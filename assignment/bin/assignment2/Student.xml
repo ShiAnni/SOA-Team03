@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:学生 xmlns="http://jw.nju.edu.cn/schema" xmlns:tns="http://jw.nju.edu.cn/schema"
+	xmlns:nju="http://www.nju.edu.cn/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://jw.nju.edu.cn/schema Student.xsd">
+	<tns:个人基本信息>
+		<nju:姓名>戴新颜</nju:姓名>
+		<nju:学号>141250023</nju:学号>
+		<nju:电话>18200000000</nju:电话>
+		<nju:单位信息>
+			<nju:单位部门名>软件学院</nju:单位部门名>
+			<nju:部门编号>001250</nju:部门编号>
+			<nju:职务>学生</nju:职务>
+		</nju:单位信息>
+	</tns:个人基本信息>
+	<tns:课程成绩列表>
+		<tns:课程成绩 课程编号="250570" 成绩性质="期末成绩">
+			<tns:成绩>
+				<tns:学号>141250023</tns:学号>
+				<tns:得分>98</tns:得分>
+			</tns:成绩>
+		</tns:课程成绩>
+		<tns:课程成绩 课程编号="250570" 成绩性质="期中成绩">
+			<tns:成绩>
+				<tns:学号>141250023</tns:学号>
+				<tns:得分>85</tns:得分>
+			</tns:成绩>
+		</tns:课程成绩>
+	</tns:课程成绩列表>
+
+</tns:学生>
+
