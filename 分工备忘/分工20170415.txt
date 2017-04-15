@@ -1,0 +1,17 @@
+﻿02.a1 Assignment 3 Processing XML （DOM）课堂报告（包括作业） 10-15分钟 谭琼
+02.05 XPath 课堂报告 35-50分钟 （视情况可能拆分为多组进行）王子安
+02.06.1 XSLT 课堂报告 20-30分钟（视情况可能拆分为多组进行）陈欢
+
+
+02.06.2 XSLT Example 课堂报告 10-15分钟 陈飞
+02.06.3 XSLT Advanced 课堂报告 18-25分钟 王子安
+02.a2 Assignment 4 Processing XML （XSLT） 课堂报告（包括作业） 8-10分钟 陈欢
+02.a2 Assignment 4 Processing XML （SAX） 课堂报告（包括作业） 8-10分钟 陈飞
+
+03.02 Document-style Message Exchange 课堂报告 10-15分钟 谭琼
+03.03 Remote Procedure Calls 课堂报告 10-15分钟 王子安
+
+
+
+
+
