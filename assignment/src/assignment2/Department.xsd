@@ -30,7 +30,7 @@
 	
 	<complexType name="部门规模类型">
 		<sequence minOccurs="1" maxOccurs="3">
-			<element name="部门人数" type="nju:部门人数类型"/>
+			<element name="人数" type="nju:部门人数类型"/>
 		</sequence>
 	</complexType>
 	
@@ -49,9 +49,10 @@
 	</simpleType>
 	
 	<complexType name="部门人数类型">
-		<sequence>
-			<element name="数量" type="nju:人数类型"/>
-		</sequence>
-		<attribute name="类型" type="nju:部门人员类型"></attribute>
+		<simpleContent>
+			<extension base="int">
+				<attribute name="类型" type="nju:部门人员类型"></attribute>
+			</extension>
+		</simpleContent>
 	</complexType>
 </schema>
