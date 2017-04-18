@@ -7,5 +7,5 @@
 			<element name="学生" type="tns:学生类型"/>
 		</sequence>
 	</complexType>
-	
+
 </schema>
