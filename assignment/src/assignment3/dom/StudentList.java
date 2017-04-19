@@ -2,15 +2,24 @@ package assignment3.dom;
 
 
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 
-import org.dom4j.Document;
-import org.dom4j.DocumentHelper;
-import org.dom4j.Element;
-import org.dom4j.Namespace;
-import org.dom4j.QName;
-import org.dom4j.io.OutputFormat;
-import org.dom4j.io.XMLWriter;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.OutputKeys;
+import javax.xml.transform.Result;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+
+import org.w3c.dom.Attr;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
 
 import assignment3.validator.XMLValidator;
 
@@ -35,64 +44,49 @@ public class StudentList {
 	private static final String NS_XSI = "http://www.w3.org/2001/XMLSchema-instance";
 	
 	public static void create() {
-		Document doc = DocumentHelper.createDocument();
-		Namespace xsi = DocumentHelper.createNamespace("xsi", NS_XSI);
-		if (doc != null) {
-			Element studentList = doc.addElement("学生列表",NS_JW);
-			studentList.add(xsi);
-			QName schema = new QName("schemaLocation", xsi);
-			studentList.addAttribute(schema, "http://jw.nju.edu.cn/schema ../schema/StudentList.xsd");
+		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+		DocumentBuilder builder = null;
+		try {
+			builder = factory.newDocumentBuilder();
+		} catch (ParserConfigurationException e1) {
+			e1.printStackTrace();
+		}
+		Document document = builder.newDocument();
+		Attr xsiAttr = document.createAttribute("xmlns:xsi");
+		xsiAttr.setValue(NS_XSI);
+		Attr jwAttr = document.createAttribute("xmlns");
+		jwAttr.setValue(NS_JW);
+		
+		Attr schemaAttr = document.createAttribute("xsi:schemaLocation");
+		schemaAttr.setValue(NS_JW+" ../schema/StudentList.xsd");
+		
+		if (document != null) {
+			Element studentList = document.createElement("学生列表");
+			studentList.setAttributeNode(jwAttr);
+			studentList.setAttributeNode(xsiAttr);
+			studentList.setAttributeNode(schemaAttr);
+			
 			for(int i = 0; i < idList.length; i++) {
-				Element student = studentList.addElement("学生");
-				student.addAttribute("学号", idList[i]);
-				
-				//学生基本信息
-				Element personInfo = student.addElement("学生基本信息",NS_NJU);
-				personInfo.addElement("姓名").addText(nameList[i]);
-				personInfo.addElement("性别").addText(genderList[i]);
-				personInfo.addElement("入学年份").addText("2014");
-				Element birth = personInfo.addElement("出生日期");
-				birth.addElement("年").addText(birthYearList[i] + "");
-				birth.addElement("月").addText(birthMonthList[i] + "");
-				birth.addElement("日").addText(birthDayList[i] + "");
-				personInfo.addElement("手机").addText(phoneList[i]);
-				personInfo.addElement("家庭住址").addText(addressList[i]);
-				
-				Element department = personInfo.addElement("部门信息");
-				department.addAttribute("部门类型", "院系");
-				department.addAttribute("部门编号", "001250");
-				department.addElement("部门名称").addText("软件学院");
-				Element size = department.addElement("部门规模");
-				Element studentSize = size.addElement("人数");
-				studentSize.addAttribute("类型", "学生");
-				studentSize.addText("218");
-				Element teacherSize = size.addElement("人数");
-				teacherSize.addAttribute("类型", "教师");
-				teacherSize.addText("48");
-				Element managerSize = size.addElement("人数");
-				managerSize.addAttribute("类型", "管理人员");
-				managerSize.addText("17");
-				
-				//课程成绩列表
-				Element scoreList = student.addElement("课程成绩列表");
-				for(int j = 0; j < courseIDList.length; j++) {
-					for(int k = 0; k < scoreTypeList.length; k++) {
-						Element scoreDes = scoreList.addElement("课程成绩");
-						scoreDes.addAttribute("课程编号", courseIDList[j]);
-						scoreDes.addAttribute("成绩性质", scoreTypeList[k]);
-						Element usualScore = scoreDes.addElement("成绩");
-						usualScore.addElement("学号").addText(idList[i]);
-						int score = 0;
-						if (i < nameList.length / 2) {
-							score = (int) (Math.random() * 40) + 60;
-						} else {
-							score = (int) (Math.random() * 60);
-						}
-						usualScore.addElement("得分").addText(score + "");
-					}
-				}
+				addStudent(document,studentList, i);
 			}
+			
+			document.appendChild(studentList);
+			DOMSource source = new DOMSource(document);
 			try {
+				Result result = new StreamResult(new FileOutputStream(new File(FILE_PATH)));
+				Transformer transformer = TransformerFactory.newInstance().newTransformer();
+				transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+				transformer.setOutputProperty( "{http://xml.apache.org/xalan}indent-amount", "4");  
+				transformer.setOutputProperty(OutputKeys.METHOD, "xml");
+				transformer.transform(source, result);
+			} catch (TransformerException e) {
+				e.printStackTrace();
+			}catch (FileNotFoundException e) {
+				e.printStackTrace();
+			}
+
+			/*try {
+				
 				OutputFormat format = OutputFormat.createPrettyPrint();
 				format.setEncoding("utf-8");
 				FileOutputStream fos = new FileOutputStream(FILE_PATH);
@@ -101,7 +95,7 @@ public class StudentList {
 				writer.close();
 			}catch (Exception e) {
 				e.printStackTrace();
-			}
+			}*/ 
 		}
 		boolean isValid = XMLValidator.validateXML(XSD_PATH, FILE_PATH);
 		if (isValid) {
@@ -109,5 +103,99 @@ public class StudentList {
 		} else {
 			System.out.println(FILE_PATH + "验证失败");
 		}
+	}
+
+	private static void addStudent(Document document,Element studentList, int i) {
+		Attr njuAttr = document.createAttribute("xmlns");
+		njuAttr.setValue(NS_NJU);
+		
+		Element student = document.createElement("学生");
+		student.setAttribute("学号", idList[i]);
+		
+		//学生基本信息
+		Element personInfo = document.createElement("学生基本信息");
+		personInfo.setAttributeNode(njuAttr);
+		Element name = document.createElement("姓名");
+		Element sex = document.createElement("性别");
+		Element comin = document.createElement("入学年份");
+		name.setTextContent(nameList[i]);
+		sex.setTextContent(genderList[i]);
+		comin.setTextContent("2014");
+		personInfo.appendChild(name);
+		personInfo.appendChild(sex);
+		personInfo.appendChild(comin);
+		
+		
+		Element birth = document.createElement("出生日期");
+		Element year = document.createElement("年");
+		Element month = document.createElement("月");
+		Element day = document.createElement("日");
+		year.setTextContent(birthYearList[i] + "");
+		month.setTextContent(birthMonthList[i] + "");
+		day.setTextContent(birthDayList[i] + "");
+		birth.appendChild(year);
+		birth.appendChild(month);
+		birth.appendChild(day);
+		personInfo.appendChild(birth);
+		
+		Element telephone = document.createElement("手机");
+		Element address = document.createElement("家庭住址");
+		telephone.setTextContent(phoneList[i]);
+		address.setTextContent(addressList[i]);
+		personInfo.appendChild(telephone);
+		personInfo.appendChild(address);
+		
+		Element department = document.createElement("部门信息");
+		department.setAttribute("部门类型", "院系");
+		department.setAttribute("部门编号", "001250");
+		Element departmentName = document.createElement("部门名称");
+		departmentName.setTextContent("软件学院");
+		department.appendChild(departmentName);
+		
+		Element size = document.createElement("部门规模");
+		Element studentSize = document.createElement("人数");
+		studentSize.setAttribute("类型", "学生");
+		studentSize.setTextContent("218");
+		Element teacherSize = document.createElement("人数");
+		teacherSize.setAttribute("类型", "教师");
+		teacherSize.setTextContent("48");
+		Element managerSize = document.createElement("人数");
+		managerSize.setAttribute("类型", "管理人员");
+		managerSize.setTextContent("17");
+		size.appendChild(studentSize);
+		size.appendChild(teacherSize);
+		size.appendChild(managerSize);
+		department.appendChild(size);
+		personInfo.appendChild(department);
+		
+		student.appendChild(personInfo);
+		
+		//课程成绩列表
+		Element scoreList = document.createElement("课程成绩列表");
+		for(int j = 0; j < courseIDList.length; j++) {
+			for(int k = 0; k < scoreTypeList.length; k++) {
+				Element scoreDes = document.createElement("课程成绩");
+				scoreDes.setAttribute("课程编号", courseIDList[j]);
+				scoreDes.setAttribute("成绩性质", scoreTypeList[k]);
+				Element usualScore = document.createElement("成绩");
+				Element scoreStudentId = document.createElement("学号");
+				scoreStudentId.setTextContent(idList[i]);
+				usualScore.appendChild(scoreStudentId);
+				int score = 0;
+				if (i < nameList.length / 2) {
+					score = (int) (Math.random() * 40) + 60;
+				} else {
+					score = (int) (Math.random() * 60);
+				}
+				Element scorePoint = document.createElement("得分");
+				scorePoint.setTextContent(score + "");
+				usualScore.appendChild(scorePoint);
+				
+				scoreDes.appendChild(usualScore);
+				scoreList.appendChild(scoreDes);
+			}
+		}
+		student.appendChild(scoreList);
+		studentList.appendChild(student);
 	}
 }
