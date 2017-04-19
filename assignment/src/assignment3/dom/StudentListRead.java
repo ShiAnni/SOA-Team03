@@ -5,6 +5,7 @@ package assignment3.dom;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.IOException;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -20,10 +21,11 @@ import javax.xml.transform.stream.StreamResult;
 import org.w3c.dom.Attr;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
+import org.xml.sax.SAXException;
 
 import assignment3.validator.XMLValidator;
-@Deprecated
-public class StudentList {
+
+public class StudentListRead {
 	private static String[] idList = {"141250010", "141250122", "141250146", "141250176", "141250150", "141250209", "141250171", "141250162", "141250170", "141250121"};
 	private static String[] nameList = {"陈欢", "谭琼", "王子安", "于海强", "伍佳艺", "周小帆", "姚朋", "徐文杰", "杨宇宁", "谭期友"};
 	private static String[] genderList = {"男", "女", "男", "男", "男", "女", "男", "男", "女", "男"};
@@ -37,6 +39,7 @@ public class StudentList {
 	private static String[] courseIDList = {"000001", "000002", "000003", "000004", "000005"};
 	private static String[] scoreTypeList = {"平时成绩", "期末成绩", "总评成绩"};
 	
+	private static final String INPUT_FILE_PATH = "src/assignment3/xml/Student.xml";
 	private static final String FILE_PATH = "src/assignment3/xml/StudentList.xml";
 	private static final String XSD_PATH = "src/assignment3/schema/StudentList.xsd";
 	private static final String NS_JW = "http://jw.nju.edu.cn/schema";
@@ -45,13 +48,17 @@ public class StudentList {
 	
 	public static void create() {
 		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-		DocumentBuilder builder = null;
+		Document document = null;
 		try {
-			builder = factory.newDocumentBuilder();
+			DocumentBuilder builder = factory.newDocumentBuilder();
+			document = builder.parse(INPUT_FILE_PATH);
 		} catch (ParserConfigurationException e1) {
 			e1.printStackTrace();
+		} catch (SAXException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
-		Document document = builder.newDocument();
 		Attr xsiAttr = document.createAttribute("xmlns:xsi");
 		xsiAttr.setValue(NS_XSI);
 		Attr jwAttr = document.createAttribute("xmlns");
@@ -61,11 +68,16 @@ public class StudentList {
 		schemaAttr.setValue(NS_JW+" ../schema/StudentList.xsd");
 		
 		if (document != null) {
+			Element student = document.getDocumentElement();
+			student.removeAttributeNode(jwAttr);
+			student.removeAttributeNode(xsiAttr);
+			student.removeAttributeNode(schemaAttr);
 			Element studentList = document.createElement("学生列表");
 			studentList.setAttributeNode(jwAttr);
 			studentList.setAttributeNode(xsiAttr);
 			studentList.setAttributeNode(schemaAttr);
 			
+			studentList.appendChild(student);
 			for(int i = 0; i < idList.length; i++) {
 				addStudent(document,studentList, i);
 			}
