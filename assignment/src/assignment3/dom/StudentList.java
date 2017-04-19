@@ -30,26 +30,24 @@ public class StudentList {
 	
 	private static final String FILE_PATH = "src/assignment3/xml/StudentList.xml";
 	private static final String XSD_PATH = "src/assignment3/schema/StudentList.xsd";
+	private static final String NS_JW = "http://jw.nju.edu.cn/schema";
+	private static final String NS_NJU = "http://www.nju.edu.cn/schema";
+	private static final String NS_XSI = "http://www.w3.org/2001/XMLSchema-instance";
 	
 	public static void create() {
 		Document doc = DocumentHelper.createDocument();
-		
-		Namespace jw = DocumentHelper.createNamespace("jw", "http://jw.nju.edu.cn/schema");
-		Namespace nju = DocumentHelper.createNamespace("nju", "http://www.nju.edu.cn/schema");
-		Namespace xsi = DocumentHelper.createNamespace("xsi", "http://www.w3.org/2001/XMLSchema-instance");
+		Namespace xsi = DocumentHelper.createNamespace("xsi", NS_XSI);
 		if (doc != null) {
-			Element studentList = doc.addElement("学生列表");
-			studentList.add(jw);
+			Element studentList = doc.addElement("学生列表",NS_JW);
 			studentList.add(xsi);
 			QName schema = new QName("schemaLocation", xsi);
-			studentList.addAttribute(schema, "http://jw.nju.edu.cn/schema StudentList.xsd");
+			studentList.addAttribute(schema, "http://jw.nju.edu.cn/schema ../schema/StudentList.xsd");
 			for(int i = 0; i < idList.length; i++) {
 				Element student = studentList.addElement("学生");
 				student.addAttribute("学号", idList[i]);
 				
 				//学生基本信息
-				Element personInfo = studentList.addElement("学生基本信息");
-				personInfo.add(nju);
+				Element personInfo = student.addElement("学生基本信息",NS_NJU);
 				personInfo.addElement("姓名").addText(nameList[i]);
 				personInfo.addElement("性别").addText(genderList[i]);
 				personInfo.addElement("入学年份").addText("2014");
@@ -57,8 +55,9 @@ public class StudentList {
 				birth.addElement("年").addText(birthYearList[i] + "");
 				birth.addElement("月").addText(birthMonthList[i] + "");
 				birth.addElement("日").addText(birthDayList[i] + "");
-				personInfo.addElement("出生日期").addText(phoneList[i]);
+				personInfo.addElement("手机").addText(phoneList[i]);
 				personInfo.addElement("家庭住址").addText(addressList[i]);
+				
 				Element department = personInfo.addElement("部门信息");
 				department.addAttribute("部门类型", "院系");
 				department.addAttribute("部门编号", "001250");
@@ -73,8 +72,9 @@ public class StudentList {
 				Element managerSize = size.addElement("人数");
 				managerSize.addAttribute("类型", "管理人员");
 				managerSize.addText("17");
+				
 				//课程成绩列表
-				Element scoreList = studentList.addElement("课程成绩列表");
+				Element scoreList = student.addElement("课程成绩列表");
 				for(int j = 0; j < courseIDList.length; j++) {
 					for(int k = 0; k < scoreTypeList.length; k++) {
 						Element scoreDes = scoreList.addElement("课程成绩");
