@@ -69,9 +69,9 @@ public class StudentListRead {
 		
 		if (document != null) {
 			Element student = document.getDocumentElement();
-			student.removeAttributeNode(jwAttr);
-			student.removeAttributeNode(xsiAttr);
-			student.removeAttributeNode(schemaAttr);
+			student.removeAttribute("xmlns:xsi");
+			student.removeAttribute("xmlns");
+			student.removeAttribute("xsi:schemaLocation");
 			Element studentList = document.createElement("学生列表");
 			studentList.setAttributeNode(jwAttr);
 			studentList.setAttributeNode(xsiAttr);
