@@ -39,16 +39,18 @@ public class StudentListRead {
 	private static String[] courseIDList = {"000001", "000002", "000003", "000004", "000005"};
 	private static String[] scoreTypeList = {"平时成绩", "期末成绩", "总评成绩"};
 	
-	private static final String INPUT_FILE_PATH = "src/assignment3/xml/Student.xml";
-	private static final String FILE_PATH = "src/assignment3/xml/StudentList.xml";
+	private static final String INPUT_FILE_PATH = "src/assignment3/xml/文档1.xml";
+	private static final String FILE_PATH = "src/assignment3/xml/文档2.xml";
 	private static final String XSD_PATH = "src/assignment3/schema/StudentList.xsd";
 	private static final String NS_JW = "http://jw.nju.edu.cn/schema";
 	private static final String NS_NJU = "http://www.nju.edu.cn/schema";
 	private static final String NS_XSI = "http://www.w3.org/2001/XMLSchema-instance";
+	private static final String SXL = NS_JW+" ../schema/StudentList.xsd";
 	
 	public static void create() {
 		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 		Document document = null;
+		
 		try {
 			DocumentBuilder builder = factory.newDocumentBuilder();
 			document = builder.parse(INPUT_FILE_PATH);
@@ -65,7 +67,7 @@ public class StudentListRead {
 		jwAttr.setValue(NS_JW);
 		
 		Attr schemaAttr = document.createAttribute("xsi:schemaLocation");
-		schemaAttr.setValue(NS_JW+" ../schema/StudentList.xsd");
+		schemaAttr.setValue(SXL);
 		
 		if (document != null) {
 			Element student = document.getDocumentElement();
@@ -182,7 +184,7 @@ public class StudentListRead {
 				scoreStudentId.setTextContent(idList[i]);
 				usualScore.appendChild(scoreStudentId);
 				int score = 0;
-				if (i < nameList.length / 2) {
+				if (i < nameList.length / 2 || j%2==0) {
 					score = (int) (Math.random() * 40) + 60;
 				} else {
 					score = (int) (Math.random() * 60);
