@@ -25,7 +25,7 @@ import org.xml.sax.SAXException;
 
 import assignment3.validator.XMLValidator;
 
-public class StudentListRead {
+public class StudentListBuilder {
 	private static String[] idList = {"141250010", "141250122", "141250146", "141250176", "141250150", "141250209", "141250171", "141250162", "141250170", "141250121"};
 	private static String[] nameList = {"陈欢", "谭琼", "王子安", "于海强", "伍佳艺", "周小帆", "姚朋", "徐文杰", "杨宇宁", "谭期友"};
 	private static String[] genderList = {"男", "女", "男", "男", "男", "女", "男", "男", "女", "男"};
