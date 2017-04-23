@@ -1,5 +1,6 @@
 package assignment4.xsl;
 
+
 import java.io.File;  
 import java.io.FileInputStream;  
 import java.io.FileNotFoundException;  
@@ -21,10 +22,12 @@ import org.dom4j.io.OutputFormat;
 import org.dom4j.io.SAXReader;  
 import org.dom4j.io.XMLWriter;
 
-import assignment3.validator.XMLValidator;  
+import assignment3.validator.XMLValidator;
+
+
   
   
-public class Xslt {  
+public class Test {  
 /** 
  * @author Administrator 
  * @parame document,styleSheet 
@@ -53,7 +56,7 @@ public class Xslt {
 	  
         InputStream is=null;  
       
-        is = new FileInputStream(new File("src/assignment4/source/StudentList.xml"));  
+        is = new FileInputStream(new File("src/assignment3/xml/文档2.xml"));  
         SAXReader reader = new SAXReader();  
           
         try {  
@@ -67,8 +70,8 @@ public class Xslt {
     }  
   public static void main(String args[]) throws IOException  {  
     try {  
-        Document doc = new Xslt().getRoleXML();          
-        Document resultDoc = Xslt.transformDocument(doc, new File("src/assignment4/source/xslt.xsl"));  
+        Document doc = new Test().getRoleXML();          
+        Document resultDoc = Test.transformDocument(doc, new File("src/assignment4/source/xslt.xsl"));  
           
         OutputFormat format = OutputFormat.createPrettyPrint();                                           
         format.setEncoding("UTF-8");   
@@ -79,11 +82,12 @@ public class Xslt {
         System.out.println("Succeed");
     	boolean bool=XMLValidator.validateXML("src/assignment4/source/ScoreList.xsd", "src/assignment4/source/xml3.xml");
    	 	if(bool){
-   	 		System.out.println("succeed");
+   	 		System.out.println("succeed schema");
    		 	}
    	 	else{
-   		 System.out.println("fail");
+   		 System.out.println("fail schema");
    	 	}
+    
         
   
           
@@ -99,3 +103,4 @@ public class Xslt {
     }    
     }  
 }  
+
