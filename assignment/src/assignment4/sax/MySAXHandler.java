@@ -10,8 +10,8 @@ import java.util.*;
 
 public class MySAXHandler extends DefaultHandler{
     private Map<String,String> scoreRecord = null;
-    private List<Map> multiScoreList = null;
-    private List<List> resultList = null;
+    private List<Map<String,String>> multiScoreList = null;
+    private List<List<Map<String,String>>> resultList = null;
     String currentTag = null;
     String currentVal = null;
     String nodeName = null;
@@ -20,7 +20,7 @@ public class MySAXHandler extends DefaultHandler{
     public MySAXHandler(String nodeName){
         this.nodeName = nodeName;
     }
-    public List<List> getList(){
+    public List<List<Map<String,String>>> getList(){
         return resultList;
     }
 
@@ -34,12 +34,12 @@ public class MySAXHandler extends DefaultHandler{
                              String qName, Attributes attributes) throws SAXException {
         //System.out.println("startElement--"+qName);
         if(qName.equals(nodeName)){
-            resultList = new LinkedList<List>();
+            resultList = new LinkedList<List<Map<String,String>>>();
             return;
         }
         if(qName.equals("课程成绩")){
-            multiScoreList = new LinkedList<Map>();
-            Map attrMap = new HashMap();//用来存放课程成绩的属性
+            multiScoreList = new LinkedList<Map<String,String>>();
+            Map<String,String> attrMap = new HashMap<String, String>();//用来存放课程成绩的属性
             if(attributes!=null && attrMap !=null){
                 for(int i=0; i<attributes.getLength(); i++){
                     attrMap.put(attributes.getQName(i),attributes.getValue(i));
