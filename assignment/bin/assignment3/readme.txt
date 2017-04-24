@@ -1,0 +1,4 @@
+本次作业的几点说明：
+1. 由于上次作业assignment2中部分xsd未符合作业要求，以及部分文件包含的学生信息过少，本次作业中，改正了schema，符合了assignment2中的要求，并添加了部分学生信息。改正的内容放在了assignment3中的schema目录下，对应的“文档1.xml”放在了xml目录下。
+
+2. 本次作业的程序位于dom、validator和main文件夹下，main文件夹下的Main函数负责启动dom文件夹下的StudentListBuilder以生成本次作业的“文档2.xml”,然后使用validator目录下的XMLValidator对生成的xml文件进行验证。生成的“文档2.xml”放在了xml目录下。
