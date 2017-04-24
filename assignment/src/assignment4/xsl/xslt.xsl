@@ -5,7 +5,7 @@
 
 	<xsl:template match="/">
 
-		<课程成绩列表 xmlns="http://jw.nju.edu.cn/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+		<课程成绩列表 xmlns="http://jw.nju.edu.cn/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jw.nju.edu.cn/schema ../schema/ScoreList.xsd">
 			<xsl:for-each select="//jw:学生[1]//jw:课程成绩">
 				<课程成绩>
 					<xsl:attribute name="课程编号">
