@@ -65,7 +65,6 @@ public class StudentListBuilder {
 		xsiAttr.setValue(NS_XSI);
 		Attr jwAttr = document.createAttribute("xmlns");
 		jwAttr.setValue(NS_JW);
-		
 		Attr schemaAttr = document.createAttribute("xsi:schemaLocation");
 		schemaAttr.setValue(SXL);
 		
