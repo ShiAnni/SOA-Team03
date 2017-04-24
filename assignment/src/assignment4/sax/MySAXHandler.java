@@ -7,9 +7,7 @@ import org.xml.sax.helpers.DefaultHandler;
 
 import java.util.*;
 
-/**
- * Created by WH on 2016/4/15.
- */
+
 public class MySAXHandler extends DefaultHandler{
     private Map<String,String> scoreRecord = null;
     private List<Map> multiScoreList = null;

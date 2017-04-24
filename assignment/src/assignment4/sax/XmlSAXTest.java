@@ -16,9 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Created by WH on 2016/4/15.
- */
+
 public class XmlSAXTest {
     public static void main(String[] args) {
         SAXParserFactory parserFactory = SAXParserFactory.newInstance();
