@@ -49,7 +49,7 @@ public class XmlSAXTest {
 			System.out.println("fail output file schema validation");
 			return;
 		}
-
+		//验证是否符合schema
     }
     private static final String NS_JW = "http://jw.nju.edu.cn/schema";
 	private static final String NS_XSI = "http://www.w3.org/2001/XMLSchema-instance";
@@ -68,6 +68,7 @@ public class XmlSAXTest {
     		jwAttr.setValue(NS_JW);
     		Attr schemaAttr = document.createAttribute("xsi:schemaLocation");
     		schemaAttr.setValue(SXL);
+    		
     		root.setAttributeNode(jwAttr);
     		root.setAttributeNode(xsiAttr);
     		root.setAttributeNode(schemaAttr);

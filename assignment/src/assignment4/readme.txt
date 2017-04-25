@@ -1,0 +1,11 @@
+————————————————————————
+XSLT
+transformer是xslt。xsl
+source是文档2.xml
+文档3。xml是输出文档
+————————————————————————
+SAX
+MySAXHandler是处理xml文档的工具
+XmlSAXTest是主函数入口
+文档3。xml是被处理的xml文档
+文档4。xml是输出文档
