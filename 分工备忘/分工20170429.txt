@@ -1,0 +1,14 @@
+4月28日 
+
+·03.05 SOAP Fault 课堂报告 时限：15~20分钟(陈欢)
+·03.06.1 SOAP Binding Tasks 课堂报告 时限：10~15分钟（陈飞）
+·03.06.2 SOAP HTTP Binding 课堂报告 时限：10-15分钟（谭琼）
+
+5月5日 课程安排 
+
+·03.a1 Assignment 5 SOAP Message（Response MEP） 作业 课堂报告 时限8-10分钟（王子安）
+·03.a2 Assignment 6 SOAP Message（Request Response MEP） 课堂报告 时限8-10分钟（陈欢）
+·03.09 Binary data Optimization 课堂报告 时限20-30分钟 （视情况可能拆分为多组进行）（陈飞）
+·04.01 WSDL Overview and Example 课堂报告 时限30-40分钟 （视情况可能拆分为多组进行）（谭琼）
+
+
