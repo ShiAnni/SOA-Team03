@@ -1,7 +1,6 @@
 package servlet;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -41,7 +40,7 @@ public class StudentScoreShow extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		packageSOAPEnv(request, response);
+		doGet(request, response);
 	}
 	/**
 	 * 不会关注里面的实现（如何组装SOAP不管（报文、文本还是saj接口都不管））要有对应的数据结构，信息放到文档中或者数据库中都可以，xml文档也可以 硬编码也可以 重点是接口
@@ -68,9 +67,6 @@ public class StudentScoreShow extends HttpServlet {
 			
 			if (id == null) {
 				body.addFault(SOAPConstants.SOAP_SENDER_FAULT, "请求缺少参数");
-				/*SOAPFault soapFault = body.addFault();
-				soapFault.setFaultCode(new QName("env", "Sender"));
-				soapFault.setFaultString("请求缺少参数", Locale.CHINESE);*/
 			}else{
 				List<Score> scores = StudentScoreListBuilder.getScoreById(id);
 				if(scores==null)	body.addFault(SOAPConstants.SOAP_SENDER_FAULT, "输入学号错误或该学号无对应学生");
@@ -78,6 +74,14 @@ public class StudentScoreShow extends HttpServlet {
 					SOAPBodyElement element = body.addBodyElement(envName);
 					QName rootQName = element.createQName("课程成绩列表", "tns");
 					SOAPElement root = element.addChildElement(rootQName);
+					/**
+					 * <学生列表 xmlns="http://jw.nju.edu.cn/schema" xmlns:xsi=
+					 * "http://www.w3.org/2001/XMLSchema-instance"
+					 * xsi:schemaLocation="http://jw.nju.edu.cn/schema
+					 * ../schema/StudentList.xsd">
+					 */
+					root.setAttribute("xmlns:xsi", "http://www.w3.org/2001/XMLSchema-instance");
+					root.setAttribute("xsi:schemaLocation", "http://jw.nju.edu.cn/schema ../schema/StudentList.xsd");
 					
 					for (Score score : scores) {
 						QName scoreQName = root.createQName("成绩", "tns");
@@ -95,6 +99,7 @@ public class StudentScoreShow extends HttpServlet {
 					}
 				}
 			}
+			
 			message.writeTo(response.getOutputStream());
 		} catch (SOAPException e) {
 			e.printStackTrace();
