@@ -21,9 +21,7 @@ import java.net.URLConnection;
 import java.util.LinkedList;
 import java.util.List;
 
-/**
- * Created by WH on 2016/4/26.
- */
+
 public class QueryParser {
     private static Document document;
     public static String path="D:\\大三（3）\\SOA\\git\\SOA-Team03\\assignment\\assignment6\\SimpleWebProject";

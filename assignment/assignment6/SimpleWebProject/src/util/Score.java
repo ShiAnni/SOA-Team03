@@ -1,8 +1,5 @@
 package util;
 
-/**
- * Created by WH on 2016/4/26.
- */
 
 //Score类封装了成绩信息
 public class Score {

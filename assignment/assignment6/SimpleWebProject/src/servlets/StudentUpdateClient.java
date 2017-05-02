@@ -15,9 +15,7 @@ import java.net.URL;
 import java.util.Iterator;
 
 
-/**
- * Created by WH on 2016/5/1.
- */
+
 @WebServlet("/updateClient")
 public class StudentUpdateClient extends HttpServlet{
     @Override

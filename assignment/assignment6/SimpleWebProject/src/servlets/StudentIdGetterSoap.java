@@ -14,9 +14,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Iterator;
 
-/**
- * Created by WH on 2016/4/26.
- */
+
 @WebServlet("/querySoap")
 public class StudentIdGetterSoap extends HttpServlet {
 

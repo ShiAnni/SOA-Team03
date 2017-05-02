@@ -17,9 +17,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.regex.Pattern;
 
-/**
- * Created by WH on 2016/5/2.
- */
+
 @WebServlet("/updateServer")
 public class StudentUpdateServer extends HttpServlet {
     private static MessageFactory messageFactory = null;

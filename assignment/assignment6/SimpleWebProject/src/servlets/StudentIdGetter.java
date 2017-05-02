@@ -17,9 +17,6 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
-/**
- * Created by WH on 2016/4/26.
- */
 @WebServlet("/query")
 public class StudentIdGetter extends HttpServlet{
     @Override
