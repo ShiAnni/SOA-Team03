@@ -36,7 +36,7 @@ public class StudentScoreListBuilder {
 		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();  
         DocumentBuilder builder = factory.newDocumentBuilder();  
         DOMReader reader = new DOMReader();
-        String path = "D:/program/git/SOA-Team03/assignment/assignment5/";
+        String path = "D:/program/git/SOA-Team03/assignment/src/assignment5/web项目/assignment5/";
 		Document document =  reader.read(builder.parse(new File(path+"src/data/文档2.xml")));
 		Element studentList = document.getRootElement();
 		List<Element> students = studentList.elements("学生");
