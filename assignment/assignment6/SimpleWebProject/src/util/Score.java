@@ -3,12 +3,20 @@ package util;
 
 //Score类封装了成绩信息
 public class Score {
-    private String studentId;
+	private String studentId;
     private String courseNumber;
     private String scoreType;
-    private int Score;
+    private int score;
 
-    public String getStudentId() {
+    
+    public Score(String studentId, String courseNumber, String scoreType, int score) {
+		this.studentId = studentId;
+		this.courseNumber = courseNumber;
+		this.scoreType = scoreType;
+		this.score = score;
+	}
+
+	public String getStudentId() {
         return studentId;
     }
 
@@ -25,11 +33,11 @@ public class Score {
     }
 
     public int getScore() {
-        return Score;
+        return score;
     }
 
     public void setScore(int score) {
-        Score = score;
+    	this.score = score;
     }
 
     public String getScoreType() {
@@ -45,6 +53,6 @@ public class Score {
         return  "studentId='" + studentId + '\'' +
                 "| courseNumber='" + courseNumber + '\'' +
                 "| scoreType='" + scoreType + '\'' +
-                "| Score=" + Score;
+                "| score=" + score;
     }
 }

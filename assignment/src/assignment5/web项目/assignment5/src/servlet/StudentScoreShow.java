@@ -87,7 +87,7 @@ public class StudentScoreShow extends HttpServlet {
 						QName scoreQName = root.createQName("成绩", "tns");
 						SOAPElement scoreElement = root.addChildElement(scoreQName);
 						scoreElement.setAttribute("成绩类型", score.getScoreType());
-						scoreElement.setAttribute("课程编号", score.getCourseId());
+						scoreElement.setAttribute("课程编号", score.getCourseNumber());
 						
 						QName idQName = scoreElement.createQName("学号", "tns");
 						SOAPElement studentIdDOM = scoreElement.addChildElement(idQName);
@@ -95,7 +95,7 @@ public class StudentScoreShow extends HttpServlet {
 	
 						QName scorelistQName = scoreElement.createQName("得分", "tns");
 						SOAPElement scorelistDOM = scoreElement.addChildElement(scorelistQName);
-						scorelistDOM.setTextContent(score.getPoint()+"");
+						scorelistDOM.setTextContent(score.getScore()+"");
 					}
 				}
 			}

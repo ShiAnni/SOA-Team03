@@ -48,7 +48,7 @@ public class StudentScoreListBuilder {
 				String scoreType = element.attributeValue("成绩性质");
 				String courseId = element.attributeValue("课程编号");
 				int score = Integer.parseInt(element.element("成绩").element("得分").getText());
-				scores.add(new Score(courseId, scoreType, score));
+				scores.add(new Score(studentId,courseId, scoreType, score));
 			}
 			scoreList.put(studentId, scores);
 		}
