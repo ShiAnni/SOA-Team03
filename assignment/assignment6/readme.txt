@@ -1,22 +1,6 @@
-模拟客户端部分：
-页面部分
-queryPage.html是查询入口，在这个页面输入学号查询
-QueryFail.html查询错误界面，当学号不符合格式要求会进入这个界面
-ScoreView.jsp当查询到这个成绩会显示在这个页面上
-UpdateScore.jsp输入更新的成绩，需要从ScoreView.jsp进入
-UpdateFail.html输入的成绩为非法值，就显示这个界面
-
-Servlet部分
-StudentIDGetter.java获得request中的学号，并以SOAP方式调用服务器部分
-StudentIdGetterSOAP.java获得request的学号，并以SOAP方式调用服务器部分，和前者不同是，直接回传soap消息本身，而不显示
-StudentUpdateClient.java获得输入的成绩，并以SOAP方式调用服务器部分
-
-模拟服务器部分：
-普通Java类
-QueryParser.java处理和xml相关的的部分，提供面向对象的API。
-Score.java定义了Score的面向对象表示，包含了学号、课程编号、成绩类型等属性。
-
-Servlet部分
-ScoreGetter.java的功能是解析SOAPMessage,找出其中的学号信息，并调用解析xml的工具类解析，返回SOAPMessage
-StudentUpdateServer.java解析SOAPMessage,知道需要更新哪条信息，然后解析xml,修改值，更新xml,返回SOAPMessage
-
+1. 关于项目的架构，请求的调用和SOAP消息如何进行传递的相关说明详见“项目架构说明.txt”文件
+2. 部分页面的截图和SOAP消息的控制台输出截图放在了截图目录下
+3. 出错和成绩列表的SOAP消息放在了soap消息目录下
+4. SOAWeb是本次作业的项目目录，为了方面展示和交互，添加了部分jsp和html并微调了存取逻辑
+5. 如果有因为文件不存在相关的报错可能是因为文件的路径问题，作业中用的是绝对路径，在相关java文件中进行相应的修改即可。
+6. 正常消息的Body中的部分元素是符合之前作业的schema的，故附上了schema文件夹
