@@ -1,1 +1,0 @@
-<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"><SOAP-ENV:Header/><SOAP-ENV:Body><Response>Got the SOAP msg indicating there are 216 laptops available</Response></SOAP-ENV:Body></SOAP-ENV:Envelope>
