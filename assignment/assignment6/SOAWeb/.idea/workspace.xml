@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d372a74e-b6c8-48b5-ad9b-17e31ab31587" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../截图/fault.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../截图/soap.jpg" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SOAWeb.iml" afterPath="$PROJECT_DIR$/SOAWeb.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/SimpleWebProject_war_exploded/WEB-INF/classes/tempfiles/文档2.xml" afterPath="$PROJECT_DIR$/out/artifacts/SimpleWebProject_war_exploded/WEB-INF/classes/tempfiles/文档2.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tempfiles/文档2.xml" afterPath="$PROJECT_DIR$/src/tempfiles/文档2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/tempfiles/文档2.xml" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/tempfiles/文档2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../soap消息/fault.xml" afterPath="$PROJECT_DIR$/../soap消息/fault.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../soap消息/querySoap.xml" afterPath="$PROJECT_DIR$/../soap消息/querySoap.xml" />
     </list>
     <ignored path="SimpleWebProject.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -64,7 +56,7 @@
       <file leaf-file-name="StudentIdGetterSoap.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/servlets/StudentIdGetterSoap.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="332">
+            <state relative-caret-position="925">
               <caret line="49" column="69" lean-forward="false" selection-start-line="49" selection-start-column="69" selection-end-line="49" selection-end-column="69" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -76,7 +68,7 @@
       <file leaf-file-name="StudentIdGetter.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/servlets/StudentIdGetter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-650">
+            <state relative-caret-position="850">
               <caret line="50" column="34" lean-forward="false" selection-start-line="50" selection-start-column="34" selection-end-line="50" selection-end-column="34" />
               <folding />
             </state>
@@ -86,8 +78,8 @@
       <file leaf-file-name="ScoreGetter.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/servlets/ScoreGetter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="74">
-              <caret line="54" column="17" lean-forward="true" selection-start-line="54" selection-start-column="17" selection-end-line="54" selection-end-column="17" />
+            <state relative-caret-position="1350">
+              <caret line="54" column="17" lean-forward="false" selection-start-line="54" selection-start-column="17" selection-end-line="54" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -394,9 +386,9 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scratches" />
       <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1081,11 +1073,12 @@
       <workItem from="1493799502707" duration="7387000" />
       <workItem from="1493810079709" duration="4120000" />
       <workItem from="1493814411258" duration="1338000" />
+      <workItem from="1493816263277" duration="70000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="68145000" />
+    <option name="totallyTimeSpent" value="68215000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1118,8 +1111,8 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3288889" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3932927" sideWeight="0.49356914" order="2" side_tool="false" content_ui="tabs" x="4" y="584" width="1866" height="373" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3932927" sideWeight="0.49356914" order="2" side_tool="false" content_ui="tabs" x="4" y="584" width="1866" height="373" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26809454" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1288,7 +1281,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1318,7 +1310,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="89">
           <caret line="467" column="0" lean-forward="false" selection-start-line="467" selection-start-column="0" selection-end-line="467" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1361,17 +1352,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/util/StudentScoreListBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="39" column="66" lean-forward="false" selection-start-line="39" selection-start-column="66" selection-end-line="39" selection-end-column="66" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/util/StudentScoreListBuilder.java" />
     <entry file="file://$PROJECT_DIR$/src/servlets/StudentIdGetterSoap.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
+        <state relative-caret-position="925">
           <caret line="49" column="69" lean-forward="false" selection-start-line="49" selection-start-column="69" selection-end-line="49" selection-end-column="69" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1389,7 +1373,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/servlets/StudentIdGetter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-650">
+        <state relative-caret-position="850">
           <caret line="50" column="34" lean-forward="false" selection-start-line="50" selection-start-column="34" selection-end-line="50" selection-end-column="34" />
           <folding />
         </state>
@@ -1397,8 +1381,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/servlets/ScoreGetter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="74">
-          <caret line="54" column="17" lean-forward="true" selection-start-line="54" selection-start-column="17" selection-end-line="54" selection-end-column="17" />
+        <state relative-caret-position="1350">
+          <caret line="54" column="17" lean-forward="false" selection-start-line="54" selection-start-column="17" selection-end-line="54" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
