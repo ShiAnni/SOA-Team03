@@ -81,7 +81,7 @@ public class StudentScoreShow extends HttpServlet {
 					 * ../schema/StudentList.xsd">
 					 */
 					root.setAttribute("xmlns:xsi", "http://www.w3.org/2001/XMLSchema-instance");
-					root.setAttribute("xsi:schemaLocation", "http://jw.nju.edu.cn/schema ../schema/StudentList.xsd");
+					root.setAttribute("xsi:schemaLocation", "http://jw.nju.edu.cn/schema ../schema/ScoreList.xsd");
 					
 					for (Score score : scores) {
 						QName scoreQName = root.createQName("成绩", "tns");
