@@ -43,7 +43,8 @@ public class ScoreGetter extends HttpServlet{
             String studentId = element.getValue();
             System.out.println("ScoreGetter得到学生学号:"+studentId);
             //检验studentId是否合法
-            boolean validInput = Pattern.matches("^141250[0-9]{3}$",studentId);
+            boolean validInput=false;
+            validInput = Pattern.matches("^141250[0-9]{3}$",studentId);
             //返回的是成绩，封装在SOAPMessage中
             SOAPMessage returnMessage = messageFactory.createMessage();
             SOAPEnvelope returnEnvelop = returnMessage.getSOAPPart().getEnvelope();
