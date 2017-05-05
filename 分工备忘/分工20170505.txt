@@ -1,0 +1,7 @@
+
+04.a1 Assignment 7 WSDL （包装现有服务） 课堂报告 时限8-10分钟 谭琼
+04.a2 Assignment 8 WSDL （全新设计）课堂报告 时限8-10分钟 陈飞
+04.03 Importing WSDL Example 课堂报告 时限10-15分钟 谭琼
+04.04 Message Types 课堂报告 时限 15-20分钟 王子安
+04.05 Importing Schemas Example  课堂报告 时限 12-15分钟 王子安
+04.06 Interface  课堂报告 时限 25-30分钟 可能视情况分为多组 陈欢
