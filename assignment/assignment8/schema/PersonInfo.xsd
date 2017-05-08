@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://www.nju.edu.cn/schema"
+        xmlns:nju="http://www.nju.edu.cn/schema"
+        elementFormDefault="qualified">
+    <include schemaLocation="Department.xsd"></include>
+
+    <!--<element name="person" type="nju:personInfo"></element>-->
+    <complexType name="personInfo">
+        <sequence>
+            <element name="personId" type="positiveInteger"/>
+            <element name="personName" type="string"/>
+            <element name="department" type="nju:departmentInfo"/>
+        </sequence>
+    </complexType>
+
+    </schema>
