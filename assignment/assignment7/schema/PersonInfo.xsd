@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+	xmlns:nju="http://www.nju.edu.cn/schema" 
+	targetNamespace="http://www.nju.edu.cn/schema" 
+	elementFormDefault="qualified">
+	<include schemaLocation="Department.xsd"/>
+	
+	<element name="学生基本信息" type="nju:个人基本信息类型"/>
+	<complexType name="个人基本信息类型">
+		<all>
+			<element name="姓名" type="string"/>
+			<element name="性别" type="nju:性别类型"/>
+			<element name="出生日期" type="nju:生日类型"/>
+			<element name="入学年份" type="nju:年类型"/>
+			<element name="手机" type="nju:手机类型"/>
+			<element name="家庭住址" type="string"/>
+			<element ref="nju:部门信息"/>
+		</all>
+	</complexType>
+	
+	<simpleType name="手机类型">
+		<restriction base="string">
+			<length value="11"/>
+		</restriction>
+	</simpleType>
+	
+	<simpleType name="性别类型">
+		<restriction base="string">
+			<enumeration value="男"/>
+			<enumeration value="女"/>
+		</restriction>
+	</simpleType>
+	
+	<complexType name="生日类型">
+		<sequence>
+			<element name="年" type="nju:年类型"/>
+			<element name="月" type="nju:月类型"/>
+			<element name="日" type="nju:日类型"/>
+		</sequence>
+	</complexType>
+	
+	<simpleType name="年类型">
+		<restriction base="int">
+			<minInclusive value="1800"/>
+			<maxExclusive value="2200"/>
+		</restriction>
+	</simpleType>
+	
+	<simpleType name="月类型">
+		<restriction base="int">
+			<minInclusive value="1"/>
+			<maxInclusive value="12"/>
+		</restriction>
+	</simpleType>
+	
+	<simpleType name="日类型">
+		<restriction base="int">
+			<minInclusive value="1"/>
+			<maxExclusive value="31"/>
+		</restriction>
+	</simpleType>
+</schema>
