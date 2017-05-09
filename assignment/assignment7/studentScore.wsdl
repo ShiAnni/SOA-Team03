@@ -15,7 +15,7 @@
 		xmlns:xs="http://www.w3.org/2001/XMLSchema"
 		namespace="http://jw.nju.edu.cn/schema"
 		schemaLocation="../schema/Personinfo.xsd"/>
-	<xs:element name="InvalidDataFault" type="xs:string"/>
+	<xs:element name="InvalidDataFault" type="string"/>
 	<xs:element name="课程成绩列表" type="tns:课程成绩列表类型" />
 	<xs:element name="课程成绩" type="tns:课程成绩类型" />
 	<xs:element name="学号" type="tns:学号类型"/>
@@ -31,8 +31,7 @@
 		
 		<operation name="getScore"
 			pattern="http://www.w3.org/ns/wsdl/in-out"
-			style="http://www.w3.org/ns/wsdl/style/iri"
-			wsdlx:safe="true">
+			style="http://www.w3.org/ns/wsdl/style/iri">
 
 			<input messageLabel="In" element="tns:学号" />
 			<output messageLabel="Out" element="tns:课程成绩列表" />
@@ -49,8 +48,7 @@
 		
 		<operation name="addScore"
 			pattern="http://www.w3.org/ns/wsdl/in-out"
-			style="http://www.w3.org/ns/wsdl/style/iri"
-			wsdlx:safe="true">
+			style="http://www.w3.org/ns/wsdl/style/iri">
 
 			<input messageLabel="In" element="tns:课程成绩" />
 			<output messageLabel="Out" element="tns:课程成绩列表" />
@@ -69,8 +67,7 @@
 		
 		<operation name="modifyScore"
 			pattern="http://www.w3.org/ns/wsdl/in-out"
-			style="http://www.w3.org/ns/wsdl/style/iri"
-			wsdlx:safe="true">
+			style="http://www.w3.org/ns/wsdl/style/iri">
 
 			<input messageLabel="In" element="tns:课程成绩" />
 			<output messageLabel="Out" element="tns:课程成绩列表" />
@@ -89,8 +86,7 @@
 		
 		<operation name="delScore"
 			pattern="http://www.w3.org/ns/wsdl/in-out"
-			style="http://www.w3.org/ns/wsdl/style/iri"
-			wsdlx:safe="true">
+			style="http://www.w3.org/ns/wsdl/style/iri">
 
 			<input messageLabel="In" element="tns:课程成绩" />
 			<output messageLabel="Out" element="tns:课程成绩列表" />
