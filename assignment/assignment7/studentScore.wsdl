@@ -2,7 +2,7 @@
 <description
 	xmlns="http://www.w3.org/ns/wsdl"
 	targetNamespace="http://jw.nju.edu.cn/wsdl"
-	xmlns:tns="http://jw.nju.edu.cn/wsdl"
+	xmlns:tns="http://jw.nju.edu.cn/schema"
 	xmlns:wsoap="http://www.w3.org/ns/wsdl/soap"
 	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
 	
