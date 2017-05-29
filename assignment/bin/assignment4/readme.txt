@@ -1,0 +1,16 @@
+————————————————————————
+XSLT
+XSLResolv.java是用来进行解析xsl文件的，放在了xsl目录下
+transformer是xslt.xsl，在xsl目录下
+文档2.xml是输入文档，在xml目录下
+文档3.xml是输出文档，在xml目录下
+————————————————————————
+SAX
+MySAXHandler是处理xml文档的工具，在sax目录下
+XmlSAXTest是主函数入口，在sax目录下
+文档3.xml是被处理的xml文档，在xml目录下
+文档4.xml是输出文档，在xml目录下
+————————————————————————
+其他说明
+schema目录中包含相关的schema文件
+XMLValidator.java是用来验证xml文件的工具类，在validator目录下

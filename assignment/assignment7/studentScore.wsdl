@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<description
+	xmlns="http://www.w3.org/ns/wsdl"
+	targetNamespace="http://jw.nju.edu.cn/wsdl"
+	xmlns:tns="http://jw.nju.edu.cn/schema"
+	xmlns:wsoap="http://www.w3.org/ns/wsdl/soap"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+	
+	<types>
+	<xs:import
+		xmlns:xs="http://www.w3.org/2001/XMLSchema"
+		namespace="http://jw.nju.edu.cn/schema"
+		schemaLocation="../schema/ScoreList.xsd"/>
+	<xs:import
+		xmlns:xs="http://www.w3.org/2001/XMLSchema"
+		namespace="http://jw.nju.edu.cn/schema"
+		schemaLocation="../schema/Personinfo.xsd"/>
+	<xs:element name="InvalidDataFault" type="string"/>
+	<xs:element name="课程成绩列表" type="tns:课程成绩列表类型" />
+	<xs:element name="课程成绩" type="tns:课程成绩类型" />
+	<xs:element name="学号" type="tns:学号类型"/>
+	</types>
+	
+	<interface  name="studentScoreShowInterface">
+		<fault name="idNotFindFault" element="tns:InvalidDataFault">
+			<documentation>学号不存在</documentation>
+		</fault>
+		<fault name="courseIdFault" element="tns:InvalidDataFault">
+			<documentation>课程号不存在</documentation>
+		</fault>
+		
+		<operation name="getScore"
+			pattern="http://www.w3.org/ns/wsdl/in-out"
+			style="http://www.w3.org/ns/wsdl/style/iri">
+
+			<input messageLabel="In" element="tns:学号" />
+			<output messageLabel="Out" element="tns:课程成绩列表" />
+			<outfault ref="tns:idNotFindFault" messageLabel="Out" />
+		</operation>
+	</interface>
+	
+	<interface  name="studentScoreAddInterface">
+		<fault name="idNotFindFault" element="tns:InvalidDataFault">
+			<documentation>学号不存在</documentation>
+		</fault>
+		<fault name="courseIdFault" element="tns:InvalidDataFault">
+			<documentation>课程号不存在</documentation>
+		
+		<operation name="addScore"
+			pattern="http://www.w3.org/ns/wsdl/in-out"
+			style="http://www.w3.org/ns/wsdl/style/iri">
+
+			<input messageLabel="In" element="tns:课程成绩" />
+			<output messageLabel="Out" element="tns:课程成绩列表" />
+			<outfault ref="tns:idNotFindFault" messageLabel="Out" />
+			<outfault ref="tns:courseIdFault" messageLabel="Out" />
+		</operation>
+	</interface>
+	
+	<interface  name="studentScoreModifyInterface">
+		<fault name="idNotFindFault" element="tns:InvalidDataFault">
+			<documentation>学号不存在</documentation>
+		</fault>
+		<fault name="courseIdFault" element="tns:InvalidDataFault">
+			<documentation>课程号不存在</documentation>
+		</fault>
+		
+		<operation name="modifyScore"
+			pattern="http://www.w3.org/ns/wsdl/in-out"
+			style="http://www.w3.org/ns/wsdl/style/iri">
+
+			<input messageLabel="In" element="tns:课程成绩" />
+			<output messageLabel="Out" element="tns:课程成绩列表" />
+			<outfault ref="tns:idNotFindFault" messageLabel="Out" />
+			<outfault ref="tns:courseIdFault" messageLabel="Out" />
+		</operation>
+	</interface>
+	
+	<interface  name="studentScoreDeleteInterface">
+		<fault name="idNotFindFault" element="tns:InvalidDataFault">
+			<documentation>学号不存在</documentation>
+		</fault>
+		<fault name="courseIdFault" element="tns:InvalidDataFault">
+			<documentation>课程号不存在</documentation>
+		</fault>
+		
+		<operation name="delScore"
+			pattern="http://www.w3.org/ns/wsdl/in-out"
+			style="http://www.w3.org/ns/wsdl/style/iri">
+
+			<input messageLabel="In" element="tns:课程成绩" />
+			<output messageLabel="Out" element="tns:课程成绩列表" />
+			<outfault ref="tns:idNotFindFault" messageLabel="Out" />
+			<outfault ref="tns:courseIdFault" messageLabel="Out" />
+		</operation>
+	</interface>
+	
+	
+	<binding name="studentScoreShowBinding"
+		interface="tns:studentScoreShowInterface"
+		type="http://www.w3.org/ns/wsdl/soap"
+		wsoap:protocal="http://www.w3.org/2003/05/soap/bindings/HTTP/">
+		<operation ref="tns:addScore"
+			wsoap:mep="http://www.w3.org/2003/05/soap/mep/request-response" />
+		<operation ref="tns:getScore"
+			wsoap:mep="http://www.w3.org/2003/05/soap/mep/soap-response" />
+		<operation ref="tns:modifyScore"
+			wsoap:mep="http://www.w3.org/2003/05/soap/mep/request-response" />
+		<operation ref="tns:delScore"
+			wsoap:mep="http://www.w3.org/2003/05/soap/mep/request-response" />
+		<fault ref="tns:idNotFindFault" wsoap:code="soap:Sender" />
+		<fault ref="tns:scoreTypeFault" wsoap:code="soap:Sender" />
+		<fault ref="tns:scoreModifyFault" wsoap:code="soap:Sender" />
+		<fault ref="tns:studentIdFault" wsoap:code="soap:Sender" />
+		<fault ref="tns:courseIdFault" wsoap:code="soap:Sender" />
+	</binding>
+	
+	<service name="studentScoreShowService"
+		interface="tns:studentScoreShowInterface">
+		<endpoint name="studentScoreShowEndpoint"
+			binding="tns:studentScoreShowBinding"
+			address="http://localhost:8080/Assignment5/StudentScoreShow"/>	
+	</service>
+</description>
