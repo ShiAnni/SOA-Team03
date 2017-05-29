@@ -15,9 +15,7 @@ import java.io.IOException;
 import java.lang.reflect.Array;
 import java.util.*;
 
-/**
- * Created by WH on 2016/6/1.
- */
+
 public class Generator {
     /** 日志对象 */
     private static final Logger LOG = LoggerFactory.getLogger(Generator.class);

@@ -3,9 +3,7 @@ package GenerateStudentList;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlTransient;
 
-/**
- * Created by ch on 2017/5/28.
- */
+
 public class Score {
     @XmlElement(name = "学号")
     private String studentId;//学号

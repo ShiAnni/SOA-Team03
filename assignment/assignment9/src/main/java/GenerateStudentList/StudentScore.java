@@ -5,9 +5,7 @@ import GenerateStudentList.CourseScore;
 import javax.xml.bind.annotation.XmlElement;
 import java.util.List;
 
-/**
- * Created by ch on 2017/5/28.
- */
+
 
 public class StudentScore {
     @XmlElement(name = "课程成绩")

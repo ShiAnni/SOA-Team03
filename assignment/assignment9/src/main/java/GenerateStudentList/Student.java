@@ -3,9 +3,7 @@ package GenerateStudentList;
 import javax.xml.bind.annotation.*;
 import java.util.List;
 
-/**
- * Created by ch on 2017/5/28.
- */
+
 @XmlRootElement(name = "学生")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Student {

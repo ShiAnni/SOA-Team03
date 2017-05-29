@@ -3,9 +3,7 @@ package GenerateStudentList;
 import javax.xml.bind.annotation.*;
 import java.util.List;
 
-/**
- * Created by ch on 2017/5/28.
- */
+
 public class CourseScore {
     @XmlAttribute(name = "成绩性质")
     private String scoreType;//成绩性质
