@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema  xmlns="http://www.w3.org/2001/XMLSchema"
+         xmlns:nju="http://www.nju.edu.cn/schema"
+         targetNamespace="http://www.nju.edu.cn/schema"
+         elementFormDefault="qualified">
+
+    <element name="部门信息" type="nju:部门信息类型"/>
+    <complexType name="部门信息类型">
+        <all>
+            <element name="部门名称" type="string"/>
+            <element name="部门规模" type="nju:部门规模类型"/>
+        </all>
+        <attribute name="部门编号" type="nju:部门编号类型"/>
+        <attribute name="部门类型" type="nju:部门类型类型"/>
+    </complexType>
+
+    <simpleType name="部门类型类型">
+        <restriction base="string">
+            <enumeration value="院系"/>
+            <enumeration value="管理部门"/>
+            <enumeration value="后勤部门"/>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="部门编号类型">
+        <restriction base="string">
+            <length value="6"/>
+        </restriction>
+    </simpleType>
+
+    <complexType name="部门规模类型">
+        <sequence minOccurs="1" maxOccurs="3">
+            <element name="人数" type="nju:部门人数类型"/>
+        </sequence>
+    </complexType>
+
+    <simpleType name="部门人员类型">
+        <restriction base="string">
+            <enumeration value="教师"/>
+            <enumeration value="管理人员"/>
+            <enumeration value="学生"/>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="人数类型">
+        <restriction base="int">
+            <minInclusive value="0"/>
+        </restriction>
+    </simpleType>
+
+    <complexType name="部门人数类型">
+        <simpleContent>
+            <extension base="int">
+                <attribute name="类型" type="nju:部门人员类型"></attribute>
+            </extension>
+        </simpleContent>
+    </complexType>
+</schema>
