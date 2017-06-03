@@ -1,0 +1,1 @@
+﻿项目是一个maven项目，主要生成文档2到文档4的Generator类在src/test包里，其他一些根据xml生成的类在src/main包里。

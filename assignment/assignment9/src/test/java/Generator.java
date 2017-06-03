@@ -207,7 +207,7 @@ public class Generator {
     }
 
     public static void generateFile3() throws JAXBException, IOException {
-        //首先从file2读取学生成绩列表，然后转换为ScoreList格式的文档
+        //首先从文档2读取学生成绩列表，然后转换为ScoreList格式的文档
         JAXBContext objJaxbContext = JAXBContext.newInstance(StudentList.class);
         Marshaller objMarshaller = objJaxbContext.createMarshaller();
         Unmarshaller objUnmarshaller = objJaxbContext.createUnmarshaller();
