@@ -1,94 +1,79 @@
 <?xml version="1.0" encoding="utf-8" ?>
 
 <description xmlns="http://www.w3.org/ns/wsdl"
-             xmlns:wsdl="http://www.w3.org/ns/wsdl"
              targetNamespace="http://jw.nju.edu.cn/wsdl"
-             xmlns:tns="http://jw.nju.edu.cn/wsdl"
+             xmlns:jwwsdl="http://jw.nju.edu.cn/wsdl"
+             xmlns:tns="http://jw.nju.edu.cn/schema"
              xmlns:xs="http://www.w3.org/2001/XMLSchema"
-             xmlns:wsoap="http://www.w3.org/ns/wsdl/soap"
-             xmlns:nju="http://www.nju.edu.cn/">
+             xmlns:wsoap="http://www.w3.org/ns/wsdl/soap">
              
-    <wsdl:types>
-        <xs:schema targetNamespace="http://www.nju.edu.cn/" >
-            <xs:import namespace="http://jw.nju.edu.cn/schema" schemaLocation="Student.xsd"></xs:import>
-            <xs:element name="account">
-                <xs:complexType>
-                    <xs:sequence>
-                        <xs:element name="student-id"></xs:element>
-                    </xs:sequence>
-                </xs:complexType>
-            </xs:element>
-        </xs:schema>
-    </wsdl:types>
+    <types>
+      <xs:import namespace="http://jw.nju.edu.cn/schema" schemaLocation="../schema/Student.xsd"></xs:import>
+      <xs:import namespace="http://jw.nju.edu.cn/schema" schemaLocation="../schema/Error.xsd"></xs:import>
+    </types>
     
-    <wsdl:interface name="StudentInfoManageInterface">
+    <interface name="StudentInfoManageInterface">
     
-     	<wsdl:fault name = "invalidDataFault"
-            element = "infoxs:错误信息"/> 
+      <fault name = "invalidDataFault" element = "tns:错误信息"/> 
            
-        <wsdl:operation name="CheckInfoOp"
-                        pattern="http://www.w3.org/ns/wsdl/in-out">
-            <wsdl:input element="tns:student"/>
-            <wsdl:output element="tns:student"/>
-        </wsdl:operation>
-        <wsdl:operation name="RegisterInfoOp"
-                        pattern="http://www.w3.org/ns/wsdl/in-out">
-            <wsdl:input element="tns:student"/>
-            <wsdl:output element="tns:student"/>
-        </wsdl:operation>
-        <wsdl:operation name="DeleteInfoOp"
-                        pattern="http://www.w3.org/ns/wsdl/in-out">
-            <wsdl:input element="tns:student"/>
-            <wsdl:output element="tns:student"/>
-        </wsdl:operation>
-    </wsdl:interface>
+        <operation name="CheckInfoOp" pattern="http://www.w3.org/ns/wsdl/in-out">
+            <input element="tns:学生"/>
+            <output element="tns:学生"/>
+            <outfault ref="jwwsdl:invalidDataFault" messageLabel="Out" />
+        </operation>
+        <operation name="RegisterInfoOp" pattern="http://www.w3.org/ns/wsdl/in-out">
+            <input element="tns:学生"/>
+            <output element="tns:学生"/>
+            <outfault ref="jwwsdl:invalidDataFault" messageLabel="Out" />
+        </operation>
+        <operation name="DeleteInfoOp" pattern="http://www.w3.org/ns/wsdl/in-out">
+            <input element="tns:学生"/>
+            <output element="tns:学生"/>
+            <outfault ref="jwwsdl:invalidDataFault" messageLabel="Out" />
+        </operation>
+    </interface>
     
-    <wsdl:interface name="AccountAuthInterface">
-    	<wsdl:fault name = "invalidDataFault"
-            element = "infoxs:错误信息"/> 
-        <wsdl:operation name="AccountAuthOp"
-                        pattern="http://www.w3.org/ns/wsdl/in-out">
-            <wsdl:input element="nju:student-id "/>
-            <wsdl:output element="nju:student-id "/>
-        </wsdl:operation>
-    </wsdl:interface>
+    <interface name="AccountAuthInterface">
+      <fault name = "invalidDataFault"  element = "tns:错误信息"/> 
+        <operation name="AccountAuthOp" pattern="http://www.w3.org/ns/wsdl/in-out">
+            <input element="tns:学号"/>
+            <output element="tns:学号"/>
+            <outfault ref="jwwsdl:invalidDataFault" messageLabel="Out" />
+        </operation>
+    </interface>
     
-    <wsdl:binding name="StudentInfoManageBinding"
-                  interface="tns:QueryStudentScoreInterface"
+    <binding name="StudentInfoManageBinding"
+                  interface="jwwsdl:QueryStudentScoreInterface"
                   type="http://www.w3.org/ns/wsdl/soap"
-                  wsoap:version="1.1"
                   wsoap:protocol="http://www.w3.org/2006/01/soap11/bindings/HTTP/">
- 		<wsdl:fault ref="ttns:invalidDataFault" 
-      	wsoap:code="soap:Sender"/>
-        <wsdl:operation ref="tns:CheckInfoOp"
+    <fault ref="jwwsdl:invalidDataFault" wsoap:code="soap:Sender"/>
+        <operation ref="jwwsdl:CheckInfoOp"
                         wsoap:mep="http://www.w3.org/2003/05/soap/mep/soap-response"/>
-        <wsdl:operation ref="tns:RegisterInfoOp"
+        <operation ref="jwwsdl:RegisterInfoOp"
                         wsoap:mep="http://www.w3.org/2003/05/soap/mep/soap-response"/>
-        <wsdl:operation ref="tns:DeleteInfoOp"
+        <operation ref="jwwsdl:DeleteInfoOp"
                         wsoap:mep="http://www.w3.org/2003/05/soap/mep/soap-response"/>
-    </wsdl:binding>
+    </binding>
     
-    <wsdl:binding name="AccountAuthBinding"
-                  interface="tns:AccountAuthInterface"
+    <binding name="AccountAuthBinding"
+                  interface="jwwsdl:AccountAuthInterface"
                   type="http://www.w3.org/ns/wsdl/soap"
-                  wsoap:version="1.1"
                   wsoap:protocol="http://www.w3.org/2006/01/soap11/bindings/HTTP/">
-     	<wsdl:fault ref="ttns:invalidDataFault" 
-      	wsoap:code="soap:Sender"/>
-        <wsdl:operation ref="tns:AccountAuthOp"
+      <fault ref="jwwsdl:invalidDataFault" wsoap:code="soap:Sender"/>
+        <operation ref="jwwsdl:AccountAuthOp"
                         wsoap:mep="http://www.w3.org/2003/05/soap/mep/soap-response"/>
-    </wsdl:binding>
+    </binding>
     
-    <wsdl:service name="AccountAuthService" interface="tns:AccountAuthInterface">
-        <wsdl:documentation>My Student Account auth Service</wsdl:documentation>
-        <wsdl:endpoint name="tns:AccountAuthEndPoint"
-                       binding="tns:AccountAuthBinding"
+    <service name="AccountAuthService" interface="jwwsdl:AccountAuthInterface">
+        <documentation>My Student Account auth Service</documentation>
+        <endpoint name="AccountAuthEndPoint"
+                       binding="jwwsdl:AccountAuthBinding"
+                       address="http://localhost:8080/SimpleWebProj"/>
+    </service>
+    <service name="StudentInfoManageService" interface="jwwsdl:StudentInfoManageInterface">
+        <documentation>My Student Info Manage Service</documentation>
+        <endpoint name="StudentInfoManageEndPoint"
+                       binding="jwwsdl:StudentInfoManageBinding"
                        address="http://localhost:8080/SimpleWebProject/"/>
-    </wsdl:service>
-    <wsdl:service name="StudentInfoManageService" interface="tns:StudentInfoManageInterface">
-        <wsdl:documentation>My Student Info Manage Service</wsdl:documentation>
-        <wsdl:endpoint name="tns:StudentInfoManageEndPoint"
-                       binding="tns:StudentInfoManageBinding"
-                       address="http://localhost:8080/SimpleWebProject/"/>
-    </wsdl:service>
+    </service>
 </description>
