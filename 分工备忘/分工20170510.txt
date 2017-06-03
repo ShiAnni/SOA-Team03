@@ -1,0 +1,4 @@
+04.07 Binding Íõ×Ó°²
+04.08 Extensibility and Predefined Extensions Ì·Çí
+04.09 Dynamic Web Service ³Â»¶
+04.10 Web Service Versioning and Management ³Â·É

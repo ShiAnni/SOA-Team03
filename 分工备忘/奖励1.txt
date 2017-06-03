@@ -1,0 +1,1 @@
+在java web service中，使用默认的情况 而且是start from wsdl,函数操作的名字不一样，接收参数不一样，platform是什么情况
