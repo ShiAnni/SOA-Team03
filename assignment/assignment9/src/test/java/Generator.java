@@ -110,21 +110,15 @@ public class Generator {
      */
     public static void main(String[] args)  {
 
-//        try {
-//            generateFile1();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        } catch (JAXBException e) {
-//            e.printStackTrace();
-//        }
-//
-//        try {
-//            generateFile2();
-//        } catch (JAXBException e) {
-//            e.printStackTrace();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
+
+
+        try {
+            generateFile2();
+        } catch (JAXBException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         try {
             generateFile3();
@@ -136,27 +130,6 @@ public class Generator {
 
     }
 
-    //生成XMl文档1.
-    public static void generateFile1() throws IOException, JAXBException{
-        Student student = new Student("141250009","陈飞","男","18260099562","山东省济南市花园路5号");
-        List<CourseScore> courseScoreList = new ArrayList<CourseScore>();
-        StudentScore studentScore = new StudentScore(courseScoreList);
-        student.setStudentScore(new ArrayList<StudentScore>());
-        student.getStudentScore().add(studentScore);
-        //init courseScore
-        List<Score> scores = new ArrayList<Score>();
-        scores.add(new Score("141250009",89));
-        courseScoreList.add(new CourseScore("00001","平时成绩",scores));
-        courseScoreList.add(new CourseScore("00001","期末成绩",scores));
-        courseScoreList.add(new CourseScore("00001","总评成绩",scores));
-        JAXBContext objJaxbContext = JAXBContext.newInstance(Student.class);
-        Marshaller objMarshaller = objJaxbContext.createMarshaller();
-        Unmarshaller objUnmarshaller = objJaxbContext.createUnmarshaller();
-        Generator test = new Generator();
-        test.setMarshaller(objMarshaller);
-        test.writeObjectToXml(student,"xml/文档1.xml");
-        test.setUnmarshaller(objUnmarshaller);
-    }
 
     public static void generateFile2() throws JAXBException, IOException {
         String[] idList = {"141250010", "141250122", "141250146", "141250176", "141250150", "141250209", "141250171", "141250162", "141250170", "141250121"};
@@ -174,8 +147,19 @@ public class Generator {
         String[] types = new String[] {
                 "平时成绩","期末成绩","总评成绩"
         };
+
+        JAXBContext objJaxbContext1 = JAXBContext.newInstance(Student.class);
+        Marshaller objMarshaller1 = objJaxbContext1.createMarshaller();
+        Unmarshaller objUnmarshaller1 = objJaxbContext1.createUnmarshaller();
+        Generator test1 = new Generator();
+        test1.setUnmarshaller(objUnmarshaller1);
+        Student student1  = (Student) test1.readObjectFromXml("xml/文档1.xml");
+        System.out.println(student1.getStudentName()+":"+student1.getStudentId());
+
+
         StudentList listObject = new StudentList();
         List<Student> studentList = new ArrayList<Student>(12);
+        studentList.add(student1);
         for(int i = 0; i < names.length; i++){
             Student student = new Student(idList[i], names[i],genderList[i],phoneList[i],addressList[i]);
             student.setStudentScore(new ArrayList<StudentScore>());
