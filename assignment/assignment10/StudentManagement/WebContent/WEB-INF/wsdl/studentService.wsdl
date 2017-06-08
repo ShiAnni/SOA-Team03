@@ -9,58 +9,106 @@
 			<!-- import 必要xsd -->
 			<xsd:import namespace="http://www.nju.edu.cn/schema"
 				schemaLocation="../schema/PersonInfo.xsd" />
+			<xsd:import namespace="http://jw.nju.edu.cn/schema"
+				schemaLocation="../schema/StudentList.xsd" />
 			<!-- 声明需要的变量 -->
-			<xsd:simpleType name="成绩性质类型">
+			<xsd:simpleType name="验证信息">
 				<xsd:restriction base="xsd:string">
-					<xsd:enumeration value="平时成绩"></xsd:enumeration>
-					<xsd:enumeration value="作业成绩"></xsd:enumeration>
-					<xsd:enumeration value="期中成绩"></xsd:enumeration>
-					<xsd:enumeration value="期末成绩"></xsd:enumeration>
-					<xsd:enumeration value="总评成绩"></xsd:enumeration>
+					<xsd:enumeration value="正确"></xsd:enumeration>
+					<xsd:enumeration value="错误"></xsd:enumeration>
 				</xsd:restriction>
 			</xsd:simpleType>
-			<xsd:element name="updateInfo" type="nju:updateInformation" />
-			<xsd:element name="personInfo" type="nju:个人基本信息类型" />
+			<xsd:complexType name="noneType">
+				<xsd:sequence />
+			</xsd:complexType>
+			<xsd:element name="studentInfo" type="stu:学生类型" />
+			<xsd:element name="studentList" type="stu:学生列表信息" />
+			<xsd:element name="isCorrect" type="tns:验证信息"/>
 			<xsd:element name="isSuccess" type="xsd:string"/>
-			<xsd:element name="isSuccess" type="xsd:string"/>
-			<xsd:element name="invalidUpdateError" type="xsd:string" />
+			<xsd:element name="noIDError" type="xsd:string" />
+			<xsd:element name="doubleIDError" type="xsd:string" />
+			<xsd:element name="none" type="tns:noneType" />
 		</xsd:schema>
 	</wsdl:types>
 
 	<wsdl:message name="updateInfoRequest">
-		<wsdl:part element="tns:updateInfo" name="updateInfo" />
+		<wsdl:part element="tns:studentInfo" name="updateInfo" />
 	</wsdl:message>
 	<wsdl:message name="updateInfoResponse">
-		<wsdl:part element="tns:updateSuccess" name="updateSuccess" />
+		<wsdl:part element="tns:isSuccess" name="updateSuccess" />
+	</wsdl:message>
+	<wsdl:message name="updateInfoFault">
+		<wsdl:part element="tns:noIDError" name="fault" />
+	</wsdl:message>
+	
+	<wsdl:message name="addInfoRequest">
+		<wsdl:part element="tns:studentInfo" name="addInfo" />
+	</wsdl:message>
+	<wsdl:message name="addInfoResponse">
+		<wsdl:part element="tns:isSuccess" name="updateSuccess" />
+	</wsdl:message>
+	<wsdl:message name="addInfoFault">
+		<wsdl:part element="tns:doubleIDError" name="fault" />
+	</wsdl:message>
+	
+	<wsdl:message name="deleteInfoRequest">
+		<wsdl:part element="tns:studentInfo" name="deleteInfo" />
+	</wsdl:message>
+	<wsdl:message name="deleteInfoResponse">
+		<wsdl:part element="tns:isSuccess" name="deleteSuccess" />
+	</wsdl:message>
+	<wsdl:message name="deleteInfoFault">
+		<wsdl:part element="tns:noIDError" name="fault" />
+	</wsdl:message>
+	
+	<wsdl:message name="checkInfoRequest">
+		<wsdl:part element="tns:studentInfo" name="checkInfo" />
+	</wsdl:message>
+	<wsdl:message name="checkInfoResponse">
+		<wsdl:part element="tns:isCorrect" name="checkResponse" />
+	</wsdl:message>
+	
+	<wsdl:message name="getInfosRequest">
+		<wsdl:part element="tns:none" name="none" />
+	</wsdl:message>
+	<wsdl:message name="getInfosResponse">
+		<wsdl:part element="tns:studentList" name="list" />
 	</wsdl:message>
 
-	<wsdl:message name="noExistIDFault">
-		<wsdl:documentation>学号不存在</wsdl:documentation>
-		<wsdl:part element="tns:noExistIDError" name="invalidDataFault" />
-	</wsdl:message>
-	<wsdl:message name="invalidUpdateFault">
-		<wsdl:documentation>修改信息错误</wsdl:documentation>
-		<wsdl:part element="tns:invalidUpdateError" name="invalidDataFault" />
-	</wsdl:message>
-
-	<wsdl:portType name="studentManagementPortType">
-		<wsdl:operation name="studentManagement">
-			<wsdl:documentation>
-				This operation returns information of a student if update operation
-				succeed.
-			</wsdl:documentation>
+	<wsdl:portType name="studentManagementInterface">
+		<wsdl:operation name="getAllStudents">
+			<wsdl:input message="tns:getInfosRequest" />
+			<wsdl:output message="tns:getInfosResponse" />
+		</wsdl:operation>
+		
+		<wsdl:operation name="checkStudent">
+			<wsdl:input message="tns:checkInfoRequest" />
+			<wsdl:output message="tns:checkInfoResponse" />
+		</wsdl:operation>
+		
+		<wsdl:operation name="addStudent">
+			<wsdl:input message="tns:addInfoRequest" />
+			<wsdl:output message="tns:addInfoResponse" />
+			<wsdl:fault name="fault" message="tns:addInfoFault"></wsdl:fault>
+		</wsdl:operation>
+		
+		<wsdl:operation name="updateStudent">
 			<wsdl:input message="tns:updateInfoRequest" />
 			<wsdl:output message="tns:updateInfoResponse" />
-			<wsdl:fault message="tns:noExistIDFault" name="noExistIDFault" />
-			<wsdl:fault message="tns:invalidUpdateFault" name="invlidUpdateFault" />
+			<wsdl:fault name="fault" message="tns:updateInfoFault"></wsdl:fault>
+		</wsdl:operation>
+		
+		<wsdl:operation name="deleteStudent">
+			<wsdl:input message="tns:deleteInfoRequest" />
+			<wsdl:output message="tns:deleteInfoResponse" />
+			<wsdl:fault name="fault" message="tns:deleteInfoFault"></wsdl:fault>
 		</wsdl:operation>
 	</wsdl:portType>
 
-	<wsdl:binding name="studentManagementSOAP" type="tns:studentManagementPortType">
-		<soap:binding style="document"
-			transport="http://schemas.xmlsoap.org/soap/http" />
-		<wsdl:operation name="studentManagement">
-			<soap:operation soapAction="http://jw.nju.edu.cn/wsdl/studentManagement" />
+	<wsdl:binding name="studentManagementSOAP" type="tns:studentManagementInterface">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="getAllStudents">
+			<soap:operation soapAction="http://jw.nju.edu.cn/wsdl/getAllStudents"/>
 			<wsdl:input>
 				<soap:body use="literal" />
 			</wsdl:input>
@@ -68,12 +116,61 @@
 				<soap:body use="literal" />
 			</wsdl:output>
 		</wsdl:operation>
+		
+		<wsdl:operation name="checkStudent">
+			<soap:operation soapAction="http://jw.nju.edu.cn/wsdl/checkStudent"/>
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		
+		<wsdl:operation name="addStudent">
+			<soap:operation soapAction="http://jw.nju.edu.cn/wsdl/addStudent"/>
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+    			<soap:fault use="literal" name="fault" />
+    		</wsdl:fault>
+		</wsdl:operation>
+		
+		<wsdl:operation name="updateStudent">
+			<soap:operation soapAction="http://jw.nju.edu.cn/wsdl/updateStudent"/>
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+    			<soap:fault use="literal" name="fault" />
+    		</wsdl:fault>
+		</wsdl:operation>
+		
+		<wsdl:operation name="deleteStudent">
+			<soap:operation soapAction="http://jw.nju.edu.cn/wsdl/deleteStudent"/>
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+    			<soap:fault use="literal" name="fault" />
+    		</wsdl:fault>
+		</wsdl:operation>
 	</wsdl:binding>
 
-	<wsdl:service name="studentManagementPortType">
-		<wsdl:port binding="tns:studentManagementSOAP" name="studentManagementSOAP">
+	<wsdl:service name="studentService">
+		<wsdl:port binding="tns:studentManagementSOAP" name="studentManagementPort">
 			<soap:address
-				location="http://localhost:8080/ManagementWSDL/services/studentManagementSOAP" />
+				location="http://localhost:8080/assignment10/StudentManagement" />
 		</wsdl:port>
 	</wsdl:service>
 
