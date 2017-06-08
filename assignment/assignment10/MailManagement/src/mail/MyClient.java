@@ -31,7 +31,7 @@ public class MyClient {
 		}  
         
         try { 
-        	UserType type = mi.login("141250146@smail.nju.edu.cn", "Wx19951229");  
+        	UserType type = mi.login("141250146@smail.nju.edu.cn", "123456");  
         	System.out.println(type.toString());
         }catch (LoginFailedFault e) {
         	System.out.println(e.getFaultInfo());
