@@ -1,0 +1,3 @@
+做一个MTOM可以加分 看MTOM和非MTOm的区别
+
+可以看看UDDI，WS-JAXR，BPL
