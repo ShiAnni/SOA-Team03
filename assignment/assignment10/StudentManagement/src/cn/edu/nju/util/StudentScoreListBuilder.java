@@ -35,11 +35,11 @@ import cn.edu.nju.schema.部门规模类型;
 public class StudentScoreListBuilder {
 	
 	public static void main(String[] args){
-		Document doc = getDocument();
+		Document doc = getDocument("文档2");
 		System.out.println(saveDocument(doc));
 	}
 	
-	public static Document getDocument(){
+	public static Document getDocument(String fileName){
 		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();  
 		factory.setIgnoringElementContentWhitespace(true);
         URL url = StudentScoreListBuilder.class.getResource("");
@@ -48,7 +48,7 @@ public class StudentScoreListBuilder {
         Document document=null;
         try{    
             DocumentBuilder builder = factory.newDocumentBuilder();
-            document = builder.parse(filePath + "文档2.xml");
+            document = builder.parse(filePath + fileName + ".xml");
         } catch(Exception e){
             e.printStackTrace();
         }
@@ -63,6 +63,9 @@ public class StudentScoreListBuilder {
             TransformerFactory tFactory = TransformerFactory.newInstance();
             Transformer transformer = tFactory.newTransformer();
             transformer.setOutputProperty(OutputKeys.ENCODING, "UTF-8");
+            transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+			transformer.setOutputProperty( "{http://xml.apache.org/xalan}indent-amount", "4");  
+			transformer.setOutputProperty(OutputKeys.METHOD, "xml");
             DOMSource source = new DOMSource(document);
             StreamResult result = new StreamResult(new File(filePath + "文档2.xml"));
             transformer.transform(source, result);

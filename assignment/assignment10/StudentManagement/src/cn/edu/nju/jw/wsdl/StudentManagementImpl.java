@@ -13,7 +13,7 @@ public class StudentManagementImpl implements StudentManagementInterface {
 
 	@Override
 	public 学生列表信息 getAllStudents(NoneType none) {
-		Document doc = StudentScoreListBuilder.getDocument();
+		Document doc = StudentScoreListBuilder.getDocument("文档2");
 		NodeList students = doc.getDocumentElement().getElementsByTagName("学生");
 		return StudentScoreListBuilder.getRootList(students);
 	}
@@ -33,7 +33,7 @@ public class StudentManagementImpl implements StudentManagementInterface {
 		学生列表信息 list = getAllStudents(new NoneType());
 		for (学生类型 student : list.get学生()) {
 			if(student.get学号().equals(addInfo.get学号()))
-				throw new AddInfoFault("列表中已有响应学号的学生","列表中已有响应学号的学生");
+				throw new AddInfoFault("列表中已有相应学号的学生","列表中已有相应学号的学生");
 		}
 		list.get学生().add(addInfo);
 		Document doc = StudentScoreListBuilder.create(list);
@@ -55,7 +55,7 @@ public class StudentManagementImpl implements StudentManagementInterface {
 			Document doc = StudentScoreListBuilder.create(list);
 			return StudentScoreListBuilder.saveDocument(doc);
 		}else{
-			throw new UpdateInfoFault("列表中没有响应学号的学生","列表中没有响应学号的学生");
+			throw new UpdateInfoFault("列表中没有相应学号的学生","列表中没有相应学号的学生");
 		}
 	}
 
@@ -73,7 +73,7 @@ public class StudentManagementImpl implements StudentManagementInterface {
 			Document doc = StudentScoreListBuilder.create(list);
 			return StudentScoreListBuilder.saveDocument(doc);
 		}else{
-			throw new DeleteInfoFault("列表中没有响应学号的学生","列表中没有响应学号的学生");
+			throw new DeleteInfoFault("列表中没有相应学号的学生","列表中没有相应学号的学生");
 		}
 	}
 
