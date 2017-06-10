@@ -32,7 +32,6 @@ public class ScoreInterfaceImpl implements ScoreInterface {
 		boolean exist = false;
 //		List<课程成绩类型> list = result.get课程成绩();
         NodeList nodes = document.getDocumentElement().getElementsByTagName("课程成绩");
-        
         for(int i=0; i<nodes.getLength(); i++){
             NodeList childNodes = nodes.item(i).getChildNodes();
            

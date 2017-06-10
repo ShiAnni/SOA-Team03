@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<学生列表 xmlns="http://jw.nju.edu.cn/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jw.nju.edu.cn/schema ../schema/StudentList.xsd">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><学生列表 xmlns="http://jw.nju.edu.cn/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jw.nju.edu.cn/schema WebContent/WEB-INF/schema/StudentList.xsd">
     <学生 学号="141250009">
         <学生基本信息 xmlns="http://www.nju.edu.cn/schema">
                 <姓名>陈飞</姓名>
