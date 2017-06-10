@@ -145,6 +145,46 @@ public class 部门信息类型 {
 	public String toString() {
 		return "部门信息类型 [部门名称=" + 部门名称 + ", 部门规模=" + 部门规模 + ", 部门编号=" + 部门编号 + ", 部门类型=" + 部门类型 + "]";
 	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((部门名称 == null) ? 0 : 部门名称.hashCode());
+		result = prime * result + ((部门类型 == null) ? 0 : 部门类型.hashCode());
+		result = prime * result + ((部门编号 == null) ? 0 : 部门编号.hashCode());
+		result = prime * result + ((部门规模 == null) ? 0 : 部门规模.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		部门信息类型 other = (部门信息类型) obj;
+		if (部门名称 == null) {
+			if (other.部门名称 != null)
+				return false;
+		} else if (!部门名称.equals(other.部门名称))
+			return false;
+		if (部门类型 != other.部门类型)
+			return false;
+		if (部门编号 == null) {
+			if (other.部门编号 != null)
+				return false;
+		} else if (!部门编号.equals(other.部门编号))
+			return false;
+		if (部门规模 == null) {
+			if (other.部门规模 != null)
+				return false;
+		} else if (!部门规模.equals(other.部门规模))
+			return false;
+		return true;
+	}
     
     
 

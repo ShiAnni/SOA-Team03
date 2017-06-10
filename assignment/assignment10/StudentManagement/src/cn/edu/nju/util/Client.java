@@ -13,7 +13,7 @@ public class Client {
 		StudentService service = new StudentService();
 		StudentManagementInterface itf = service.getPort(StudentManagementInterface.class);
 		
-		学生列表信息 list = itf.getAllStudents(null);
+		学生列表信息 list = itf.getAllStudents(new NoneType());
 		System.out.println(list.get学生().size());
 		try {
 			itf.addStudent(null);

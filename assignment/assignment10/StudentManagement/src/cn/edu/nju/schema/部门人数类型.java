@@ -80,6 +80,31 @@ public class 部门人数类型 {
 	public String toString() {
 		return "部门人数类型 [value=" + value + ", 类型=" + 类型 + "]";
 	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + value;
+		result = prime * result + ((类型 == null) ? 0 : 类型.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		部门人数类型 other = (部门人数类型) obj;
+		if (value != other.value)
+			return false;
+		if (类型 != other.类型)
+			return false;
+		return true;
+	}
     
     
 

@@ -82,6 +82,34 @@ public class 成绩类型 {
 	public String toString() {
 		return "成绩类型 [学号=" + 学号 + ", 得分=" + 得分 + "]";
 	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((学号 == null) ? 0 : 学号.hashCode());
+		result = prime * result + 得分;
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		成绩类型 other = (成绩类型) obj;
+		if (学号 == null) {
+			if (other.学号 != null)
+				return false;
+		} else if (!学号.equals(other.学号))
+			return false;
+		if (得分 != other.得分)
+			return false;
+		return true;
+	}
     
     
 

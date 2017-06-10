@@ -20,8 +20,12 @@ public class StudentManagementImpl implements StudentManagementInterface {
 
 	@Override
 	public 验证信息 checkStudent(学生类型 checkInfo) {
-		// TODO Auto-generated method stub
-		return null;
+		学生列表信息 list = getAllStudents(new NoneType());
+		for (学生类型 student : list.get学生()) {
+			if(checkInfo.equals(student))
+				return 验证信息.正确;
+		}
+		return 验证信息.错误;
 	}
 
 	@Override

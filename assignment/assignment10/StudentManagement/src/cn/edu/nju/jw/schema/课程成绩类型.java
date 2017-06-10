@@ -123,6 +123,40 @@ public class 课程成绩类型 {
 	public String toString() {
 		return "课程成绩类型 [成绩=" + 成绩 + ", 课程编号=" + 课程编号 + ", 成绩性质=" + 成绩性质 + "]";
 	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((成绩 == null) ? 0 : 成绩.hashCode());
+		result = prime * result + ((成绩性质 == null) ? 0 : 成绩性质.hashCode());
+		result = prime * result + ((课程编号 == null) ? 0 : 课程编号.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		课程成绩类型 other = (课程成绩类型) obj;
+		if (成绩 == null) {
+			if (other.成绩 != null)
+				return false;
+		} else if (!成绩.equals(other.成绩))
+			return false;
+		if (成绩性质 != other.成绩性质)
+			return false;
+		if (课程编号 == null) {
+			if (other.课程编号 != null)
+				return false;
+		} else if (!课程编号.equals(other.课程编号))
+			return false;
+		return true;
+	}
     
     
 

@@ -115,4 +115,43 @@ public class 学生类型 {
         this.学号 = value;
     }
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((学号 == null) ? 0 : 学号.hashCode());
+		result = prime * result + ((学生基本信息 == null) ? 0 : 学生基本信息.hashCode());
+		result = prime * result + ((课程成绩列表 == null) ? 0 : 课程成绩列表.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		学生类型 other = (学生类型) obj;
+		if (学号 == null) {
+			if (other.学号 != null)
+				return false;
+		} else if (!学号.equals(other.学号))
+			return false;
+		if (学生基本信息 == null) {
+			if (other.学生基本信息 != null)
+				return false;
+		} else if (!学生基本信息.equals(other.学生基本信息))
+			return false;
+		if (课程成绩列表 == null) {
+			if (other.课程成绩列表 != null)
+				return false;
+		} else if (!课程成绩列表.equals(other.课程成绩列表))
+			return false;
+		return true;
+	}
+
+	
+
 }

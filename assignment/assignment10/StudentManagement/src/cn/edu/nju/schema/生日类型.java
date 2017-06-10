@@ -91,6 +91,34 @@ public class 生日类型 {
 	public String toString() {
 		return "生日类型 [年=" + 年 + ", 月=" + 月 + ", 日=" + 日 + "]";
 	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + 年;
+		result = prime * result + 日;
+		result = prime * result + 月;
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		生日类型 other = (生日类型) obj;
+		if (年 != other.年)
+			return false;
+		if (日 != other.日)
+			return false;
+		if (月 != other.月)
+			return false;
+		return true;
+	}
     
     
 

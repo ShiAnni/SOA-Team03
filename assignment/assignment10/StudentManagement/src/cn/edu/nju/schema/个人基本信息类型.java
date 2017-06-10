@@ -219,7 +219,62 @@ public class 个人基本信息类型 {
 		return "个人基本信息类型 [姓名=" + 姓名 + ", 性别=" + 性别 + ", 出生日期=" + 出生日期 + ", 入学年份=" + 入学年份 + ", 手机=" + 手机 + ", 家庭住址="
 				+ 家庭住址 + ", 部门信息=" + 部门信息 + "]";
 	}
-    
-    
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + 入学年份;
+		result = prime * result + ((出生日期 == null) ? 0 : 出生日期.hashCode());
+		result = prime * result + ((姓名 == null) ? 0 : 姓名.hashCode());
+		result = prime * result + ((家庭住址 == null) ? 0 : 家庭住址.hashCode());
+		result = prime * result + ((性别 == null) ? 0 : 性别.hashCode());
+		result = prime * result + ((手机 == null) ? 0 : 手机.hashCode());
+		result = prime * result + ((部门信息 == null) ? 0 : 部门信息.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		个人基本信息类型 other = (个人基本信息类型) obj;
+		if (入学年份 != other.入学年份)
+			return false;
+		if (出生日期 == null) {
+			if (other.出生日期 != null)
+				return false;
+		} else if (!出生日期.equals(other.出生日期))
+			return false;
+		if (姓名 == null) {
+			if (other.姓名 != null)
+				return false;
+		} else if (!姓名.equals(other.姓名))
+			return false;
+		if (家庭住址 == null) {
+			if (other.家庭住址 != null)
+				return false;
+		} else if (!家庭住址.equals(other.家庭住址))
+			return false;
+		if (性别 != other.性别)
+			return false;
+		if (手机 == null) {
+			if (other.手机 != null)
+				return false;
+		} else if (!手机.equals(other.手机))
+			return false;
+		if (部门信息 == null) {
+			if (other.部门信息 != null)
+				return false;
+		} else if (!部门信息.equals(other.部门信息))
+			return false;
+		return true;
+	}
+    
+    
+	
 }

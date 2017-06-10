@@ -68,6 +68,31 @@ public class 课程成绩列表类型 {
 	public String toString() {
 		return "课程成绩列表类型 [课程成绩=" + 课程成绩 + "]";
 	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((课程成绩 == null) ? 0 : 课程成绩.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		课程成绩列表类型 other = (课程成绩列表类型) obj;
+		if (课程成绩 == null) {
+			if (other.课程成绩 != null)
+				return false;
+		} else if (!课程成绩.equals(other.课程成绩))
+			return false;
+		return true;
+	}
     
     
 

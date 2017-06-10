@@ -70,6 +70,31 @@ public class 部门规模类型 {
 	public String toString() {
 		return "部门规模类型 [人数=" + 人数 + "]";
 	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((人数 == null) ? 0 : 人数.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		部门规模类型 other = (部门规模类型) obj;
+		if (人数 == null) {
+			if (other.人数 != null)
+				return false;
+		} else if (!人数.equals(other.人数))
+			return false;
+		return true;
+	}
     
     
 
