@@ -8,7 +8,7 @@ import org.w3c.dom.NodeList;
 import cn.edu.nju.jw.schema.学生列表信息;
 import cn.edu.nju.jw.schema.学生类型;
 import cn.edu.nju.util.StudentScoreListBuilder;
-@WebService
+@WebService(endpointInterface="cn.edu.nju.jw.wsdl.StudentManagementInterface")  
 public class StudentManagementImpl implements StudentManagementInterface {
 
 	@Override

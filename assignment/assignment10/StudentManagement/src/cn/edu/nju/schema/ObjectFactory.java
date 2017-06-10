@@ -35,14 +35,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link 个人基本信息类型 }
-     * 
-     */
-    public 个人基本信息类型 create个人基本信息类型() {
-        return new 个人基本信息类型();
-    }
-
-    /**
      * Create an instance of {@link 部门信息类型 }
      * 
      */
@@ -51,11 +43,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link 生日类型 }
+     * Create an instance of {@link 个人基本信息类型 }
      * 
      */
-    public 生日类型 create生日类型() {
-        return new 生日类型();
+    public 个人基本信息类型 create个人基本信息类型() {
+        return new 个人基本信息类型();
+    }
+
+    /**
+     * Create an instance of {@link 部门人数类型 }
+     * 
+     */
+    public 部门人数类型 create部门人数类型() {
+        return new 部门人数类型();
     }
 
     /**
@@ -67,11 +67,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link 部门人数类型 }
+     * Create an instance of {@link 生日类型 }
      * 
      */
-    public 部门人数类型 create部门人数类型() {
-        return new 部门人数类型();
+    public 生日类型 create生日类型() {
+        return new 生日类型();
     }
 
     /**

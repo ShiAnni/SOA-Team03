@@ -9,9 +9,9 @@ import javax.xml.bind.annotation.XmlValue;
 
 
 /**
- * <p>Java class for 部门人数类型 complex type.
+ * <p>部门人数类型 complex type的 Java 类。
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>以下模式片段指定包含在此类中的预期内容。
  * 
  * <pre>
  * &lt;complexType name="部门人数类型">
@@ -37,7 +37,7 @@ public class 部门人数类型 {
     protected 部门人员类型 类型;
 
     /**
-     * Gets the value of the value property.
+     * 获取value属性的值。
      * 
      */
     public int getValue() {
@@ -45,7 +45,7 @@ public class 部门人数类型 {
     }
 
     /**
-     * Sets the value of the value property.
+     * 设置value属性的值。
      * 
      */
     public void setValue(int value) {
@@ -53,7 +53,7 @@ public class 部门人数类型 {
     }
 
     /**
-     * Gets the value of the 类型 property.
+     * 获取类型属性的值。
      * 
      * @return
      *     possible object is
@@ -65,7 +65,7 @@ public class 部门人数类型 {
     }
 
     /**
-     * Sets the value of the 类型 property.
+     * 设置类型属性的值。
      * 
      * @param value
      *     allowed object is
@@ -75,5 +75,12 @@ public class 部门人数类型 {
     public void set类型(部门人员类型 value) {
         this.类型 = value;
     }
+
+	@Override
+	public String toString() {
+		return "部门人数类型 [value=" + value + ", 类型=" + 类型 + "]";
+	}
+    
+    
 
 }

@@ -10,9 +10,9 @@ import cn.edu.nju.schema.个人基本信息类型;
 
 
 /**
- * <p>Java class for 学生类型 complex type.
+ * <p>学生类型 complex type的 Java 类。
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>以下模式片段指定包含在此类中的预期内容。
  * 
  * <pre>
  * &lt;complexType name="学生类型">
@@ -44,7 +44,7 @@ public class 学生类型 {
     protected String 学号;
 
     /**
-     * Gets the value of the 学生基本信息 property.
+     * 获取学生基本信息属性的值。
      * 
      * @return
      *     possible object is
@@ -56,7 +56,7 @@ public class 学生类型 {
     }
 
     /**
-     * Sets the value of the 学生基本信息 property.
+     * 设置学生基本信息属性的值。
      * 
      * @param value
      *     allowed object is
@@ -68,7 +68,7 @@ public class 学生类型 {
     }
 
     /**
-     * Gets the value of the 课程成绩列表 property.
+     * 获取课程成绩列表属性的值。
      * 
      * @return
      *     possible object is
@@ -80,7 +80,7 @@ public class 学生类型 {
     }
 
     /**
-     * Sets the value of the 课程成绩列表 property.
+     * 设置课程成绩列表属性的值。
      * 
      * @param value
      *     allowed object is
@@ -92,7 +92,7 @@ public class 学生类型 {
     }
 
     /**
-     * Gets the value of the 学号 property.
+     * 获取学号属性的值。
      * 
      * @return
      *     possible object is
@@ -104,7 +104,7 @@ public class 学生类型 {
     }
 
     /**
-     * Sets the value of the 学号 property.
+     * 设置学号属性的值。
      * 
      * @param value
      *     allowed object is

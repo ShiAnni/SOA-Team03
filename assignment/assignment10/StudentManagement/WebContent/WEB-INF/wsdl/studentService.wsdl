@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<wsdl:definitions xmlns:nju="http://www.nju.edu.cn/schema"
-	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:stu="http://jw.nju.edu.cn/schema"
-	xmlns:tns="http://jw.nju.edu.cn/wsdl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
-	xmlns:wsoap="http://www.w3.org/ns/wsdl/soap" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-	name="studentService" targetNamespace="http://jw.nju.edu.cn/wsdl">
+<wsdl:definitions 
+	xmlns:nju="http://www.nju.edu.cn/schema"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
+	xmlns:stu="http://jw.nju.edu.cn/schema"
+	xmlns:tns="http://jw.nju.edu.cn/wsdl" 
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:wsoap="http://www.w3.org/ns/wsdl/soap" 
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	name="studentService" 
+	targetNamespace="http://jw.nju.edu.cn/wsdl">
 	<wsdl:types>
 		<xsd:schema targetNamespace="http://jw.nju.edu.cn/wsdl">
-			<!-- import 必要xsd -->
 			<xsd:import namespace="http://www.nju.edu.cn/schema"
 				schemaLocation="../schema/PersonInfo.xsd" />
 			<xsd:import namespace="http://jw.nju.edu.cn/schema"
@@ -170,7 +174,7 @@
 	<wsdl:service name="studentService">
 		<wsdl:port binding="tns:studentManagementSOAP" name="studentManagementPort">
 			<soap:address
-				location="http://localhost:8080/assignment10/StudentManagement" />
+				location="http://localhost:8880/assignment10/StudentManagement" />
 		</wsdl:port>
 	</wsdl:service>
 

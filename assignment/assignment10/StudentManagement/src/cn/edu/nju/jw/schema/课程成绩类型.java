@@ -10,9 +10,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for 课程成绩类型 complex type.
+ * <p>课程成绩类型 complex type的 Java 类。
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>以下模式片段指定包含在此类中的预期内容。
  * 
  * <pre>
  * &lt;complexType name="课程成绩类型">
@@ -72,7 +72,7 @@ public class 课程成绩类型 {
     }
 
     /**
-     * Gets the value of the 课程编号 property.
+     * 获取课程编号属性的值。
      * 
      * @return
      *     possible object is
@@ -84,7 +84,7 @@ public class 课程成绩类型 {
     }
 
     /**
-     * Sets the value of the 课程编号 property.
+     * 设置课程编号属性的值。
      * 
      * @param value
      *     allowed object is
@@ -96,7 +96,7 @@ public class 课程成绩类型 {
     }
 
     /**
-     * Gets the value of the 成绩性质 property.
+     * 获取成绩性质属性的值。
      * 
      * @return
      *     possible object is
@@ -108,7 +108,7 @@ public class 课程成绩类型 {
     }
 
     /**
-     * Sets the value of the 成绩性质 property.
+     * 设置成绩性质属性的值。
      * 
      * @param value
      *     allowed object is
@@ -118,5 +118,12 @@ public class 课程成绩类型 {
     public void set成绩性质(成绩性质类型 value) {
         this.成绩性质 = value;
     }
+
+	@Override
+	public String toString() {
+		return "课程成绩类型 [成绩=" + 成绩 + ", 课程编号=" + 课程编号 + ", 成绩性质=" + 成绩性质 + "]";
+	}
+    
+    
 
 }
