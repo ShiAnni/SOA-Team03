@@ -5,12 +5,14 @@ import java.net.URL;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.OutputKeys;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 
+import org.w3c.dom.Attr;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
@@ -178,7 +180,126 @@ public class StudentScoreListBuilder {
 		return score;
 	}
 	
+	public static Document create(学生列表信息 list){
+		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+		DocumentBuilder builder = null;
+		try {
+			builder = factory.newDocumentBuilder();
+		} catch (ParserConfigurationException e) {
+			e.printStackTrace();
+		}
+		Document document = builder.newDocument();
+
+		Attr xsiAttr = document.createAttribute("xmlns:xsi");
+		xsiAttr.setValue(NS_XSI);
+		Attr jwAttr = document.createAttribute("xmlns");
+		jwAttr.setValue(NS_JW);
+		Attr schemaAttr = document.createAttribute("xsi:schemaLocation");
+		schemaAttr.setValue(SXL);
+		
+		if (document != null) {
+			
+			Element studentList = document.createElement("学生列表");
+			studentList.setAttributeNode(jwAttr);
+			studentList.setAttributeNode(xsiAttr);
+			studentList.setAttributeNode(schemaAttr);
+			
+			for(int i = 0; i < list.get学生().size(); i++) {
+				addStudent(document,studentList, list.get学生().get(i));
+			}
+			
+			document.appendChild(studentList);
+		}
+		
+		return document;
+	}
 	
-	
+	private static void addStudent(Document document, Element studentList, 学生类型 studentT) {
+		Attr njuAttr = document.createAttribute("xmlns");
+		njuAttr.setValue(NS_NJU);
+		
+		Element student = document.createElement("学生");
+		student.setAttribute("学号", studentT.get学号());
+		
+		//学生基本信息
+		Element personInfo = document.createElement("学生基本信息");
+		personInfo.setAttributeNode(njuAttr);
+		Element name = document.createElement("姓名");
+		Element sex = document.createElement("性别");
+		Element comin = document.createElement("入学年份");
+		name.setTextContent(studentT.get学生基本信息().get姓名());
+		sex.setTextContent(studentT.get学生基本信息().get性别().toString());
+		comin.setTextContent(studentT.get学生基本信息().get入学年份()+"");
+		personInfo.appendChild(name);
+		personInfo.appendChild(sex);
+		personInfo.appendChild(comin);
+		
+		
+		Element birth = document.createElement("出生日期");
+		Element year = document.createElement("年");
+		Element month = document.createElement("月");
+		Element day = document.createElement("日");
+		year.setTextContent(studentT.get学生基本信息().get出生日期().get年() + "");
+		month.setTextContent(studentT.get学生基本信息().get出生日期().get月() + "");
+		day.setTextContent(studentT.get学生基本信息().get出生日期().get日() + "");
+		birth.appendChild(year);
+		birth.appendChild(month);
+		birth.appendChild(day);
+		personInfo.appendChild(birth);
+		
+		Element telephone = document.createElement("手机");
+		Element address = document.createElement("家庭住址");
+		telephone.setTextContent(studentT.get学生基本信息().get手机());
+		address.setTextContent(studentT.get学生基本信息().get家庭住址());
+		personInfo.appendChild(telephone);
+		personInfo.appendChild(address);
+		
+		Element department = document.createElement("部门信息");
+		department.setAttribute("部门类型", studentT.get学生基本信息().get部门信息().get部门类型().toString());
+		department.setAttribute("部门编号", studentT.get学生基本信息().get部门信息().get部门编号());
+		Element departmentName = document.createElement("部门名称");
+		departmentName.setTextContent("软件学院");
+		department.appendChild(departmentName);
+		
+		Element size = document.createElement("部门规模");
+		for (部门人数类型 people : studentT.get学生基本信息().get部门信息().get部门规模().get人数()) {
+			Element studentSize = document.createElement("人数");
+			studentSize.setAttribute("类型", people.get类型().toString());
+			studentSize.setTextContent(people.getValue()+"");
+			size.appendChild(studentSize);
+		}
+		department.appendChild(size);
+		personInfo.appendChild(department);
+		
+		student.appendChild(personInfo);
+		
+		//课程成绩列表
+		Element scoreList = document.createElement("课程成绩列表");
+		for(课程成绩类型 peopleScore:studentT.get课程成绩列表().get课程成绩()) {
+			for(成绩类型 score:peopleScore.get成绩()) {
+				Element scoreDes = document.createElement("课程成绩");
+				scoreDes.setAttribute("课程编号", peopleScore.get课程编号());
+				scoreDes.setAttribute("成绩性质", peopleScore.get成绩性质().toString());
+				Element usualScore = document.createElement("成绩");
+				Element scoreStudentId = document.createElement("学号");
+				scoreStudentId.setTextContent(score.get学号());
+				usualScore.appendChild(scoreStudentId);
+				Element scorePoint = document.createElement("得分");
+				scorePoint.setTextContent(score.get得分() + "");
+				usualScore.appendChild(scorePoint);
+				
+				scoreDes.appendChild(usualScore);
+				scoreList.appendChild(scoreDes);
+			}
+		}
+		student.appendChild(scoreList);
+		studentList.appendChild(student);
+		
+	}
+
+	private static final String NS_JW = "http://jw.nju.edu.cn/schema";
+	private static final String NS_NJU = "http://www.nju.edu.cn/schema";
+	private static final String NS_XSI = "http://www.w3.org/2001/XMLSchema-instance";
+	private static final String SXL = NS_JW+" WebContent/WEB-INF/schema/StudentList.xsd";
 	
 }

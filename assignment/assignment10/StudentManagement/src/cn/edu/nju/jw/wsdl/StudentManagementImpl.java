@@ -30,20 +30,51 @@ public class StudentManagementImpl implements StudentManagementInterface {
 
 	@Override
 	public String addStudent(学生类型 addInfo) throws AddInfoFault {
-		// TODO Auto-generated method stub
-		return null;
+		学生列表信息 list = getAllStudents(new NoneType());
+		for (学生类型 student : list.get学生()) {
+			if(student.get学号().equals(addInfo.get学号()))
+				throw new AddInfoFault("列表中已有响应学号的学生","列表中已有响应学号的学生");
+		}
+		list.get学生().add(addInfo);
+		Document doc = StudentScoreListBuilder.create(list);
+		
+		return StudentScoreListBuilder.saveDocument(doc);
 	}
 
 	@Override
 	public String updateStudent(学生类型 updateInfo) throws UpdateInfoFault {
-		// TODO Auto-generated method stub
-		return null;
+		boolean found=false;
+		学生列表信息 list = getAllStudents(new NoneType());
+		for (int i=0;i<list.get学生().size();++i) {
+			if(list.get学生().get(i).get学号().equals(updateInfo.get学号())){
+				list.get学生().set(i, updateInfo);
+				found=true;
+			}
+		}
+		if(found){
+			Document doc = StudentScoreListBuilder.create(list);
+			return StudentScoreListBuilder.saveDocument(doc);
+		}else{
+			throw new UpdateInfoFault("列表中没有响应学号的学生","列表中没有响应学号的学生");
+		}
 	}
 
 	@Override
 	public String deleteStudent(学生类型 deleteInfo) throws DeleteInfoFault {
-		// TODO Auto-generated method stub
-		return null;
+		boolean found=false;
+		学生列表信息 list = getAllStudents(new NoneType());
+		for (int i=0;i<list.get学生().size();++i) {
+			if(list.get学生().get(i).get学号().equals(deleteInfo.get学号())){
+				list.get学生().remove(i);
+				found=true;
+			}
+		}
+		if(found){
+			Document doc = StudentScoreListBuilder.create(list);
+			return StudentScoreListBuilder.saveDocument(doc);
+		}else{
+			throw new DeleteInfoFault("列表中没有响应学号的学生","列表中没有响应学号的学生");
+		}
 	}
 
 }
