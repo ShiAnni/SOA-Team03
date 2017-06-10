@@ -11,7 +11,7 @@ public class MyClient {
 		  
 		URL url = null;
         try {  
-        	url=new URL("http://localhost:8088/mail?wsdl");  
+        	url=new URL("http://localhost:8088/assignment10/MailManagement?wsdl");  
             //服务WSDL Document的地址  
             //Qnameqname是qualified name 的简写  
             //2.构成：由名字空间(namespace)前缀(prefix)以及冒号(:),还有一个元素名称构成  
@@ -31,7 +31,7 @@ public class MyClient {
 		}  
         
         try { 
-        	UserType type = mi.login("141250146@smail.nju.edu.cn", "123456");  
+        	UserType type = mi.login("141250146@smail.nju.edu.cn", "Sa19951229");  
         	System.out.println(type.toString());
         }catch (LoginFailedFault e) {
         	System.out.println(e.getFaultInfo());

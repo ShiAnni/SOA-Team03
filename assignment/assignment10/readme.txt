@@ -1,0 +1,19 @@
+ScoreManagement文件夹为作业7的wsdl对应的Web项目，使用wsimport等工具完成了从wsdl和xsd文件到服务的构建
+cn.edu.nju.jw.wsdl.MyServer用来开启服务
+cn.edu.nju.client.Client用于测试，输出结果见截图文件夹
+使用的数据文件为文档3.xml位于项目目录下
+使用的wsdl文件和xsd文件位于项目目录下的Webcontent文件夹下的WEB-INF文件夹下的wsdl和xsd文件夹中
+开启服务器后可在http://localhost:8080/assignment10/ScoreManagement?wsdl查看wsdl文件
+--------------------------------------------
+StudentManagement文件夹为作业7的wsdl对应的Web项目，使用wsimport等工具完成了从wsdl和xsd文件到服务的构建
+cn.edu.nju.util.MyServer用来开启服务
+cn.edu.nju.util.Client用于测试，输出结果见截图文件夹
+使用的数据文件为文档11.xml 文档12.xml 文档13.xml 文档2.xml位于项目目录下
+使用的wsdl文件和xsd文件位于项目目录下的Webcontent文件夹下的WEB-INF文件夹下的wsdl和xsd文件夹中
+开启服务器后可在http://localhost:8880/assignment10/StudentManagement?wsdl查看wsdl文件
+--------------------------------------------
+StudentManagement文件夹为新增服务项目，使用SFJ方式构建
+mail.MyServer用来开启服务
+mail.MyClient用于测试，输出结果见截图文件夹
+开启服务器后可在http://localhost:8088/assignment10/MailManagement?wsdl查看wsdl文件
+--------------------------------------------
