@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for 生日类型 complex type.
+ * <p>生日类型 complex type的 Java 类。
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>以下模式片段指定包含在此类中的预期内容。
  * 
  * <pre>
  * &lt;complexType name="生日类型">
@@ -40,7 +40,7 @@ public class 生日类型 {
     protected int 日;
 
     /**
-     * Gets the value of the 年 property.
+     * 获取年属性的值。
      * 
      */
     public int get年() {
@@ -48,7 +48,7 @@ public class 生日类型 {
     }
 
     /**
-     * Sets the value of the 年 property.
+     * 设置年属性的值。
      * 
      */
     public void set年(int value) {
@@ -56,7 +56,7 @@ public class 生日类型 {
     }
 
     /**
-     * Gets the value of the 月 property.
+     * 获取月属性的值。
      * 
      */
     public int get月() {
@@ -64,7 +64,7 @@ public class 生日类型 {
     }
 
     /**
-     * Sets the value of the 月 property.
+     * 设置月属性的值。
      * 
      */
     public void set月(int value) {
@@ -72,7 +72,7 @@ public class 生日类型 {
     }
 
     /**
-     * Gets the value of the 日 property.
+     * 获取日属性的值。
      * 
      */
     public int get日() {
@@ -80,7 +80,7 @@ public class 生日类型 {
     }
 
     /**
-     * Sets the value of the 日 property.
+     * 设置日属性的值。
      * 
      */
     public void set日(int value) {

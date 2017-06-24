@@ -4,7 +4,7 @@ import javax.xml.ws.Endpoint;
   
 public class MyServer {  
     public static void main(String[] args) {  
-        String address="http://localhost:8080/assignment10/ScoreManagement";  
+        String address="http://localhost:8070/assignment10/ScoreManagement";  
         Endpoint.publish(address, new ScoreInterfaceImpl());  
     }  
 }  

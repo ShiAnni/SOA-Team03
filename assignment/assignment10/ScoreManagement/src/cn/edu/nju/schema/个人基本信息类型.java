@@ -4,13 +4,14 @@ package cn.edu.nju.schema;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for 个人基本信息类型 complex type.
+ * <p>个人基本信息类型 complex type的 Java 类。
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>以下模式片段指定包含在此类中的预期内容。
  * 
  * <pre>
  * &lt;complexType name="个人基本信息类型">
@@ -41,6 +42,7 @@ public class 个人基本信息类型 {
     @XmlElement(required = true)
     protected String 姓名;
     @XmlElement(required = true)
+    @XmlSchemaType(name = "string")
     protected 性别类型 性别;
     @XmlElement(required = true)
     protected 生日类型 出生日期;
@@ -53,7 +55,7 @@ public class 个人基本信息类型 {
     protected 部门信息类型 部门信息;
 
     /**
-     * Gets the value of the 姓名 property.
+     * 获取姓名属性的值。
      * 
      * @return
      *     possible object is
@@ -65,7 +67,7 @@ public class 个人基本信息类型 {
     }
 
     /**
-     * Sets the value of the 姓名 property.
+     * 设置姓名属性的值。
      * 
      * @param value
      *     allowed object is
@@ -77,7 +79,7 @@ public class 个人基本信息类型 {
     }
 
     /**
-     * Gets the value of the 性别 property.
+     * 获取性别属性的值。
      * 
      * @return
      *     possible object is
@@ -89,7 +91,7 @@ public class 个人基本信息类型 {
     }
 
     /**
-     * Sets the value of the 性别 property.
+     * 设置性别属性的值。
      * 
      * @param value
      *     allowed object is
@@ -101,7 +103,7 @@ public class 个人基本信息类型 {
     }
 
     /**
-     * Gets the value of the 出生日期 property.
+     * 获取出生日期属性的值。
      * 
      * @return
      *     possible object is
@@ -113,7 +115,7 @@ public class 个人基本信息类型 {
     }
 
     /**
-     * Sets the value of the 出生日期 property.
+     * 设置出生日期属性的值。
      * 
      * @param value
      *     allowed object is
@@ -125,7 +127,7 @@ public class 个人基本信息类型 {
     }
 
     /**
-     * Gets the value of the 入学年份 property.
+     * 获取入学年份属性的值。
      * 
      */
     public int get入学年份() {
@@ -133,7 +135,7 @@ public class 个人基本信息类型 {
     }
 
     /**
-     * Sets the value of the 入学年份 property.
+     * 设置入学年份属性的值。
      * 
      */
     public void set入学年份(int value) {
@@ -141,7 +143,7 @@ public class 个人基本信息类型 {
     }
 
     /**
-     * Gets the value of the 手机 property.
+     * 获取手机属性的值。
      * 
      * @return
      *     possible object is
@@ -153,7 +155,7 @@ public class 个人基本信息类型 {
     }
 
     /**
-     * Sets the value of the 手机 property.
+     * 设置手机属性的值。
      * 
      * @param value
      *     allowed object is
@@ -165,7 +167,7 @@ public class 个人基本信息类型 {
     }
 
     /**
-     * Gets the value of the 家庭住址 property.
+     * 获取家庭住址属性的值。
      * 
      * @return
      *     possible object is
@@ -177,7 +179,7 @@ public class 个人基本信息类型 {
     }
 
     /**
-     * Sets the value of the 家庭住址 property.
+     * 设置家庭住址属性的值。
      * 
      * @param value
      *     allowed object is
@@ -189,7 +191,7 @@ public class 个人基本信息类型 {
     }
 
     /**
-     * Gets the value of the 部门信息 property.
+     * 获取部门信息属性的值。
      * 
      * @return
      *     possible object is
@@ -201,7 +203,7 @@ public class 个人基本信息类型 {
     }
 
     /**
-     * Sets the value of the 部门信息 property.
+     * 设置部门信息属性的值。
      * 
      * @param value
      *     allowed object is

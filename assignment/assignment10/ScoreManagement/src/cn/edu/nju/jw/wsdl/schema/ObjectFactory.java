@@ -26,17 +26,26 @@ import cn.edu.nju.jw.schema.课程成绩类型;
 @XmlRegistry
 public class ObjectFactory {
 
+    private final static QName _IsSuccess_QNAME = new QName("http://jw.nju.edu.cn/wsdl/schema", "isSuccess");
     private final static QName _StudentNo_QNAME = new QName("http://jw.nju.edu.cn/wsdl/schema", "studentNo");
     private final static QName _InvalidDataFault_QNAME = new QName("http://jw.nju.edu.cn/wsdl/schema", "InvalidDataFault");
-    private final static QName _Score_QNAME = new QName("http://jw.nju.edu.cn/wsdl/schema", "score");
-    private final static QName _IsSuccess_QNAME = new QName("http://jw.nju.edu.cn/wsdl/schema", "isSuccess");
     private final static QName _ScoreList_QNAME = new QName("http://jw.nju.edu.cn/wsdl/schema", "scoreList");
+    private final static QName _Score_QNAME = new QName("http://jw.nju.edu.cn/wsdl/schema", "score");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: cn.edu.nju.jw.wsdl.schema
      * 
      */
     public ObjectFactory() {
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://jw.nju.edu.cn/wsdl/schema", name = "isSuccess")
+    public JAXBElement<String> createIsSuccess(String value) {
+        return new JAXBElement<String>(_IsSuccess_QNAME, String.class, null, value);
     }
 
     /**
@@ -58,30 +67,21 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link 课程成绩类型 }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://jw.nju.edu.cn/wsdl/schema", name = "score")
-    public JAXBElement<课程成绩类型> createScore(课程成绩类型 value) {
-        return new JAXBElement<课程成绩类型>(_Score_QNAME, 课程成绩类型.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://jw.nju.edu.cn/wsdl/schema", name = "isSuccess")
-    public JAXBElement<String> createIsSuccess(String value) {
-        return new JAXBElement<String>(_IsSuccess_QNAME, String.class, null, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link 课程成绩列表类型 }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://jw.nju.edu.cn/wsdl/schema", name = "scoreList")
     public JAXBElement<课程成绩列表类型> createScoreList(课程成绩列表类型 value) {
         return new JAXBElement<课程成绩列表类型>(_ScoreList_QNAME, 课程成绩列表类型.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link 课程成绩类型 }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://jw.nju.edu.cn/wsdl/schema", name = "score")
+    public JAXBElement<课程成绩类型> createScore(课程成绩类型 value) {
+        return new JAXBElement<课程成绩类型>(_Score_QNAME, 课程成绩类型.class, null, value);
     }
 
 }

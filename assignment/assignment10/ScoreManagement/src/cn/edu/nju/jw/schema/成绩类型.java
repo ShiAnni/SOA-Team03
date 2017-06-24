@@ -8,9 +8,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for 成绩类型 complex type.
+ * <p>成绩类型 complex type的 Java 类。
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>以下模式片段指定包含在此类中的预期内容。
  * 
  * <pre>
  * &lt;complexType name="成绩类型">
@@ -39,7 +39,7 @@ public class 成绩类型 {
     protected int 得分;
 
     /**
-     * Gets the value of the 学号 property.
+     * 获取学号属性的值。
      * 
      * @return
      *     possible object is
@@ -51,7 +51,7 @@ public class 成绩类型 {
     }
 
     /**
-     * Sets the value of the 学号 property.
+     * 设置学号属性的值。
      * 
      * @param value
      *     allowed object is
@@ -63,7 +63,7 @@ public class 成绩类型 {
     }
 
     /**
-     * Gets the value of the 得分 property.
+     * 获取得分属性的值。
      * 
      */
     public int get得分() {
@@ -71,7 +71,7 @@ public class 成绩类型 {
     }
 
     /**
-     * Sets the value of the 得分 property.
+     * 设置得分属性的值。
      * 
      */
     public void set得分(int value) {

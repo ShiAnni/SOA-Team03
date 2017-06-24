@@ -9,9 +9,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for 部门信息类型 complex type.
+ * <p>部门信息类型 complex type的 Java 类。
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>以下模式片段指定包含在此类中的预期内容。
  * 
  * <pre>
  * &lt;complexType name="部门信息类型">
@@ -46,7 +46,7 @@ public class 部门信息类型 {
     protected 部门类型类型 部门类型;
 
     /**
-     * Gets the value of the 部门名称 property.
+     * 获取部门名称属性的值。
      * 
      * @return
      *     possible object is
@@ -58,7 +58,7 @@ public class 部门信息类型 {
     }
 
     /**
-     * Sets the value of the 部门名称 property.
+     * 设置部门名称属性的值。
      * 
      * @param value
      *     allowed object is
@@ -70,7 +70,7 @@ public class 部门信息类型 {
     }
 
     /**
-     * Gets the value of the 部门规模 property.
+     * 获取部门规模属性的值。
      * 
      * @return
      *     possible object is
@@ -82,7 +82,7 @@ public class 部门信息类型 {
     }
 
     /**
-     * Sets the value of the 部门规模 property.
+     * 设置部门规模属性的值。
      * 
      * @param value
      *     allowed object is
@@ -94,7 +94,7 @@ public class 部门信息类型 {
     }
 
     /**
-     * Gets the value of the 部门编号 property.
+     * 获取部门编号属性的值。
      * 
      * @return
      *     possible object is
@@ -106,7 +106,7 @@ public class 部门信息类型 {
     }
 
     /**
-     * Sets the value of the 部门编号 property.
+     * 设置部门编号属性的值。
      * 
      * @param value
      *     allowed object is
@@ -118,7 +118,7 @@ public class 部门信息类型 {
     }
 
     /**
-     * Gets the value of the 部门类型 property.
+     * 获取部门类型属性的值。
      * 
      * @return
      *     possible object is
@@ -130,7 +130,7 @@ public class 部门信息类型 {
     }
 
     /**
-     * Sets the value of the 部门类型 property.
+     * 设置部门类型属性的值。
      * 
      * @param value
      *     allowed object is

@@ -149,7 +149,7 @@ xmlns:jwwsdl="http://jw.nju.edu.cn/wsdl"
     
     <wsdl:service name="ScoreService">
 		<wsdl:port name="ScorePort" binding="jwwsdl:ScoreSoapBinding">
-			<soap:address location="http://localhost:8080/assignment10/ScoreManagement" />
+			<soap:address location="http://localhost:8070/assignment10/ScoreManagement" />
 		</wsdl:port>
 	</wsdl:service>
 
