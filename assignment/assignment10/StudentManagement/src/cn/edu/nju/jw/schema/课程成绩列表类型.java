@@ -9,16 +9,16 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>¿Î³Ì³É¼¨ÁĞ±íÀàĞÍ complex typeµÄ Java Àà¡£
+ * <p>è¯¾ç¨‹æˆç»©åˆ—è¡¨ç±»å‹ complex typeçš„ Java ç±»ã€‚
  * 
- * <p>ÒÔÏÂÄ£Ê½Æ¬¶ÎÖ¸¶¨°üº¬ÔÚ´ËÀàÖĞµÄÔ¤ÆÚÄÚÈİ¡£
+ * <p>ä»¥ä¸‹æ¨¡å¼ç‰‡æ®µæŒ‡å®šåŒ…å«åœ¨æ­¤ç±»ä¸­çš„é¢„æœŸå†…å®¹ã€‚
  * 
  * <pre>
- * &lt;complexType name="¿Î³Ì³É¼¨ÁĞ±íÀàĞÍ">
+ * &lt;complexType name="è¯¾ç¨‹æˆç»©åˆ—è¡¨ç±»å‹">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence maxOccurs="unbounded" minOccurs="0">
- *         &lt;element name="¿Î³Ì³É¼¨" type="{http://jw.nju.edu.cn/schema}¿Î³Ì³É¼¨ÀàĞÍ"/>
+ *         &lt;element name="è¯¾ç¨‹æˆç»©" type="{http://jw.nju.edu.cn/schema}è¯¾ç¨‹æˆç»©ç±»å‹"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -31,49 +31,49 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "\u8bfe\u7a0b\u6210\u7ee9\u5217\u8868\u7c7b\u578b", propOrder = {
     "\u8bfe\u7a0b\u6210\u7ee9"
 })
-public class ¿Î³Ì³É¼¨ÁĞ±íÀàĞÍ {
+public class è¯¾ç¨‹æˆç»©åˆ—è¡¨ç±»å‹ {
 
-    protected List<¿Î³Ì³É¼¨ÀàĞÍ> ¿Î³Ì³É¼¨;
+    protected List<è¯¾ç¨‹æˆç»©ç±»å‹> è¯¾ç¨‹æˆç»©;
 
     /**
-     * Gets the value of the ¿Î³Ì³É¼¨ property.
+     * Gets the value of the è¯¾ç¨‹æˆç»© property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the ¿Î³Ì³É¼¨ property.
+     * This is why there is not a <CODE>set</CODE> method for the è¯¾ç¨‹æˆç»© property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    get¿Î³Ì³É¼¨().add(newItem);
+     *    getè¯¾ç¨‹æˆç»©().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link ¿Î³Ì³É¼¨ÀàĞÍ }
+     * {@link è¯¾ç¨‹æˆç»©ç±»å‹ }
      * 
      * 
      */
-    public List<¿Î³Ì³É¼¨ÀàĞÍ> get¿Î³Ì³É¼¨() {
-        if (¿Î³Ì³É¼¨ == null) {
-            ¿Î³Ì³É¼¨ = new ArrayList<¿Î³Ì³É¼¨ÀàĞÍ>();
+    public List<è¯¾ç¨‹æˆç»©ç±»å‹> getè¯¾ç¨‹æˆç»©() {
+        if (è¯¾ç¨‹æˆç»© == null) {
+            è¯¾ç¨‹æˆç»© = new ArrayList<è¯¾ç¨‹æˆç»©ç±»å‹>();
         }
-        return this.¿Î³Ì³É¼¨;
+        return this.è¯¾ç¨‹æˆç»©;
     }
 
 	@Override
 	public String toString() {
-		return "¿Î³Ì³É¼¨ÁĞ±íÀàĞÍ [¿Î³Ì³É¼¨=" + ¿Î³Ì³É¼¨ + "]";
+		return "è¯¾ç¨‹æˆç»©åˆ—è¡¨ç±»å‹ [è¯¾ç¨‹æˆç»©=" + è¯¾ç¨‹æˆç»© + "]";
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((¿Î³Ì³É¼¨ == null) ? 0 : ¿Î³Ì³É¼¨.hashCode());
+		result = prime * result + ((è¯¾ç¨‹æˆç»© == null) ? 0 : è¯¾ç¨‹æˆç»©.hashCode());
 		return result;
 	}
 
@@ -85,11 +85,11 @@ public class ¿Î³Ì³É¼¨ÁĞ±íÀàĞÍ {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		¿Î³Ì³É¼¨ÁĞ±íÀàĞÍ other = (¿Î³Ì³É¼¨ÁĞ±íÀàĞÍ) obj;
-		if (¿Î³Ì³É¼¨ == null) {
-			if (other.¿Î³Ì³É¼¨ != null)
+		è¯¾ç¨‹æˆç»©åˆ—è¡¨ç±»å‹ other = (è¯¾ç¨‹æˆç»©åˆ—è¡¨ç±»å‹) obj;
+		if (è¯¾ç¨‹æˆç»© == null) {
+			if (other.è¯¾ç¨‹æˆç»© != null)
 				return false;
-		} else if (!¿Î³Ì³É¼¨.equals(other.¿Î³Ì³É¼¨))
+		} else if (!è¯¾ç¨‹æˆç»©.equals(other.è¯¾ç¨‹æˆç»©))
 			return false;
 		return true;
 	}

@@ -24,8 +24,8 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _部门信息_QNAME = new QName("http://www.nju.edu.cn/schema", "\u90e8\u95e8\u4fe1\u606f");
-    private final static QName _学生基本信息_QNAME = new QName("http://www.nju.edu.cn/schema", "\u5b66\u751f\u57fa\u672c\u4fe1\u606f");
+    private final static QName _閮ㄩ棬淇℃伅_QNAME = new QName("http://www.nju.edu.cn/schema", "\u90e8\u95e8\u4fe1\u606f");
+    private final static QName _瀛︾敓鍩烘湰淇℃伅_QNAME = new QName("http://www.nju.edu.cn/schema", "\u5b66\u751f\u57fa\u672c\u4fe1\u606f");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: cn.edu.nju.schema
@@ -35,61 +35,61 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link 部门信息类型 }
+     * Create an instance of {@link 閮ㄩ棬淇℃伅绫诲瀷 }
      * 
      */
-    public 部门信息类型 create部门信息类型() {
-        return new 部门信息类型();
+    public 閮ㄩ棬淇℃伅绫诲瀷 create閮ㄩ棬淇℃伅绫诲瀷() {
+        return new 閮ㄩ棬淇℃伅绫诲瀷();
     }
 
     /**
-     * Create an instance of {@link 个人基本信息类型 }
+     * Create an instance of {@link 涓汉鍩烘湰淇℃伅绫诲瀷 }
      * 
      */
-    public 个人基本信息类型 create个人基本信息类型() {
-        return new 个人基本信息类型();
+    public 涓汉鍩烘湰淇℃伅绫诲瀷 create涓汉鍩烘湰淇℃伅绫诲瀷() {
+        return new 涓汉鍩烘湰淇℃伅绫诲瀷();
     }
 
     /**
-     * Create an instance of {@link 部门人数类型 }
+     * Create an instance of {@link 閮ㄩ棬浜烘暟绫诲瀷 }
      * 
      */
-    public 部门人数类型 create部门人数类型() {
-        return new 部门人数类型();
+    public 閮ㄩ棬浜烘暟绫诲瀷 create閮ㄩ棬浜烘暟绫诲瀷() {
+        return new 閮ㄩ棬浜烘暟绫诲瀷();
     }
 
     /**
-     * Create an instance of {@link 部门规模类型 }
+     * Create an instance of {@link 閮ㄩ棬瑙勬ā绫诲瀷 }
      * 
      */
-    public 部门规模类型 create部门规模类型() {
-        return new 部门规模类型();
+    public 閮ㄩ棬瑙勬ā绫诲瀷 create閮ㄩ棬瑙勬ā绫诲瀷() {
+        return new 閮ㄩ棬瑙勬ā绫诲瀷();
     }
 
     /**
-     * Create an instance of {@link 生日类型 }
+     * Create an instance of {@link 鐢熸棩绫诲瀷 }
      * 
      */
-    public 生日类型 create生日类型() {
-        return new 生日类型();
+    public 鐢熸棩绫诲瀷 create鐢熸棩绫诲瀷() {
+        return new 鐢熸棩绫诲瀷();
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link 部门信息类型 }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link 閮ㄩ棬淇℃伅绫诲瀷 }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://www.nju.edu.cn/schema", name = "\u90e8\u95e8\u4fe1\u606f")
-    public JAXBElement<部门信息类型> create部门信息(部门信息类型 value) {
-        return new JAXBElement<部门信息类型>(_部门信息_QNAME, 部门信息类型.class, null, value);
+    public JAXBElement<閮ㄩ棬淇℃伅绫诲瀷> create閮ㄩ棬淇℃伅(閮ㄩ棬淇℃伅绫诲瀷 value) {
+        return new JAXBElement<閮ㄩ棬淇℃伅绫诲瀷>(_閮ㄩ棬淇℃伅_QNAME, 閮ㄩ棬淇℃伅绫诲瀷.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link 个人基本信息类型 }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link 涓汉鍩烘湰淇℃伅绫诲瀷 }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://www.nju.edu.cn/schema", name = "\u5b66\u751f\u57fa\u672c\u4fe1\u606f")
-    public JAXBElement<个人基本信息类型> create学生基本信息(个人基本信息类型 value) {
-        return new JAXBElement<个人基本信息类型>(_学生基本信息_QNAME, 个人基本信息类型.class, null, value);
+    public JAXBElement<涓汉鍩烘湰淇℃伅绫诲瀷> create瀛︾敓鍩烘湰淇℃伅(涓汉鍩烘湰淇℃伅绫诲瀷 value) {
+        return new JAXBElement<涓汉鍩烘湰淇℃伅绫诲瀷>(_瀛︾敓鍩烘湰淇℃伅_QNAME, 涓汉鍩烘湰淇℃伅绫诲瀷.class, null, value);
     }
 
 }

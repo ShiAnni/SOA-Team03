@@ -8,17 +8,17 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>³É¼¨ÀàĞÍ complex typeµÄ Java Àà¡£
+ * <p>æˆç»©ç±»å‹ complex typeçš„ Java ç±»ã€‚
  * 
- * <p>ÒÔÏÂÄ£Ê½Æ¬¶ÎÖ¸¶¨°üº¬ÔÚ´ËÀàÖĞµÄÔ¤ÆÚÄÚÈİ¡£
+ * <p>ä»¥ä¸‹æ¨¡å¼ç‰‡æ®µæŒ‡å®šåŒ…å«åœ¨æ­¤ç±»ä¸­çš„é¢„æœŸå†…å®¹ã€‚
  * 
  * <pre>
- * &lt;complexType name="³É¼¨ÀàĞÍ">
+ * &lt;complexType name="æˆç»©ç±»å‹">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="Ñ§ºÅ" type="{http://jw.nju.edu.cn/schema}Ñ§ºÅÀàĞÍ"/>
- *         &lt;element name="µÃ·Ö" type="{http://jw.nju.edu.cn/schema}µÃ·ÖÀàĞÍ"/>
+ *         &lt;element name="å­¦å·" type="{http://jw.nju.edu.cn/schema}å­¦å·ç±»å‹"/>
+ *         &lt;element name="å¾—åˆ†" type="{http://jw.nju.edu.cn/schema}å¾—åˆ†ç±»å‹"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -32,50 +32,50 @@ import javax.xml.bind.annotation.XmlType;
     "\u5b66\u53f7",
     "\u5f97\u5206"
 })
-public class ³É¼¨ÀàĞÍ {
+public class æˆç»©ç±»å‹ {
 
     @XmlElement(required = true)
-    protected String Ñ§ºÅ;
-    protected int µÃ·Ö;
+    protected String å­¦å·;
+    protected int å¾—åˆ†;
 
     /**
-     * »ñÈ¡Ñ§ºÅÊôĞÔµÄÖµ¡£
+     * è·å–å­¦å·å±æ€§çš„å€¼ã€‚
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getÑ§ºÅ() {
-        return Ñ§ºÅ;
+    public String getå­¦å·() {
+        return å­¦å·;
     }
 
     /**
-     * ÉèÖÃÑ§ºÅÊôĞÔµÄÖµ¡£
+     * è®¾ç½®å­¦å·å±æ€§çš„å€¼ã€‚
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setÑ§ºÅ(String value) {
-        this.Ñ§ºÅ = value;
+    public void setå­¦å·(String value) {
+        this.å­¦å· = value;
     }
 
     /**
-     * »ñÈ¡µÃ·ÖÊôĞÔµÄÖµ¡£
+     * è·å–å¾—åˆ†å±æ€§çš„å€¼ã€‚
      * 
      */
-    public int getµÃ·Ö() {
-        return µÃ·Ö;
+    public int getå¾—åˆ†() {
+        return å¾—åˆ†;
     }
 
     /**
-     * ÉèÖÃµÃ·ÖÊôĞÔµÄÖµ¡£
+     * è®¾ç½®å¾—åˆ†å±æ€§çš„å€¼ã€‚
      * 
      */
-    public void setµÃ·Ö(int value) {
-        this.µÃ·Ö = value;
+    public void setå¾—åˆ†(int value) {
+        this.å¾—åˆ† = value;
     }
 
 }

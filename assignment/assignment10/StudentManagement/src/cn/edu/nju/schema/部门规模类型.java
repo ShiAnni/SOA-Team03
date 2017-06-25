@@ -10,16 +10,16 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>²¿ÃÅ¹æÄ£ÀàĞÍ complex typeµÄ Java Àà¡£
+ * <p>éƒ¨é—¨è§„æ¨¡ç±»å‹ complex typeçš„ Java ç±»ã€‚
  * 
- * <p>ÒÔÏÂÄ£Ê½Æ¬¶ÎÖ¸¶¨°üº¬ÔÚ´ËÀàÖĞµÄÔ¤ÆÚÄÚÈİ¡£
+ * <p>ä»¥ä¸‹æ¨¡å¼ç‰‡æ®µæŒ‡å®šåŒ…å«åœ¨æ­¤ç±»ä¸­çš„é¢„æœŸå†…å®¹ã€‚
  * 
  * <pre>
- * &lt;complexType name="²¿ÃÅ¹æÄ£ÀàĞÍ">
+ * &lt;complexType name="éƒ¨é—¨è§„æ¨¡ç±»å‹">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence maxOccurs="3">
- *         &lt;element name="ÈËÊı" type="{http://www.nju.edu.cn/schema}²¿ÃÅÈËÊıÀàĞÍ"/>
+ *         &lt;element name="äººæ•°" type="{http://www.nju.edu.cn/schema}éƒ¨é—¨äººæ•°ç±»å‹"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -32,50 +32,50 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "\u90e8\u95e8\u89c4\u6a21\u7c7b\u578b", propOrder = {
     "\u4eba\u6570"
 })
-public class ²¿ÃÅ¹æÄ£ÀàĞÍ {
+public class éƒ¨é—¨è§„æ¨¡ç±»å‹ {
 
     @XmlElement(required = true)
-    protected List<²¿ÃÅÈËÊıÀàĞÍ> ÈËÊı;
+    protected List<éƒ¨é—¨äººæ•°ç±»å‹> äººæ•°;
 
     /**
-     * Gets the value of the ÈËÊı property.
+     * Gets the value of the äººæ•° property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the ÈËÊı property.
+     * This is why there is not a <CODE>set</CODE> method for the äººæ•° property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getÈËÊı().add(newItem);
+     *    getäººæ•°().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link ²¿ÃÅÈËÊıÀàĞÍ }
+     * {@link éƒ¨é—¨äººæ•°ç±»å‹ }
      * 
      * 
      */
-    public List<²¿ÃÅÈËÊıÀàĞÍ> getÈËÊı() {
-        if (ÈËÊı == null) {
-            ÈËÊı = new ArrayList<²¿ÃÅÈËÊıÀàĞÍ>();
+    public List<éƒ¨é—¨äººæ•°ç±»å‹> getäººæ•°() {
+        if (äººæ•° == null) {
+            äººæ•° = new ArrayList<éƒ¨é—¨äººæ•°ç±»å‹>();
         }
-        return this.ÈËÊı;
+        return this.äººæ•°;
     }
 
 	@Override
 	public String toString() {
-		return "²¿ÃÅ¹æÄ£ÀàĞÍ [ÈËÊı=" + ÈËÊı + "]";
+		return "éƒ¨é—¨è§„æ¨¡ç±»å‹ [äººæ•°=" + äººæ•° + "]";
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((ÈËÊı == null) ? 0 : ÈËÊı.hashCode());
+		result = prime * result + ((äººæ•° == null) ? 0 : äººæ•°.hashCode());
 		return result;
 	}
 
@@ -87,11 +87,11 @@ public class ²¿ÃÅ¹æÄ£ÀàĞÍ {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		²¿ÃÅ¹æÄ£ÀàĞÍ other = (²¿ÃÅ¹æÄ£ÀàĞÍ) obj;
-		if (ÈËÊı == null) {
-			if (other.ÈËÊı != null)
+		éƒ¨é—¨è§„æ¨¡ç±»å‹ other = (éƒ¨é—¨è§„æ¨¡ç±»å‹) obj;
+		if (äººæ•° == null) {
+			if (other.äººæ•° != null)
 				return false;
-		} else if (!ÈËÊı.equals(other.ÈËÊı))
+		} else if (!äººæ•°.equals(other.äººæ•°))
 			return false;
 		return true;
 	}

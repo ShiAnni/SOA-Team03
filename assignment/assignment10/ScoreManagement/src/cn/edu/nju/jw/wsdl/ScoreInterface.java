@@ -7,8 +7,8 @@ import javax.jws.WebResult;
 import javax.jws.WebService;
 import javax.jws.soap.SOAPBinding;
 import javax.xml.bind.annotation.XmlSeeAlso;
-import cn.edu.nju.jw.schema.课程成绩列表类型;
-import cn.edu.nju.jw.schema.课程成绩类型;
+import cn.edu.nju.jw.schema.璇剧▼鎴愮哗鍒楄〃绫诲瀷;
+import cn.edu.nju.jw.schema.璇剧▼鎴愮哗绫诲瀷;
 
 
 /**
@@ -31,12 +31,12 @@ public interface ScoreInterface {
      * 
      * @param studentNo
      * @return
-     *     returns cn.edu.nju.jw.schema.课程成绩列表类型
+     *     returns cn.edu.nju.jw.schema.璇剧▼鎴愮哗鍒楄〃绫诲瀷
      * @throws SearchScoreFault
      */
     @WebMethod(action = "http://jw.nju.edu.cn/wsdl/searchScore")
     @WebResult(name = "scoreList", targetNamespace = "http://jw.nju.edu.cn/wsdl/schema", partName = "scoreList")
-    public 课程成绩列表类型 searchScore(
+    public 璇剧▼鎴愮哗鍒楄〃绫诲瀷 searchScore(
         @WebParam(name = "studentNo", targetNamespace = "http://jw.nju.edu.cn/wsdl/schema", partName = "studentNo")
         String studentNo)
         throws SearchScoreFault
@@ -53,7 +53,7 @@ public interface ScoreInterface {
     @WebResult(name = "isSuccess", targetNamespace = "http://jw.nju.edu.cn/wsdl/schema", partName = "isSuccess")
     public String addScore(
         @WebParam(name = "score", targetNamespace = "http://jw.nju.edu.cn/wsdl/schema", partName = "addScore")
-        课程成绩类型 addScore)
+        璇剧▼鎴愮哗绫诲瀷 addScore)
         throws AddScoreFault
     ;
 
@@ -68,7 +68,7 @@ public interface ScoreInterface {
     @WebResult(name = "isSuccess", targetNamespace = "http://jw.nju.edu.cn/wsdl/schema", partName = "isSuccess")
     public String deleteScore(
         @WebParam(name = "score", targetNamespace = "http://jw.nju.edu.cn/wsdl/schema", partName = "delScore")
-        课程成绩类型 delScore)
+        璇剧▼鎴愮哗绫诲瀷 delScore)
         throws DeleteScoreFault
     ;
 
@@ -83,7 +83,7 @@ public interface ScoreInterface {
     @WebResult(name = "isSuccess", targetNamespace = "http://jw.nju.edu.cn/wsdl/schema", partName = "isSuccess")
     public String modifyScore(
         @WebParam(name = "score", targetNamespace = "http://jw.nju.edu.cn/wsdl/schema", partName = "modSocre")
-        课程成绩类型 modSocre)
+        璇剧▼鎴愮哗绫诲瀷 modSocre)
         throws ModifyScoreFault
     ;
 

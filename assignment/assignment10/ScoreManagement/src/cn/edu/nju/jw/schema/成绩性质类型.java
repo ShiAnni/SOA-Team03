@@ -6,18 +6,18 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>³É¼¨ĞÔÖÊÀàĞÍµÄ Java Àà¡£
+ * <p>æˆç»©æ€§è´¨ç±»å‹çš„ Java ç±»ã€‚
  * 
- * <p>ÒÔÏÂÄ£Ê½Æ¬¶ÎÖ¸¶¨°üº¬ÔÚ´ËÀàÖĞµÄÔ¤ÆÚÄÚÈİ¡£
+ * <p>ä»¥ä¸‹æ¨¡å¼ç‰‡æ®µæŒ‡å®šåŒ…å«åœ¨æ­¤ç±»ä¸­çš„é¢„æœŸå†…å®¹ã€‚
  * <p>
  * <pre>
- * &lt;simpleType name="³É¼¨ĞÔÖÊÀàĞÍ">
+ * &lt;simpleType name="æˆç»©æ€§è´¨ç±»å‹">
  *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="Æ½Ê±³É¼¨"/>
- *     &lt;enumeration value="×÷Òµ³É¼¨"/>
- *     &lt;enumeration value="ÆÚÖĞ³É¼¨"/>
- *     &lt;enumeration value="ÆÚÄ©³É¼¨"/>
- *     &lt;enumeration value="×ÜÆÀ³É¼¨"/>
+ *     &lt;enumeration value="å¹³æ—¶æˆç»©"/>
+ *     &lt;enumeration value="ä½œä¸šæˆç»©"/>
+ *     &lt;enumeration value="æœŸä¸­æˆç»©"/>
+ *     &lt;enumeration value="æœŸæœ«æˆç»©"/>
+ *     &lt;enumeration value="æ€»è¯„æˆç»©"/>
  *   &lt;/restriction>
  * &lt;/simpleType>
  * </pre>
@@ -25,19 +25,19 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlType(name = "\u6210\u7ee9\u6027\u8d28\u7c7b\u578b")
 @XmlEnum
-public enum ³É¼¨ĞÔÖÊÀàĞÍ {
+public enum æˆç»©æ€§è´¨ç±»å‹ {
 
-    Æ½Ê±³É¼¨,
-    ×÷Òµ³É¼¨,
-    ÆÚÖĞ³É¼¨,
-    ÆÚÄ©³É¼¨,
-    ×ÜÆÀ³É¼¨;
+    å¹³æ—¶æˆç»©,
+    ä½œä¸šæˆç»©,
+    æœŸä¸­æˆç»©,
+    æœŸæœ«æˆç»©,
+    æ€»è¯„æˆç»©;
 
     public String value() {
         return name();
     }
 
-    public static ³É¼¨ĞÔÖÊÀàĞÍ fromValue(String v) {
+    public static æˆç»©æ€§è´¨ç±»å‹ fromValue(String v) {
         return valueOf(v);
     }
 

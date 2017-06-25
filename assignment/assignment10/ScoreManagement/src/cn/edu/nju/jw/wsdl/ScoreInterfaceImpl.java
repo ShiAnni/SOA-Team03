@@ -18,134 +18,134 @@ import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
-import cn.edu.nju.jw.schema.³É¼¨ĞÔÖÊÀàĞÍ;
-import cn.edu.nju.jw.schema.³É¼¨ÀàĞÍ;
-import cn.edu.nju.jw.schema.¿Î³Ì³É¼¨ÁĞ±íÀàĞÍ;
-import cn.edu.nju.jw.schema.¿Î³Ì³É¼¨ÀàĞÍ;
+import cn.edu.nju.jw.schema.æˆç»©æ€§è´¨ç±»å‹;
+import cn.edu.nju.jw.schema.æˆç»©ç±»å‹;
+import cn.edu.nju.jw.schema.è¯¾ç¨‹æˆç»©åˆ—è¡¨ç±»å‹;
+import cn.edu.nju.jw.schema.è¯¾ç¨‹æˆç»©ç±»å‹;
 @WebService(endpointInterface="cn.edu.nju.jw.wsdl.ScoreInterface")  
 public class ScoreInterfaceImpl implements ScoreInterface {
 
 	@Override
-	public ¿Î³Ì³É¼¨ÁĞ±íÀàĞÍ searchScore(String studentNo) throws SearchScoreFault {
+	public è¯¾ç¨‹æˆç»©åˆ—è¡¨ç±»å‹ searchScore(String studentNo) throws SearchScoreFault {
 		Document document = getDocument();
-		¿Î³Ì³É¼¨ÁĞ±íÀàĞÍ result = new ¿Î³Ì³É¼¨ÁĞ±íÀàĞÍ();
+		è¯¾ç¨‹æˆç»©åˆ—è¡¨ç±»å‹ result = new è¯¾ç¨‹æˆç»©åˆ—è¡¨ç±»å‹();
 		boolean exist = false;
-//		List<¿Î³Ì³É¼¨ÀàĞÍ> list = result.get¿Î³Ì³É¼¨();
-        NodeList nodes = document.getDocumentElement().getElementsByTagName("¿Î³Ì³É¼¨");
+//		List<è¯¾ç¨‹æˆç»©ç±»å‹> list = result.getè¯¾ç¨‹æˆç»©();
+        NodeList nodes = document.getDocumentElement().getElementsByTagName("è¯¾ç¨‹æˆç»©");
         for(int i=0; i<nodes.getLength(); i++){
             NodeList childNodes = nodes.item(i).getChildNodes();
            
             NamedNodeMap nodeAttr = nodes.item(i).getAttributes();
             
-//            System.out.println("¿Î³Ì±àºÅÓë³É¼¨ÀàĞÍ:"+nodeAttr.getNamedItem("³É¼¨ĞÔÖÊ")+"¡¡"+nodeAttr.getNamedItem("¿Î³Ì±àºÅ"));
+//            System.out.println("è¯¾ç¨‹ç¼–å·ä¸æˆç»©ç±»å‹:"+nodeAttr.getNamedItem("æˆç»©æ€§è´¨")+"ã€€"+nodeAttr.getNamedItem("è¯¾ç¨‹ç¼–å·"));
             for(int j=0; j<childNodes.getLength(); j++){
                 Node temp = childNodes.item(j);
-                if(temp.getNodeType() != Node.ELEMENT_NODE) {  //ºöÂÔ¿Õ¸ñ  
+                if(temp.getNodeType() != Node.ELEMENT_NODE) {  //å¿½ç•¥ç©ºæ ¼  
                     continue;  
                 }  
-                // ±È½ÏÑ§ºÅ
+                // æ¯”è¾ƒå­¦å·
                 String stuID="";
                 int score=0;
                 for(int k=0;k<temp.getChildNodes().getLength();k++){
-                	 if(temp.getChildNodes().item(k).getNodeType() != Node.ELEMENT_NODE) {  //ºöÂÔ¿Õ¸ñ  
+                	 if(temp.getChildNodes().item(k).getNodeType() != Node.ELEMENT_NODE) {  //å¿½ç•¥ç©ºæ ¼  
                          continue;  
                      } else{
                     	 //System.out.println(temp.getChildNodes().item(k).getNodeName());
-                    	 if(temp.getChildNodes().item(k).getNodeName().equals("Ñ§ºÅ")){
+                    	 if(temp.getChildNodes().item(k).getNodeName().equals("å­¦å·")){
                     		 stuID = temp.getChildNodes().item(k).getTextContent();
-                    	 } else if(temp.getChildNodes().item(k).getNodeName().equals("µÃ·Ö")){
+                    	 } else if(temp.getChildNodes().item(k).getNodeName().equals("å¾—åˆ†")){
                     		 score = Integer.parseInt( temp.getChildNodes().item(k).getTextContent() );
                     	 }
                      }
                 }
                 if(stuID.equals(studentNo)){
                 	exist=true;
-                	¿Î³Ì³É¼¨ÀàĞÍ single = new ¿Î³Ì³É¼¨ÀàĞÍ();
-                	³É¼¨ÀàĞÍ singlescore = new ³É¼¨ÀàĞÍ();
-                	singlescore.setÑ§ºÅ(stuID);
-                	singlescore.setµÃ·Ö(score);
-                    single.set³É¼¨ĞÔÖÊ(³É¼¨ĞÔÖÊÀàĞÍ.fromValue(nodeAttr.getNamedItem("³É¼¨ĞÔÖÊ").getTextContent()));
-                    single.set¿Î³Ì±àºÅ(nodeAttr.getNamedItem("¿Î³Ì±àºÅ").getTextContent());
-                    single.get³É¼¨().add(singlescore);
-                    result.get¿Î³Ì³É¼¨().add(single);
+                	è¯¾ç¨‹æˆç»©ç±»å‹ single = new è¯¾ç¨‹æˆç»©ç±»å‹();
+                	æˆç»©ç±»å‹ singlescore = new æˆç»©ç±»å‹();
+                	singlescore.setå­¦å·(stuID);
+                	singlescore.setå¾—åˆ†(score);
+                    single.setæˆç»©æ€§è´¨(æˆç»©æ€§è´¨ç±»å‹.fromValue(nodeAttr.getNamedItem("æˆç»©æ€§è´¨").getTextContent()));
+                    single.setè¯¾ç¨‹ç¼–å·(nodeAttr.getNamedItem("è¯¾ç¨‹ç¼–å·").getTextContent());
+                    single.getæˆç»©().add(singlescore);
+                    result.getè¯¾ç¨‹æˆç»©().add(single);
                 }
             }
         }
         if(!exist)
-        	throw new SearchScoreFault("²éÕÒµÄÑ§ºÅ²»´æÔÚ","²éÕÒµÄÑ§ºÅ²»´æÔÚ");
+        	throw new SearchScoreFault("æŸ¥æ‰¾çš„å­¦å·ä¸å­˜åœ¨","æŸ¥æ‰¾çš„å­¦å·ä¸å­˜åœ¨");
         return result;
 	}
 
 	@Override
-	public String addScore(¿Î³Ì³É¼¨ÀàĞÍ addScore) throws AddScoreFault {
+	public String addScore(è¯¾ç¨‹æˆç»©ç±»å‹ addScore) throws AddScoreFault {
 		Document document = getDocument();
-        // ¼ìÑé¿Î³ÌºÍ³É¼¨ĞÔÖÊÊÇ·ñÒÑ¾­´æÔÚ
+        // æ£€éªŒè¯¾ç¨‹å’Œæˆç»©æ€§è´¨æ˜¯å¦å·²ç»å­˜åœ¨
         
-       NodeList nodes = document.getDocumentElement().getElementsByTagName("¿Î³Ì³É¼¨");
+       NodeList nodes = document.getDocumentElement().getElementsByTagName("è¯¾ç¨‹æˆç»©");
        Element scoreType = null;
        for (int i = 0; i < nodes.getLength(); i++) {
            NamedNodeMap scoreAttr = nodes.item(i).getAttributes();
-           if (scoreAttr.getNamedItem("¿Î³Ì±àºÅ").getTextContent().equals(addScore.get¿Î³Ì±àºÅ()) && scoreAttr.getNamedItem("³É¼¨ĞÔÖÊ").getTextContent().equals(addScore.get³É¼¨ĞÔÖÊ().toString()) ) {
-               System.out.println("¿Î³ÌÓë³É¼¨ÀàĞÍ´æÔÚ");
+           if (scoreAttr.getNamedItem("è¯¾ç¨‹ç¼–å·").getTextContent().equals(addScore.getè¯¾ç¨‹ç¼–å·()) && scoreAttr.getNamedItem("æˆç»©æ€§è´¨").getTextContent().equals(addScore.getæˆç»©æ€§è´¨().toString()) ) {
+               System.out.println("è¯¾ç¨‹ä¸æˆç»©ç±»å‹å­˜åœ¨");
                scoreType = (Element) nodes.item(i);
                break;
            }
        }
        
-       // ¿Î³ÌÓë³É¼¨ÀàĞÍ²»´æÔÚ£¬Ìí¼Ó¿Î³ÌºÍ³É¼¨ÀàĞÍ£¬ÔİÊ±»¹Ã»ÊµÏÖ£¬²»ÖªµÀÎªÊ²Ã´ÊÇbug
+       // è¯¾ç¨‹ä¸æˆç»©ç±»å‹ä¸å­˜åœ¨ï¼Œæ·»åŠ è¯¾ç¨‹å’Œæˆç»©ç±»å‹ï¼Œæš‚æ—¶è¿˜æ²¡å®ç°ï¼Œä¸çŸ¥é“ä¸ºä»€ä¹ˆæ˜¯bug
        if(scoreType==null){
-           System.out.println("¿Î³ÌÓë³É¼¨ÀàĞÍ²»´æÔÚ");
-           scoreType = document.createElement("¿Î³Ì³É¼¨");
-           scoreType.setAttribute("³É¼¨ĞÔÖÊ", addScore.get³É¼¨ĞÔÖÊ().toString());
-           scoreType.setAttribute("¿Î³Ì±àºÅ", addScore.get¿Î³Ì±àºÅ().toString());
+           System.out.println("è¯¾ç¨‹ä¸æˆç»©ç±»å‹ä¸å­˜åœ¨");
+           scoreType = document.createElement("è¯¾ç¨‹æˆç»©");
+           scoreType.setAttribute("æˆç»©æ€§è´¨", addScore.getæˆç»©æ€§è´¨().toString());
+           scoreType.setAttribute("è¯¾ç¨‹ç¼–å·", addScore.getè¯¾ç¨‹ç¼–å·().toString());
        }
-       Element score = document.createElement("³É¼¨");
-       Element studentID = document.createElement("Ñ§ºÅ");
-       studentID.setTextContent(addScore.get³É¼¨().get(0).getÑ§ºÅ());
+       Element score = document.createElement("æˆç»©");
+       Element studentID = document.createElement("å­¦å·");
+       studentID.setTextContent(addScore.getæˆç»©().get(0).getå­¦å·());
 //       System.out.println(studentID.getTextContent());
-       Element number = document.createElement("µÃ·Ö");
-       number.setTextContent( String.valueOf(addScore.get³É¼¨().get(0).getµÃ·Ö()) );
+       Element number = document.createElement("å¾—åˆ†");
+       number.setTextContent( String.valueOf(addScore.getæˆç»©().get(0).getå¾—åˆ†()) );
        score.appendChild(studentID);
        score.appendChild(number);
-       //ÔÙ°Ñ³É¼¨Ìí¼Ó½ø¿Î³Ì×é
+       //å†æŠŠæˆç»©æ·»åŠ è¿›è¯¾ç¨‹ç»„
        scoreType.appendChild(score);
            
        return writeXML(document);    
 	}
 
 	@Override
-	public String deleteScore(¿Î³Ì³É¼¨ÀàĞÍ delScore) throws DeleteScoreFault {
+	public String deleteScore(è¯¾ç¨‹æˆç»©ç±»å‹ delScore) throws DeleteScoreFault {
 		Document document = getDocument();
 	       
         /*
-         * ¼ìÑé¿Î³ÌºÍ³É¼¨ĞÔÖÊÊÇ·ñÒÑ¾­´æÔÚ
+         * æ£€éªŒè¯¾ç¨‹å’Œæˆç»©æ€§è´¨æ˜¯å¦å·²ç»å­˜åœ¨
          */
-        NodeList nodes = document.getDocumentElement().getElementsByTagName("¿Î³Ì³É¼¨");
+        NodeList nodes = document.getDocumentElement().getElementsByTagName("è¯¾ç¨‹æˆç»©");
         boolean exist=false;
         
         for (int i = 0; i < nodes.getLength(); i++) {
-        	if(nodes.item(i).getNodeType() != Node.ELEMENT_NODE) {  //ºöÂÔ¿Õ¸ñ  
+        	if(nodes.item(i).getNodeType() != Node.ELEMENT_NODE) {  //å¿½ç•¥ç©ºæ ¼  
                 continue;  
             }
             NamedNodeMap scoreAttr = nodes.item(i).getAttributes();
-            String lessonid = scoreAttr.getNamedItem("¿Î³Ì±àºÅ").getTextContent();
-            String type = scoreAttr.getNamedItem("³É¼¨ĞÔÖÊ").getTextContent();
-            if (lessonid.equals(delScore.get¿Î³Ì±àºÅ()) && type.equals(delScore.get³É¼¨ĞÔÖÊ().toString())){
+            String lessonid = scoreAttr.getNamedItem("è¯¾ç¨‹ç¼–å·").getTextContent();
+            String type = scoreAttr.getNamedItem("æˆç»©æ€§è´¨").getTextContent();
+            if (lessonid.equals(delScore.getè¯¾ç¨‹ç¼–å·()) && type.equals(delScore.getæˆç»©æ€§è´¨().toString())){
             	NodeList childNodes = nodes.item(i).getChildNodes();
             	for(int j=0;j<childNodes.getLength();j++){
             		 Node temp = childNodes.item(j);
-                     if(temp.getNodeType() != Node.ELEMENT_NODE) {  //ºöÂÔ¿Õ¸ñ  
+                     if(temp.getNodeType() != Node.ELEMENT_NODE) {  //å¿½ç•¥ç©ºæ ¼  
                          continue;  
                      }  
-                     // ±È½ÏÑ§ºÅ
+                     // æ¯”è¾ƒå­¦å·
                      for(int k=0;k<temp.getChildNodes().getLength();k++){
-                    	 if(temp.getChildNodes().item(k).getNodeType() != Node.ELEMENT_NODE) {  //ºöÂÔ¿Õ¸ñ  
+                    	 if(temp.getChildNodes().item(k).getNodeType() != Node.ELEMENT_NODE) {  //å¿½ç•¥ç©ºæ ¼  
                              continue;  
                          } else{
                         	 //System.out.println(temp.getChildNodes().item(k).getNodeName());
-                        	 if(temp.getChildNodes().item(k).getNodeName().equals("Ñ§ºÅ")){
+                        	 if(temp.getChildNodes().item(k).getNodeName().equals("å­¦å·")){
 //                        		System.out.println(temp.getChildNodes().item(k).getTextContent());
-                        		 if(temp.getChildNodes().item(k).getTextContent().equals(delScore.get³É¼¨().get(0).getÑ§ºÅ())){
+                        		 if(temp.getChildNodes().item(k).getTextContent().equals(delScore.getæˆç»©().get(0).getå­¦å·())){
                         			 nodes.item(i).removeChild(temp);
                         			 exist=true;
                         		       break;
@@ -158,50 +158,50 @@ public class ScoreInterfaceImpl implements ScoreInterface {
             }
         }
         if(!exist)
-        	throw new DeleteScoreFault("É¾³ıµÄ³É¼¨²»´æÔÚ","É¾³ıµÄ³É¼¨²»´æÔÚ");
+        	throw new DeleteScoreFault("åˆ é™¤çš„æˆç»©ä¸å­˜åœ¨","åˆ é™¤çš„æˆç»©ä¸å­˜åœ¨");
         return writeXML(document);
 	}
 
 	@Override
-	public String modifyScore(¿Î³Ì³É¼¨ÀàĞÍ modSocre) throws ModifyScoreFault {
+	public String modifyScore(è¯¾ç¨‹æˆç»©ç±»å‹ modSocre) throws ModifyScoreFault {
 		Document document = getDocument();
 	       
         /*
-         * ¼ìÑé¿Î³ÌºÍ³É¼¨ĞÔÖÊÊÇ·ñÒÑ¾­´æÔÚ
+         * æ£€éªŒè¯¾ç¨‹å’Œæˆç»©æ€§è´¨æ˜¯å¦å·²ç»å­˜åœ¨
          */
-        NodeList nodes = document.getDocumentElement().getElementsByTagName("¿Î³Ì³É¼¨");
+        NodeList nodes = document.getDocumentElement().getElementsByTagName("è¯¾ç¨‹æˆç»©");
         boolean exist=false;
         for (int i = 0; i < nodes.getLength(); i++) {
-        	if(nodes.item(i).getNodeType() != Node.ELEMENT_NODE) {  //ºöÂÔ¿Õ¸ñ  
+        	if(nodes.item(i).getNodeType() != Node.ELEMENT_NODE) {  //å¿½ç•¥ç©ºæ ¼  
                 continue;  
             }
             NamedNodeMap scoreAttr = nodes.item(i).getAttributes();
             
-            String lessonid = scoreAttr.getNamedItem("¿Î³Ì±àºÅ").getTextContent();
-            String type = scoreAttr.getNamedItem("³É¼¨ĞÔÖÊ").getTextContent();
-            if (lessonid.equals(modSocre.get¿Î³Ì±àºÅ()) && type.equals(modSocre.get³É¼¨ĞÔÖÊ().toString())){
+            String lessonid = scoreAttr.getNamedItem("è¯¾ç¨‹ç¼–å·").getTextContent();
+            String type = scoreAttr.getNamedItem("æˆç»©æ€§è´¨").getTextContent();
+            if (lessonid.equals(modSocre.getè¯¾ç¨‹ç¼–å·()) && type.equals(modSocre.getæˆç»©æ€§è´¨().toString())){
             	NodeList childNodes = nodes.item(i).getChildNodes();
             	for(int j=0;j<childNodes.getLength();j++){
             		 Node temp = childNodes.item(j);
-                     if(temp.getNodeType() != Node.ELEMENT_NODE) {  //ºöÂÔ¿Õ¸ñ  
+                     if(temp.getNodeType() != Node.ELEMENT_NODE) {  //å¿½ç•¥ç©ºæ ¼  
                          continue;  
                      }  
-                     // ±È½ÏÑ§ºÅ
+                     // æ¯”è¾ƒå­¦å·
                      boolean found = false;
                      for(int k=0;k<temp.getChildNodes().getLength();k++){
-                    	 if(temp.getChildNodes().item(k).getNodeType() != Node.ELEMENT_NODE) {  //ºöÂÔ¿Õ¸ñ  
+                    	 if(temp.getChildNodes().item(k).getNodeType() != Node.ELEMENT_NODE) {  //å¿½ç•¥ç©ºæ ¼  
                              continue;  
                          } else{
 //                        	 System.out.println(temp.getChildNodes().item(k).getNodeName());
-                        	 if(temp.getChildNodes().item(k).getNodeName().equals("Ñ§ºÅ")){
+                        	 if(temp.getChildNodes().item(k).getNodeName().equals("å­¦å·")){
                         		 
-                        		 if(temp.getChildNodes().item(k).getTextContent().equals(modSocre.get³É¼¨().get(0).getÑ§ºÅ())){
+                        		 if(temp.getChildNodes().item(k).getTextContent().equals(modSocre.getæˆç»©().get(0).getå­¦å·())){
                         			 found=true;
                         		 }
                         	 } 
-                        	 else if(temp.getChildNodes().item(k).getNodeName().equals("µÃ·Ö")){
+                        	 else if(temp.getChildNodes().item(k).getNodeName().equals("å¾—åˆ†")){
                          		 if(found){
-                         			temp.getChildNodes().item(k).setTextContent(modSocre.get³É¼¨().get(0).getµÃ·Ö()+"");
+                         			temp.getChildNodes().item(k).setTextContent(modSocre.getæˆç»©().get(0).getå¾—åˆ†()+"");
                          			exist=true;
                          			found=false;
                          		       break;
@@ -214,12 +214,12 @@ public class ScoreInterfaceImpl implements ScoreInterface {
             }
         }
         if(!exist)
-        	throw new ModifyScoreFault("ĞŞ¸ÄµÄ³É¼¨²»´æÔÚ","ĞŞ¸ÄµÄ³É¼¨²»´æÔÚ");
+        	throw new ModifyScoreFault("ä¿®æ”¹çš„æˆç»©ä¸å­˜åœ¨","ä¿®æ”¹çš„æˆç»©ä¸å­˜åœ¨");
         return writeXML(document);
 	}
 	
 	/*
-     * ½«ĞŞ¸ÄºóµÄdocument¶ÔÏóĞ´ÈëXMLÖĞ
+     * å°†ä¿®æ”¹åçš„documentå¯¹è±¡å†™å…¥XMLä¸­
      */
     private String writeXML(Document document){
         URL url = getClass().getResource("");
@@ -229,17 +229,17 @@ public class ScoreInterfaceImpl implements ScoreInterface {
             Transformer transformer = tFactory.newTransformer();
             transformer.setOutputProperty(OutputKeys.ENCODING, "UTF-8");
             DOMSource source = new DOMSource(document);
-            StreamResult result = new StreamResult(new File(filePath + "ÎÄµµ3.xml"));
+            StreamResult result = new StreamResult(new File(filePath + "æ–‡æ¡£3.xml"));
             transformer.transform(source, result);
-            return "²Ù×÷³É¹¦";
+            return "æ“ä½œæˆåŠŸ";
         } catch (Exception e) {
             e.printStackTrace();
-            return "²Ù×÷Ê§°Ü£º " + e.getMessage();
+            return "æ“ä½œå¤±è´¥ï¼š " + e.getMessage();
         }
     }
     	
     /**
-     * ¶ÁScoreList.xmlÎÄ¼ş
+     * è¯»ScoreList.xmlæ–‡ä»¶
      */
     private Document getDocument(){
         URL url = getClass().getResource("");
@@ -251,7 +251,7 @@ public class ScoreInterfaceImpl implements ScoreInterface {
         try{    
             DocumentBuilder builder = factory.newDocumentBuilder();
             
-            document = builder.parse(filePath + "ÎÄµµ3.xml");
+            document = builder.parse(filePath + "æ–‡æ¡£3.xml");
             //score = document.getDocumentElement();
         } catch(Exception e){
             e.printStackTrace();

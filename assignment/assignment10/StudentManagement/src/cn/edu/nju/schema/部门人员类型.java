@@ -6,16 +6,16 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>²¿ÃÅÈËÔ±ÀàĞÍµÄ Java Àà¡£
+ * <p>éƒ¨é—¨äººå‘˜ç±»å‹çš„ Java ç±»ã€‚
  * 
- * <p>ÒÔÏÂÄ£Ê½Æ¬¶ÎÖ¸¶¨°üº¬ÔÚ´ËÀàÖĞµÄÔ¤ÆÚÄÚÈİ¡£
+ * <p>ä»¥ä¸‹æ¨¡å¼ç‰‡æ®µæŒ‡å®šåŒ…å«åœ¨æ­¤ç±»ä¸­çš„é¢„æœŸå†…å®¹ã€‚
  * <p>
  * <pre>
- * &lt;simpleType name="²¿ÃÅÈËÔ±ÀàĞÍ">
+ * &lt;simpleType name="éƒ¨é—¨äººå‘˜ç±»å‹">
  *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="½ÌÊ¦"/>
- *     &lt;enumeration value="¹ÜÀíÈËÔ±"/>
- *     &lt;enumeration value="Ñ§Éú"/>
+ *     &lt;enumeration value="æ•™å¸ˆ"/>
+ *     &lt;enumeration value="ç®¡ç†äººå‘˜"/>
+ *     &lt;enumeration value="å­¦ç”Ÿ"/>
  *   &lt;/restriction>
  * &lt;/simpleType>
  * </pre>
@@ -23,17 +23,17 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlType(name = "\u90e8\u95e8\u4eba\u5458\u7c7b\u578b")
 @XmlEnum
-public enum ²¿ÃÅÈËÔ±ÀàĞÍ {
+public enum éƒ¨é—¨äººå‘˜ç±»å‹ {
 
-    ½ÌÊ¦,
-    ¹ÜÀíÈËÔ±,
-    Ñ§Éú;
+    æ•™å¸ˆ,
+    ç®¡ç†äººå‘˜,
+    å­¦ç”Ÿ;
 
     public String value() {
         return name();
     }
 
-    public static ²¿ÃÅÈËÔ±ÀàĞÍ fromValue(String v) {
+    public static éƒ¨é—¨äººå‘˜ç±»å‹ fromValue(String v) {
         return valueOf(v);
     }
 

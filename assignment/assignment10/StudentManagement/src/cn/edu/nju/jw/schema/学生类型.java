@@ -6,23 +6,23 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import cn.edu.nju.schema.¸öÈË»ù±¾ĞÅÏ¢ÀàĞÍ;
+import cn.edu.nju.schema.ä¸ªäººåŸºæœ¬ä¿¡æ¯ç±»å‹;
 
 
 /**
- * <p>Ñ§ÉúÀàĞÍ complex typeµÄ Java Àà¡£
+ * <p>å­¦ç”Ÿç±»å‹ complex typeçš„ Java ç±»ã€‚
  * 
- * <p>ÒÔÏÂÄ£Ê½Æ¬¶ÎÖ¸¶¨°üº¬ÔÚ´ËÀàÖĞµÄÔ¤ÆÚÄÚÈİ¡£
+ * <p>ä»¥ä¸‹æ¨¡å¼ç‰‡æ®µæŒ‡å®šåŒ…å«åœ¨æ­¤ç±»ä¸­çš„é¢„æœŸå†…å®¹ã€‚
  * 
  * <pre>
- * &lt;complexType name="Ñ§ÉúÀàĞÍ">
+ * &lt;complexType name="å­¦ç”Ÿç±»å‹">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;all>
- *         &lt;element ref="{http://www.nju.edu.cn/schema}Ñ§Éú»ù±¾ĞÅÏ¢"/>
- *         &lt;element ref="{http://jw.nju.edu.cn/schema}¿Î³Ì³É¼¨ÁĞ±í"/>
+ *         &lt;element ref="{http://www.nju.edu.cn/schema}å­¦ç”ŸåŸºæœ¬ä¿¡æ¯"/>
+ *         &lt;element ref="{http://jw.nju.edu.cn/schema}è¯¾ç¨‹æˆç»©åˆ—è¡¨"/>
  *       &lt;/all>
- *       &lt;attribute name="Ñ§ºÅ" type="{http://jw.nju.edu.cn/schema}Ñ§ºÅÀàĞÍ" />
+ *       &lt;attribute name="å­¦å·" type="{http://jw.nju.edu.cn/schema}å­¦å·ç±»å‹" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -34,94 +34,94 @@ import cn.edu.nju.schema.¸öÈË»ù±¾ĞÅÏ¢ÀàĞÍ;
 @XmlType(name = "\u5b66\u751f\u7c7b\u578b", propOrder = {
 
 })
-public class Ñ§ÉúÀàĞÍ {
+public class å­¦ç”Ÿç±»å‹ {
 
     @XmlElement(namespace = "http://www.nju.edu.cn/schema", required = true)
-    protected ¸öÈË»ù±¾ĞÅÏ¢ÀàĞÍ Ñ§Éú»ù±¾ĞÅÏ¢;
+    protected ä¸ªäººåŸºæœ¬ä¿¡æ¯ç±»å‹ å­¦ç”ŸåŸºæœ¬ä¿¡æ¯;
     @XmlElement(required = true)
-    protected ¿Î³Ì³É¼¨ÁĞ±íÀàĞÍ ¿Î³Ì³É¼¨ÁĞ±í;
+    protected è¯¾ç¨‹æˆç»©åˆ—è¡¨ç±»å‹ è¯¾ç¨‹æˆç»©åˆ—è¡¨;
     @XmlAttribute
-    protected String Ñ§ºÅ;
+    protected String å­¦å·;
 
     /**
-     * »ñÈ¡Ñ§Éú»ù±¾ĞÅÏ¢ÊôĞÔµÄÖµ¡£
+     * è·å–å­¦ç”ŸåŸºæœ¬ä¿¡æ¯å±æ€§çš„å€¼ã€‚
      * 
      * @return
      *     possible object is
-     *     {@link ¸öÈË»ù±¾ĞÅÏ¢ÀàĞÍ }
+     *     {@link ä¸ªäººåŸºæœ¬ä¿¡æ¯ç±»å‹ }
      *     
      */
-    public ¸öÈË»ù±¾ĞÅÏ¢ÀàĞÍ getÑ§Éú»ù±¾ĞÅÏ¢() {
-        return Ñ§Éú»ù±¾ĞÅÏ¢;
+    public ä¸ªäººåŸºæœ¬ä¿¡æ¯ç±»å‹ getå­¦ç”ŸåŸºæœ¬ä¿¡æ¯() {
+        return å­¦ç”ŸåŸºæœ¬ä¿¡æ¯;
     }
 
     /**
-     * ÉèÖÃÑ§Éú»ù±¾ĞÅÏ¢ÊôĞÔµÄÖµ¡£
+     * è®¾ç½®å­¦ç”ŸåŸºæœ¬ä¿¡æ¯å±æ€§çš„å€¼ã€‚
      * 
      * @param value
      *     allowed object is
-     *     {@link ¸öÈË»ù±¾ĞÅÏ¢ÀàĞÍ }
+     *     {@link ä¸ªäººåŸºæœ¬ä¿¡æ¯ç±»å‹ }
      *     
      */
-    public void setÑ§Éú»ù±¾ĞÅÏ¢(¸öÈË»ù±¾ĞÅÏ¢ÀàĞÍ value) {
-        this.Ñ§Éú»ù±¾ĞÅÏ¢ = value;
+    public void setå­¦ç”ŸåŸºæœ¬ä¿¡æ¯(ä¸ªäººåŸºæœ¬ä¿¡æ¯ç±»å‹ value) {
+        this.å­¦ç”ŸåŸºæœ¬ä¿¡æ¯ = value;
     }
 
     /**
-     * »ñÈ¡¿Î³Ì³É¼¨ÁĞ±íÊôĞÔµÄÖµ¡£
+     * è·å–è¯¾ç¨‹æˆç»©åˆ—è¡¨å±æ€§çš„å€¼ã€‚
      * 
      * @return
      *     possible object is
-     *     {@link ¿Î³Ì³É¼¨ÁĞ±íÀàĞÍ }
+     *     {@link è¯¾ç¨‹æˆç»©åˆ—è¡¨ç±»å‹ }
      *     
      */
-    public ¿Î³Ì³É¼¨ÁĞ±íÀàĞÍ get¿Î³Ì³É¼¨ÁĞ±í() {
-        return ¿Î³Ì³É¼¨ÁĞ±í;
+    public è¯¾ç¨‹æˆç»©åˆ—è¡¨ç±»å‹ getè¯¾ç¨‹æˆç»©åˆ—è¡¨() {
+        return è¯¾ç¨‹æˆç»©åˆ—è¡¨;
     }
 
     /**
-     * ÉèÖÃ¿Î³Ì³É¼¨ÁĞ±íÊôĞÔµÄÖµ¡£
+     * è®¾ç½®è¯¾ç¨‹æˆç»©åˆ—è¡¨å±æ€§çš„å€¼ã€‚
      * 
      * @param value
      *     allowed object is
-     *     {@link ¿Î³Ì³É¼¨ÁĞ±íÀàĞÍ }
+     *     {@link è¯¾ç¨‹æˆç»©åˆ—è¡¨ç±»å‹ }
      *     
      */
-    public void set¿Î³Ì³É¼¨ÁĞ±í(¿Î³Ì³É¼¨ÁĞ±íÀàĞÍ value) {
-        this.¿Î³Ì³É¼¨ÁĞ±í = value;
+    public void setè¯¾ç¨‹æˆç»©åˆ—è¡¨(è¯¾ç¨‹æˆç»©åˆ—è¡¨ç±»å‹ value) {
+        this.è¯¾ç¨‹æˆç»©åˆ—è¡¨ = value;
     }
 
     /**
-     * »ñÈ¡Ñ§ºÅÊôĞÔµÄÖµ¡£
+     * è·å–å­¦å·å±æ€§çš„å€¼ã€‚
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getÑ§ºÅ() {
-        return Ñ§ºÅ;
+    public String getå­¦å·() {
+        return å­¦å·;
     }
 
     /**
-     * ÉèÖÃÑ§ºÅÊôĞÔµÄÖµ¡£
+     * è®¾ç½®å­¦å·å±æ€§çš„å€¼ã€‚
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setÑ§ºÅ(String value) {
-        this.Ñ§ºÅ = value;
+    public void setå­¦å·(String value) {
+        this.å­¦å· = value;
     }
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((Ñ§ºÅ == null) ? 0 : Ñ§ºÅ.hashCode());
-		result = prime * result + ((Ñ§Éú»ù±¾ĞÅÏ¢ == null) ? 0 : Ñ§Éú»ù±¾ĞÅÏ¢.hashCode());
-		result = prime * result + ((¿Î³Ì³É¼¨ÁĞ±í == null) ? 0 : ¿Î³Ì³É¼¨ÁĞ±í.hashCode());
+		result = prime * result + ((å­¦å· == null) ? 0 : å­¦å·.hashCode());
+		result = prime * result + ((å­¦ç”ŸåŸºæœ¬ä¿¡æ¯ == null) ? 0 : å­¦ç”ŸåŸºæœ¬ä¿¡æ¯.hashCode());
+		result = prime * result + ((è¯¾ç¨‹æˆç»©åˆ—è¡¨ == null) ? 0 : è¯¾ç¨‹æˆç»©åˆ—è¡¨.hashCode());
 		return result;
 	}
 
@@ -133,21 +133,21 @@ public class Ñ§ÉúÀàĞÍ {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Ñ§ÉúÀàĞÍ other = (Ñ§ÉúÀàĞÍ) obj;
-		if (Ñ§ºÅ == null) {
-			if (other.Ñ§ºÅ != null)
+		å­¦ç”Ÿç±»å‹ other = (å­¦ç”Ÿç±»å‹) obj;
+		if (å­¦å· == null) {
+			if (other.å­¦å· != null)
 				return false;
-		} else if (!Ñ§ºÅ.equals(other.Ñ§ºÅ))
+		} else if (!å­¦å·.equals(other.å­¦å·))
 			return false;
-		if (Ñ§Éú»ù±¾ĞÅÏ¢ == null) {
-			if (other.Ñ§Éú»ù±¾ĞÅÏ¢ != null)
+		if (å­¦ç”ŸåŸºæœ¬ä¿¡æ¯ == null) {
+			if (other.å­¦ç”ŸåŸºæœ¬ä¿¡æ¯ != null)
 				return false;
-		} else if (!Ñ§Éú»ù±¾ĞÅÏ¢.equals(other.Ñ§Éú»ù±¾ĞÅÏ¢))
+		} else if (!å­¦ç”ŸåŸºæœ¬ä¿¡æ¯.equals(other.å­¦ç”ŸåŸºæœ¬ä¿¡æ¯))
 			return false;
-		if (¿Î³Ì³É¼¨ÁĞ±í == null) {
-			if (other.¿Î³Ì³É¼¨ÁĞ±í != null)
+		if (è¯¾ç¨‹æˆç»©åˆ—è¡¨ == null) {
+			if (other.è¯¾ç¨‹æˆç»©åˆ—è¡¨ != null)
 				return false;
-		} else if (!¿Î³Ì³É¼¨ÁĞ±í.equals(other.¿Î³Ì³É¼¨ÁĞ±í))
+		} else if (!è¯¾ç¨‹æˆç»©åˆ—è¡¨.equals(other.è¯¾ç¨‹æˆç»©åˆ—è¡¨))
 			return false;
 		return true;
 	}

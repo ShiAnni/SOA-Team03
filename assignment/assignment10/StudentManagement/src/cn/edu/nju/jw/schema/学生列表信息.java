@@ -9,16 +9,16 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Ñ§ÉúÁĞ±íĞÅÏ¢ complex typeµÄ Java Àà¡£
+ * <p>å­¦ç”Ÿåˆ—è¡¨ä¿¡æ¯ complex typeçš„ Java ç±»ã€‚
  * 
- * <p>ÒÔÏÂÄ£Ê½Æ¬¶ÎÖ¸¶¨°üº¬ÔÚ´ËÀàÖĞµÄÔ¤ÆÚÄÚÈİ¡£
+ * <p>ä»¥ä¸‹æ¨¡å¼ç‰‡æ®µæŒ‡å®šåŒ…å«åœ¨æ­¤ç±»ä¸­çš„é¢„æœŸå†…å®¹ã€‚
  * 
  * <pre>
- * &lt;complexType name="Ñ§ÉúÁĞ±íĞÅÏ¢">
+ * &lt;complexType name="å­¦ç”Ÿåˆ—è¡¨ä¿¡æ¯">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence maxOccurs="unbounded" minOccurs="0">
- *         &lt;element name="Ñ§Éú" type="{http://jw.nju.edu.cn/schema}Ñ§ÉúÀàĞÍ"/>
+ *         &lt;element name="å­¦ç”Ÿ" type="{http://jw.nju.edu.cn/schema}å­¦ç”Ÿç±»å‹"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -31,37 +31,37 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "\u5b66\u751f\u5217\u8868\u4fe1\u606f", propOrder = {
     "\u5b66\u751f"
 })
-public class Ñ§ÉúÁĞ±íĞÅÏ¢ {
+public class å­¦ç”Ÿåˆ—è¡¨ä¿¡æ¯ {
 
-    protected List<Ñ§ÉúÀàĞÍ> Ñ§Éú;
+    protected List<å­¦ç”Ÿç±»å‹> å­¦ç”Ÿ;
 
     /**
-     * Gets the value of the Ñ§Éú property.
+     * Gets the value of the å­¦ç”Ÿ property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the Ñ§Éú property.
+     * This is why there is not a <CODE>set</CODE> method for the å­¦ç”Ÿ property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getÑ§Éú().add(newItem);
+     *    getå­¦ç”Ÿ().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link Ñ§ÉúÀàĞÍ }
+     * {@link å­¦ç”Ÿç±»å‹ }
      * 
      * 
      */
-    public List<Ñ§ÉúÀàĞÍ> getÑ§Éú() {
-        if (Ñ§Éú == null) {
-            Ñ§Éú = new ArrayList<Ñ§ÉúÀàĞÍ>();
+    public List<å­¦ç”Ÿç±»å‹> getå­¦ç”Ÿ() {
+        if (å­¦ç”Ÿ == null) {
+            å­¦ç”Ÿ = new ArrayList<å­¦ç”Ÿç±»å‹>();
         }
-        return this.Ñ§Éú;
+        return this.å­¦ç”Ÿ;
     }
 
 }

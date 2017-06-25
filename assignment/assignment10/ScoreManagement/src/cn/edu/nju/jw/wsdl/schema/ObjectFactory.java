@@ -5,8 +5,8 @@ import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlElementDecl;
 import javax.xml.bind.annotation.XmlRegistry;
 import javax.xml.namespace.QName;
-import cn.edu.nju.jw.schema.课程成绩列表类型;
-import cn.edu.nju.jw.schema.课程成绩类型;
+import cn.edu.nju.jw.schema.璇剧▼鎴愮哗鍒楄〃绫诲瀷;
+import cn.edu.nju.jw.schema.璇剧▼鎴愮哗绫诲瀷;
 
 
 /**
@@ -67,21 +67,21 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link 课程成绩列表类型 }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link 璇剧▼鎴愮哗鍒楄〃绫诲瀷 }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://jw.nju.edu.cn/wsdl/schema", name = "scoreList")
-    public JAXBElement<课程成绩列表类型> createScoreList(课程成绩列表类型 value) {
-        return new JAXBElement<课程成绩列表类型>(_ScoreList_QNAME, 课程成绩列表类型.class, null, value);
+    public JAXBElement<璇剧▼鎴愮哗鍒楄〃绫诲瀷> createScoreList(璇剧▼鎴愮哗鍒楄〃绫诲瀷 value) {
+        return new JAXBElement<璇剧▼鎴愮哗鍒楄〃绫诲瀷>(_ScoreList_QNAME, 璇剧▼鎴愮哗鍒楄〃绫诲瀷.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link 课程成绩类型 }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link 璇剧▼鎴愮哗绫诲瀷 }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://jw.nju.edu.cn/wsdl/schema", name = "score")
-    public JAXBElement<课程成绩类型> createScore(课程成绩类型 value) {
-        return new JAXBElement<课程成绩类型>(_Score_QNAME, 课程成绩类型.class, null, value);
+    public JAXBElement<璇剧▼鎴愮哗绫诲瀷> createScore(璇剧▼鎴愮哗绫诲瀷 value) {
+        return new JAXBElement<璇剧▼鎴愮哗绫诲瀷>(_Score_QNAME, 璇剧▼鎴愮哗绫诲瀷.class, null, value);
     }
 
 }

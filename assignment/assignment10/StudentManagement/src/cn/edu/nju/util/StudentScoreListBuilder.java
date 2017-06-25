@@ -17,25 +17,25 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
-import cn.edu.nju.jw.schema.Ñ§ÉúÁĞ±íĞÅÏ¢;
-import cn.edu.nju.jw.schema.Ñ§ÉúÀàĞÍ;
-import cn.edu.nju.jw.schema.³É¼¨ĞÔÖÊÀàĞÍ;
-import cn.edu.nju.jw.schema.³É¼¨ÀàĞÍ;
-import cn.edu.nju.jw.schema.¿Î³Ì³É¼¨ÁĞ±íÀàĞÍ;
-import cn.edu.nju.jw.schema.¿Î³Ì³É¼¨ÀàĞÍ;
-import cn.edu.nju.schema.¸öÈË»ù±¾ĞÅÏ¢ÀàĞÍ;
-import cn.edu.nju.schema.ĞÔ±ğÀàĞÍ;
-import cn.edu.nju.schema.ÉúÈÕÀàĞÍ;
-import cn.edu.nju.schema.²¿ÃÅÈËÔ±ÀàĞÍ;
-import cn.edu.nju.schema.²¿ÃÅÈËÊıÀàĞÍ;
-import cn.edu.nju.schema.²¿ÃÅĞÅÏ¢ÀàĞÍ;
-import cn.edu.nju.schema.²¿ÃÅÀàĞÍÀàĞÍ;
-import cn.edu.nju.schema.²¿ÃÅ¹æÄ£ÀàĞÍ;
+import cn.edu.nju.jw.schema.å­¦ç”Ÿåˆ—è¡¨ä¿¡æ¯;
+import cn.edu.nju.jw.schema.å­¦ç”Ÿç±»å‹;
+import cn.edu.nju.jw.schema.æˆç»©æ€§è´¨ç±»å‹;
+import cn.edu.nju.jw.schema.æˆç»©ç±»å‹;
+import cn.edu.nju.jw.schema.è¯¾ç¨‹æˆç»©åˆ—è¡¨ç±»å‹;
+import cn.edu.nju.jw.schema.è¯¾ç¨‹æˆç»©ç±»å‹;
+import cn.edu.nju.schema.ä¸ªäººåŸºæœ¬ä¿¡æ¯ç±»å‹;
+import cn.edu.nju.schema.æ€§åˆ«ç±»å‹;
+import cn.edu.nju.schema.ç”Ÿæ—¥ç±»å‹;
+import cn.edu.nju.schema.éƒ¨é—¨äººå‘˜ç±»å‹;
+import cn.edu.nju.schema.éƒ¨é—¨äººæ•°ç±»å‹;
+import cn.edu.nju.schema.éƒ¨é—¨ä¿¡æ¯ç±»å‹;
+import cn.edu.nju.schema.éƒ¨é—¨ç±»å‹ç±»å‹;
+import cn.edu.nju.schema.éƒ¨é—¨è§„æ¨¡ç±»å‹;
 
 public class StudentScoreListBuilder {
 	
 	public static void main(String[] args){
-		Document doc = getDocument("ÎÄµµ2");
+		Document doc = getDocument("æ–‡æ¡£2");
 		System.out.println(saveDocument(doc));
 	}
 	
@@ -67,123 +67,123 @@ public class StudentScoreListBuilder {
 			transformer.setOutputProperty( "{http://xml.apache.org/xalan}indent-amount", "4");  
 			transformer.setOutputProperty(OutputKeys.METHOD, "xml");
             DOMSource source = new DOMSource(document);
-            StreamResult result = new StreamResult(new File(filePath + "ÎÄµµ2.xml"));
+            StreamResult result = new StreamResult(new File(filePath + "æ–‡æ¡£2.xml"));
             transformer.transform(source, result);
-            return "²Ù×÷³É¹¦";
+            return "æ“ä½œæˆåŠŸ";
         } catch (Exception e) {
             e.printStackTrace();
-            return "²Ù×÷Ê§°Ü£º " + e.getMessage();
+            return "æ“ä½œå¤±è´¥ï¼š " + e.getMessage();
         }
 	}
 	
-	public static Ñ§ÉúÁĞ±íĞÅÏ¢ getRootList(NodeList students){
-		Ñ§ÉúÁĞ±íĞÅÏ¢ list = new Ñ§ÉúÁĞ±íĞÅÏ¢();
+	public static å­¦ç”Ÿåˆ—è¡¨ä¿¡æ¯ getRootList(NodeList students){
+		å­¦ç”Ÿåˆ—è¡¨ä¿¡æ¯ list = new å­¦ç”Ÿåˆ—è¡¨ä¿¡æ¯();
 		for(int i=0;i<students.getLength();++i){
-			list.getÑ§Éú().add(getStudent((Element)students.item(i)));
+			list.getå­¦ç”Ÿ().add(getStudent((Element)students.item(i)));
 		}
 		return list;
 	}
 	
-	public static Ñ§ÉúÀàĞÍ getStudent(Element student){
-		Ñ§ÉúÀàĞÍ item = new Ñ§ÉúÀàĞÍ();
-		String ID = student.getAttribute("Ñ§ºÅ");
-		¸öÈË»ù±¾ĞÅÏ¢ÀàĞÍ personInfo = getPersonInfo(student);
-		¿Î³Ì³É¼¨ÁĞ±íÀàĞÍ courseInfo = getCourseInfo(student);
-		item.setÑ§ºÅ(ID);
-		item.setÑ§Éú»ù±¾ĞÅÏ¢(personInfo);
-		item.set¿Î³Ì³É¼¨ÁĞ±í(courseInfo);
+	public static å­¦ç”Ÿç±»å‹ getStudent(Element student){
+		å­¦ç”Ÿç±»å‹ item = new å­¦ç”Ÿç±»å‹();
+		String ID = student.getAttribute("å­¦å·");
+		ä¸ªäººåŸºæœ¬ä¿¡æ¯ç±»å‹ personInfo = getPersonInfo(student);
+		è¯¾ç¨‹æˆç»©åˆ—è¡¨ç±»å‹ courseInfo = getCourseInfo(student);
+		item.setå­¦å·(ID);
+		item.setå­¦ç”ŸåŸºæœ¬ä¿¡æ¯(personInfo);
+		item.setè¯¾ç¨‹æˆç»©åˆ—è¡¨(courseInfo);
 		return item;
 	}
 	
-	public static ¸öÈË»ù±¾ĞÅÏ¢ÀàĞÍ getPersonInfo(Element student){
-		Element ePersonInfo = (Element) student.getElementsByTagName("Ñ§Éú»ù±¾ĞÅÏ¢").item(0);
-		String name = ePersonInfo.getElementsByTagName("ĞÕÃû").item(0).getTextContent();
-		ĞÔ±ğÀàĞÍ sex = ĞÔ±ğÀàĞÍ.fromValue(ePersonInfo.getElementsByTagName("ĞÔ±ğ").item(0).getTextContent());
-		int year = Integer.parseInt(ePersonInfo.getElementsByTagName("ÈëÑ§Äê·İ").item(0).getTextContent());
+	public static ä¸ªäººåŸºæœ¬ä¿¡æ¯ç±»å‹ getPersonInfo(Element student){
+		Element ePersonInfo = (Element) student.getElementsByTagName("å­¦ç”ŸåŸºæœ¬ä¿¡æ¯").item(0);
+		String name = ePersonInfo.getElementsByTagName("å§“å").item(0).getTextContent();
+		æ€§åˆ«ç±»å‹ sex = æ€§åˆ«ç±»å‹.fromValue(ePersonInfo.getElementsByTagName("æ€§åˆ«").item(0).getTextContent());
+		int year = Integer.parseInt(ePersonInfo.getElementsByTagName("å…¥å­¦å¹´ä»½").item(0).getTextContent());
 		
-		int birthYear =  Integer.parseInt(((Element) ePersonInfo.getElementsByTagName("³öÉúÈÕÆÚ").item(0)).getElementsByTagName("Äê").item(0).getTextContent());
-		int birthMonth =  Integer.parseInt(((Element) ePersonInfo.getElementsByTagName("³öÉúÈÕÆÚ").item(0)).getElementsByTagName("ÔÂ").item(0).getTextContent());
-		int birthDate =  Integer.parseInt(((Element) ePersonInfo.getElementsByTagName("³öÉúÈÕÆÚ").item(0)).getElementsByTagName("ÈÕ").item(0).getTextContent());
-		ÉúÈÕÀàĞÍ birthday = new ÉúÈÕÀàĞÍ();
-		birthday.setÄê(birthYear);
-		birthday.setÔÂ(birthMonth);
-		birthday.setÈÕ(birthDate);
+		int birthYear =  Integer.parseInt(((Element) ePersonInfo.getElementsByTagName("å‡ºç”Ÿæ—¥æœŸ").item(0)).getElementsByTagName("å¹´").item(0).getTextContent());
+		int birthMonth =  Integer.parseInt(((Element) ePersonInfo.getElementsByTagName("å‡ºç”Ÿæ—¥æœŸ").item(0)).getElementsByTagName("æœˆ").item(0).getTextContent());
+		int birthDate =  Integer.parseInt(((Element) ePersonInfo.getElementsByTagName("å‡ºç”Ÿæ—¥æœŸ").item(0)).getElementsByTagName("æ—¥").item(0).getTextContent());
+		ç”Ÿæ—¥ç±»å‹ birthday = new ç”Ÿæ—¥ç±»å‹();
+		birthday.setå¹´(birthYear);
+		birthday.setæœˆ(birthMonth);
+		birthday.setæ—¥(birthDate);
 		
-		String phone = ePersonInfo.getElementsByTagName("ÊÖ»ú").item(0).getTextContent();
-		String address = ePersonInfo.getElementsByTagName("¼ÒÍ¥×¡Ö·").item(0).getTextContent();
-		²¿ÃÅĞÅÏ¢ÀàĞÍ department = getDepartmentInfo((Element) ePersonInfo.getElementsByTagName("²¿ÃÅĞÅÏ¢").item(0));
+		String phone = ePersonInfo.getElementsByTagName("æ‰‹æœº").item(0).getTextContent();
+		String address = ePersonInfo.getElementsByTagName("å®¶åº­ä½å€").item(0).getTextContent();
+		éƒ¨é—¨ä¿¡æ¯ç±»å‹ department = getDepartmentInfo((Element) ePersonInfo.getElementsByTagName("éƒ¨é—¨ä¿¡æ¯").item(0));
 		
-		¸öÈË»ù±¾ĞÅÏ¢ÀàĞÍ personInfo = new ¸öÈË»ù±¾ĞÅÏ¢ÀàĞÍ();
-		personInfo.setĞÕÃû(name);
-		personInfo.setĞÔ±ğ(sex);
-		personInfo.setÈëÑ§Äê·İ(year);
-		personInfo.set³öÉúÈÕÆÚ(birthday);
-		personInfo.setÊÖ»ú(phone);
-		personInfo.set¼ÒÍ¥×¡Ö·(address);
-		personInfo.set²¿ÃÅĞÅÏ¢(department);
+		ä¸ªäººåŸºæœ¬ä¿¡æ¯ç±»å‹ personInfo = new ä¸ªäººåŸºæœ¬ä¿¡æ¯ç±»å‹();
+		personInfo.setå§“å(name);
+		personInfo.setæ€§åˆ«(sex);
+		personInfo.setå…¥å­¦å¹´ä»½(year);
+		personInfo.setå‡ºç”Ÿæ—¥æœŸ(birthday);
+		personInfo.setæ‰‹æœº(phone);
+		personInfo.setå®¶åº­ä½å€(address);
+		personInfo.setéƒ¨é—¨ä¿¡æ¯(department);
 //		System.out.println(personInfo);
 		return personInfo;
 	}
 	
-	private static ²¿ÃÅĞÅÏ¢ÀàĞÍ getDepartmentInfo(Element department){
-		²¿ÃÅĞÅÏ¢ÀàĞÍ departmentType = new ²¿ÃÅĞÅÏ¢ÀàĞÍ();
-		String name = department.getElementsByTagName("²¿ÃÅÃû³Æ").item(0).getTextContent();
-		String ID = department.getAttribute("²¿ÃÅ±àºÅ");
-		²¿ÃÅÀàĞÍÀàĞÍ type = ²¿ÃÅÀàĞÍÀàĞÍ.fromValue(department.getAttribute("²¿ÃÅÀàĞÍ"));
-		²¿ÃÅ¹æÄ£ÀàĞÍ size = new ²¿ÃÅ¹æÄ£ÀàĞÍ();
-		NodeList NOPs = ((Element) department.getElementsByTagName("²¿ÃÅ¹æÄ£").item(0)).getElementsByTagName("ÈËÊı");
+	private static éƒ¨é—¨ä¿¡æ¯ç±»å‹ getDepartmentInfo(Element department){
+		éƒ¨é—¨ä¿¡æ¯ç±»å‹ departmentType = new éƒ¨é—¨ä¿¡æ¯ç±»å‹();
+		String name = department.getElementsByTagName("éƒ¨é—¨åç§°").item(0).getTextContent();
+		String ID = department.getAttribute("éƒ¨é—¨ç¼–å·");
+		éƒ¨é—¨ç±»å‹ç±»å‹ type = éƒ¨é—¨ç±»å‹ç±»å‹.fromValue(department.getAttribute("éƒ¨é—¨ç±»å‹"));
+		éƒ¨é—¨è§„æ¨¡ç±»å‹ size = new éƒ¨é—¨è§„æ¨¡ç±»å‹();
+		NodeList NOPs = ((Element) department.getElementsByTagName("éƒ¨é—¨è§„æ¨¡").item(0)).getElementsByTagName("äººæ•°");
 		for (int i = 0; i < NOPs.getLength(); i++) {
-			²¿ÃÅÈËÔ±ÀàĞÍ t = ²¿ÃÅÈËÔ±ÀàĞÍ.fromValue(((Element) NOPs.item(i)).getAttribute("ÀàĞÍ"));
+			éƒ¨é—¨äººå‘˜ç±»å‹ t = éƒ¨é—¨äººå‘˜ç±»å‹.fromValue(((Element) NOPs.item(i)).getAttribute("ç±»å‹"));
 			int num = Integer.parseInt(NOPs.item(i).getTextContent());
-			²¿ÃÅÈËÊıÀàĞÍ nt = new ²¿ÃÅÈËÊıÀàĞÍ();
+			éƒ¨é—¨äººæ•°ç±»å‹ nt = new éƒ¨é—¨äººæ•°ç±»å‹();
 			nt.setValue(num);
-			nt.setÀàĞÍ(t);
-			size.getÈËÊı().add(nt);
+			nt.setç±»å‹(t);
+			size.getäººæ•°().add(nt);
 		}
-		departmentType.set²¿ÃÅÃû³Æ(name);
-		departmentType.set²¿ÃÅÀàĞÍ(type);
-		departmentType.set²¿ÃÅ±àºÅ(ID);
-		departmentType.set²¿ÃÅ¹æÄ£(size);
+		departmentType.setéƒ¨é—¨åç§°(name);
+		departmentType.setéƒ¨é—¨ç±»å‹(type);
+		departmentType.setéƒ¨é—¨ç¼–å·(ID);
+		departmentType.setéƒ¨é—¨è§„æ¨¡(size);
 		return departmentType;
 	}
 	
-	public static ¿Î³Ì³É¼¨ÁĞ±íÀàĞÍ getCourseInfo(Element student){
-		Element eCourseInfo = (Element) student.getElementsByTagName("¿Î³Ì³É¼¨ÁĞ±í").item(0);
-		NodeList courses = eCourseInfo.getElementsByTagName("¿Î³Ì³É¼¨");
-		¿Î³Ì³É¼¨ÁĞ±íÀàĞÍ courseList = new ¿Î³Ì³É¼¨ÁĞ±íÀàĞÍ();
+	public static è¯¾ç¨‹æˆç»©åˆ—è¡¨ç±»å‹ getCourseInfo(Element student){
+		Element eCourseInfo = (Element) student.getElementsByTagName("è¯¾ç¨‹æˆç»©åˆ—è¡¨").item(0);
+		NodeList courses = eCourseInfo.getElementsByTagName("è¯¾ç¨‹æˆç»©");
+		è¯¾ç¨‹æˆç»©åˆ—è¡¨ç±»å‹ courseList = new è¯¾ç¨‹æˆç»©åˆ—è¡¨ç±»å‹();
 		
 		for (int i = 0; i < courses.getLength(); i++) {
-			¿Î³Ì³É¼¨ÀàĞÍ score = getScoreType((Element) courses.item(i));
-			courseList.get¿Î³Ì³É¼¨().add(score);
+			è¯¾ç¨‹æˆç»©ç±»å‹ score = getScoreType((Element) courses.item(i));
+			courseList.getè¯¾ç¨‹æˆç»©().add(score);
 		}
 //		System.out.println(courseList);
 		return courseList;
 	}
 	
-	private static ¿Î³Ì³É¼¨ÀàĞÍ getScoreType(Element eCourse){
-		¿Î³Ì³É¼¨ÀàĞÍ score = new ¿Î³Ì³É¼¨ÀàĞÍ();
-		String ID = eCourse.getAttribute("¿Î³Ì±àºÅ");
-		³É¼¨ĞÔÖÊÀàĞÍ type = ³É¼¨ĞÔÖÊÀàĞÍ.fromValue(eCourse.getAttribute("³É¼¨ĞÔÖÊ"));
-		NodeList list = eCourse.getElementsByTagName("³É¼¨");
+	private static è¯¾ç¨‹æˆç»©ç±»å‹ getScoreType(Element eCourse){
+		è¯¾ç¨‹æˆç»©ç±»å‹ score = new è¯¾ç¨‹æˆç»©ç±»å‹();
+		String ID = eCourse.getAttribute("è¯¾ç¨‹ç¼–å·");
+		æˆç»©æ€§è´¨ç±»å‹ type = æˆç»©æ€§è´¨ç±»å‹.fromValue(eCourse.getAttribute("æˆç»©æ€§è´¨"));
+		NodeList list = eCourse.getElementsByTagName("æˆç»©");
 		for(int i=0;i<list.getLength();++i){
-			³É¼¨ÀàĞÍ point = getScore((Element) list.item(0));
-			score.get³É¼¨().add(point);
+			æˆç»©ç±»å‹ point = getScore((Element) list.item(0));
+			score.getæˆç»©().add(point);
 		}
-		score.set³É¼¨ĞÔÖÊ(type);
-		score.set¿Î³Ì±àºÅ(ID);
+		score.setæˆç»©æ€§è´¨(type);
+		score.setè¯¾ç¨‹ç¼–å·(ID);
 		return score;
 	}
 	
-	private static ³É¼¨ÀàĞÍ getScore(Element escore){
-		String stuID = escore.getElementsByTagName("Ñ§ºÅ").item(0).getTextContent();
-		int point = Integer.parseInt(escore.getElementsByTagName("µÃ·Ö").item(0).getTextContent());
-		³É¼¨ÀàĞÍ score = new ³É¼¨ÀàĞÍ();
-		score.setÑ§ºÅ(stuID);
-		score.setµÃ·Ö(point);
+	private static æˆç»©ç±»å‹ getScore(Element escore){
+		String stuID = escore.getElementsByTagName("å­¦å·").item(0).getTextContent();
+		int point = Integer.parseInt(escore.getElementsByTagName("å¾—åˆ†").item(0).getTextContent());
+		æˆç»©ç±»å‹ score = new æˆç»©ç±»å‹();
+		score.setå­¦å·(stuID);
+		score.setå¾—åˆ†(point);
 		return score;
 	}
 	
-	public static Document create(Ñ§ÉúÁĞ±íĞÅÏ¢ list){
+	public static Document create(å­¦ç”Ÿåˆ—è¡¨ä¿¡æ¯ list){
 		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder builder = null;
 		try {
@@ -202,13 +202,13 @@ public class StudentScoreListBuilder {
 		
 		if (document != null) {
 			
-			Element studentList = document.createElement("Ñ§ÉúÁĞ±í");
+			Element studentList = document.createElement("å­¦ç”Ÿåˆ—è¡¨");
 			studentList.setAttributeNode(jwAttr);
 			studentList.setAttributeNode(xsiAttr);
 			studentList.setAttributeNode(schemaAttr);
 			
-			for(int i = 0; i < list.getÑ§Éú().size(); i++) {
-				addStudent(document,studentList, list.getÑ§Éú().get(i));
+			for(int i = 0; i < list.getå­¦ç”Ÿ().size(); i++) {
+				addStudent(document,studentList, list.getå­¦ç”Ÿ().get(i));
 			}
 			
 			document.appendChild(studentList);
@@ -217,57 +217,57 @@ public class StudentScoreListBuilder {
 		return document;
 	}
 	
-	private static void addStudent(Document document, Element studentList, Ñ§ÉúÀàĞÍ studentT) {
+	private static void addStudent(Document document, Element studentList, å­¦ç”Ÿç±»å‹ studentT) {
 		Attr njuAttr = document.createAttribute("xmlns");
 		njuAttr.setValue(NS_NJU);
 		
-		Element student = document.createElement("Ñ§Éú");
-		student.setAttribute("Ñ§ºÅ", studentT.getÑ§ºÅ());
+		Element student = document.createElement("å­¦ç”Ÿ");
+		student.setAttribute("å­¦å·", studentT.getå­¦å·());
 		
-		//Ñ§Éú»ù±¾ĞÅÏ¢
-		Element personInfo = document.createElement("Ñ§Éú»ù±¾ĞÅÏ¢");
+		//å­¦ç”ŸåŸºæœ¬ä¿¡æ¯
+		Element personInfo = document.createElement("å­¦ç”ŸåŸºæœ¬ä¿¡æ¯");
 		personInfo.setAttributeNode(njuAttr);
-		Element name = document.createElement("ĞÕÃû");
-		Element sex = document.createElement("ĞÔ±ğ");
-		Element comin = document.createElement("ÈëÑ§Äê·İ");
-		name.setTextContent(studentT.getÑ§Éú»ù±¾ĞÅÏ¢().getĞÕÃû());
-		sex.setTextContent(studentT.getÑ§Éú»ù±¾ĞÅÏ¢().getĞÔ±ğ().toString());
-		comin.setTextContent(studentT.getÑ§Éú»ù±¾ĞÅÏ¢().getÈëÑ§Äê·İ()+"");
+		Element name = document.createElement("å§“å");
+		Element sex = document.createElement("æ€§åˆ«");
+		Element comin = document.createElement("å…¥å­¦å¹´ä»½");
+		name.setTextContent(studentT.getå­¦ç”ŸåŸºæœ¬ä¿¡æ¯().getå§“å());
+		sex.setTextContent(studentT.getå­¦ç”ŸåŸºæœ¬ä¿¡æ¯().getæ€§åˆ«().toString());
+		comin.setTextContent(studentT.getå­¦ç”ŸåŸºæœ¬ä¿¡æ¯().getå…¥å­¦å¹´ä»½()+"");
 		personInfo.appendChild(name);
 		personInfo.appendChild(sex);
 		personInfo.appendChild(comin);
 		
 		
-		Element birth = document.createElement("³öÉúÈÕÆÚ");
-		Element year = document.createElement("Äê");
-		Element month = document.createElement("ÔÂ");
-		Element day = document.createElement("ÈÕ");
-		year.setTextContent(studentT.getÑ§Éú»ù±¾ĞÅÏ¢().get³öÉúÈÕÆÚ().getÄê() + "");
-		month.setTextContent(studentT.getÑ§Éú»ù±¾ĞÅÏ¢().get³öÉúÈÕÆÚ().getÔÂ() + "");
-		day.setTextContent(studentT.getÑ§Éú»ù±¾ĞÅÏ¢().get³öÉúÈÕÆÚ().getÈÕ() + "");
+		Element birth = document.createElement("å‡ºç”Ÿæ—¥æœŸ");
+		Element year = document.createElement("å¹´");
+		Element month = document.createElement("æœˆ");
+		Element day = document.createElement("æ—¥");
+		year.setTextContent(studentT.getå­¦ç”ŸåŸºæœ¬ä¿¡æ¯().getå‡ºç”Ÿæ—¥æœŸ().getå¹´() + "");
+		month.setTextContent(studentT.getå­¦ç”ŸåŸºæœ¬ä¿¡æ¯().getå‡ºç”Ÿæ—¥æœŸ().getæœˆ() + "");
+		day.setTextContent(studentT.getå­¦ç”ŸåŸºæœ¬ä¿¡æ¯().getå‡ºç”Ÿæ—¥æœŸ().getæ—¥() + "");
 		birth.appendChild(year);
 		birth.appendChild(month);
 		birth.appendChild(day);
 		personInfo.appendChild(birth);
 		
-		Element telephone = document.createElement("ÊÖ»ú");
-		Element address = document.createElement("¼ÒÍ¥×¡Ö·");
-		telephone.setTextContent(studentT.getÑ§Éú»ù±¾ĞÅÏ¢().getÊÖ»ú());
-		address.setTextContent(studentT.getÑ§Éú»ù±¾ĞÅÏ¢().get¼ÒÍ¥×¡Ö·());
+		Element telephone = document.createElement("æ‰‹æœº");
+		Element address = document.createElement("å®¶åº­ä½å€");
+		telephone.setTextContent(studentT.getå­¦ç”ŸåŸºæœ¬ä¿¡æ¯().getæ‰‹æœº());
+		address.setTextContent(studentT.getå­¦ç”ŸåŸºæœ¬ä¿¡æ¯().getå®¶åº­ä½å€());
 		personInfo.appendChild(telephone);
 		personInfo.appendChild(address);
 		
-		Element department = document.createElement("²¿ÃÅĞÅÏ¢");
-		department.setAttribute("²¿ÃÅÀàĞÍ", studentT.getÑ§Éú»ù±¾ĞÅÏ¢().get²¿ÃÅĞÅÏ¢().get²¿ÃÅÀàĞÍ().toString());
-		department.setAttribute("²¿ÃÅ±àºÅ", studentT.getÑ§Éú»ù±¾ĞÅÏ¢().get²¿ÃÅĞÅÏ¢().get²¿ÃÅ±àºÅ());
-		Element departmentName = document.createElement("²¿ÃÅÃû³Æ");
-		departmentName.setTextContent("Èí¼şÑ§Ôº");
+		Element department = document.createElement("éƒ¨é—¨ä¿¡æ¯");
+		department.setAttribute("éƒ¨é—¨ç±»å‹", studentT.getå­¦ç”ŸåŸºæœ¬ä¿¡æ¯().getéƒ¨é—¨ä¿¡æ¯().getéƒ¨é—¨ç±»å‹().toString());
+		department.setAttribute("éƒ¨é—¨ç¼–å·", studentT.getå­¦ç”ŸåŸºæœ¬ä¿¡æ¯().getéƒ¨é—¨ä¿¡æ¯().getéƒ¨é—¨ç¼–å·());
+		Element departmentName = document.createElement("éƒ¨é—¨åç§°");
+		departmentName.setTextContent("è½¯ä»¶å­¦é™¢");
 		department.appendChild(departmentName);
 		
-		Element size = document.createElement("²¿ÃÅ¹æÄ£");
-		for (²¿ÃÅÈËÊıÀàĞÍ people : studentT.getÑ§Éú»ù±¾ĞÅÏ¢().get²¿ÃÅĞÅÏ¢().get²¿ÃÅ¹æÄ£().getÈËÊı()) {
-			Element studentSize = document.createElement("ÈËÊı");
-			studentSize.setAttribute("ÀàĞÍ", people.getÀàĞÍ().toString());
+		Element size = document.createElement("éƒ¨é—¨è§„æ¨¡");
+		for (éƒ¨é—¨äººæ•°ç±»å‹ people : studentT.getå­¦ç”ŸåŸºæœ¬ä¿¡æ¯().getéƒ¨é—¨ä¿¡æ¯().getéƒ¨é—¨è§„æ¨¡().getäººæ•°()) {
+			Element studentSize = document.createElement("äººæ•°");
+			studentSize.setAttribute("ç±»å‹", people.getç±»å‹().toString());
 			studentSize.setTextContent(people.getValue()+"");
 			size.appendChild(studentSize);
 		}
@@ -276,19 +276,19 @@ public class StudentScoreListBuilder {
 		
 		student.appendChild(personInfo);
 		
-		//¿Î³Ì³É¼¨ÁĞ±í
-		Element scoreList = document.createElement("¿Î³Ì³É¼¨ÁĞ±í");
-		for(¿Î³Ì³É¼¨ÀàĞÍ peopleScore:studentT.get¿Î³Ì³É¼¨ÁĞ±í().get¿Î³Ì³É¼¨()) {
-			for(³É¼¨ÀàĞÍ score:peopleScore.get³É¼¨()) {
-				Element scoreDes = document.createElement("¿Î³Ì³É¼¨");
-				scoreDes.setAttribute("¿Î³Ì±àºÅ", peopleScore.get¿Î³Ì±àºÅ());
-				scoreDes.setAttribute("³É¼¨ĞÔÖÊ", peopleScore.get³É¼¨ĞÔÖÊ().toString());
-				Element usualScore = document.createElement("³É¼¨");
-				Element scoreStudentId = document.createElement("Ñ§ºÅ");
-				scoreStudentId.setTextContent(score.getÑ§ºÅ());
+		//è¯¾ç¨‹æˆç»©åˆ—è¡¨
+		Element scoreList = document.createElement("è¯¾ç¨‹æˆç»©åˆ—è¡¨");
+		for(è¯¾ç¨‹æˆç»©ç±»å‹ peopleScore:studentT.getè¯¾ç¨‹æˆç»©åˆ—è¡¨().getè¯¾ç¨‹æˆç»©()) {
+			for(æˆç»©ç±»å‹ score:peopleScore.getæˆç»©()) {
+				Element scoreDes = document.createElement("è¯¾ç¨‹æˆç»©");
+				scoreDes.setAttribute("è¯¾ç¨‹ç¼–å·", peopleScore.getè¯¾ç¨‹ç¼–å·());
+				scoreDes.setAttribute("æˆç»©æ€§è´¨", peopleScore.getæˆç»©æ€§è´¨().toString());
+				Element usualScore = document.createElement("æˆç»©");
+				Element scoreStudentId = document.createElement("å­¦å·");
+				scoreStudentId.setTextContent(score.getå­¦å·());
 				usualScore.appendChild(scoreStudentId);
-				Element scorePoint = document.createElement("µÃ·Ö");
-				scorePoint.setTextContent(score.getµÃ·Ö() + "");
+				Element scorePoint = document.createElement("å¾—åˆ†");
+				scorePoint.setTextContent(score.getå¾—åˆ†() + "");
 				usualScore.appendChild(scorePoint);
 				
 				scoreDes.appendChild(usualScore);

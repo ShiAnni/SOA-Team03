@@ -60,24 +60,24 @@ public class MailImpl implements MailInterface {
 			int i = getIdentity(user);
 			switch(i) {
 			case 1:
-				System.out.println("µÇÂ¼³É¹¦£¡Éí·İÊÇ±¾¿ÆÉú");
-				return UserType.±¾¿ÆÉú;
+				System.out.println("ç™»å½•æˆåŠŸï¼èº«ä»½æ˜¯æœ¬ç§‘ç”Ÿ");
+				return UserType.æœ¬ç§‘ç”Ÿ;
 			case 2:
-				System.out.println("µÇÂ¼³É¹¦£¡Éí·İÊÇÑĞ¾¿Éú");
-				return UserType.ÑĞ¾¿Éú;
+				System.out.println("ç™»å½•æˆåŠŸï¼èº«ä»½æ˜¯ç ”ç©¶ç”Ÿ");
+				return UserType.ç ”ç©¶ç”Ÿ;
 			case 4:
-				System.out.println("µÇÂ¼³É¹¦£¡Éí·İÊÇÀÏÊ¦");
-				return UserType.½ÌÊ¦;
+				System.out.println("ç™»å½•æˆåŠŸï¼èº«ä»½æ˜¯è€å¸ˆ");
+				return UserType.æ•™å¸ˆ;
 			case 3:
-				System.out.println("µÇÂ¼³É¹¦£¡Éí·İÎ´Öª");
-				return UserType.Î´ÖªÀàĞÍ;
+				System.out.println("ç™»å½•æˆåŠŸï¼èº«ä»½æœªçŸ¥");
+				return UserType.æœªçŸ¥ç±»å‹;
 			default:
-				return UserType.Î´ÖªÀàĞÍ;
+				return UserType.æœªçŸ¥ç±»å‹;
 			}
 		} else {
-			System.out.println("µÇÂ¼Ê§°Ü");
+			System.out.println("ç™»å½•å¤±è´¥");
 		}
-		throw new LoginFailedFault("µÇÂ¼Ê§°Ü","µÇÂ¼Ê§°Ü");
+		throw new LoginFailedFault("ç™»å½•å¤±è´¥","ç™»å½•å¤±è´¥");
 	}
 	
 	@WebMethod(exclude = true)

@@ -7,18 +7,18 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>ÉúÈÕÀàĞÍ complex typeµÄ Java Àà¡£
+ * <p>ç”Ÿæ—¥ç±»å‹ complex typeçš„ Java ç±»ã€‚
  * 
- * <p>ÒÔÏÂÄ£Ê½Æ¬¶ÎÖ¸¶¨°üº¬ÔÚ´ËÀàÖĞµÄÔ¤ÆÚÄÚÈİ¡£
+ * <p>ä»¥ä¸‹æ¨¡å¼ç‰‡æ®µæŒ‡å®šåŒ…å«åœ¨æ­¤ç±»ä¸­çš„é¢„æœŸå†…å®¹ã€‚
  * 
  * <pre>
- * &lt;complexType name="ÉúÈÕÀàĞÍ">
+ * &lt;complexType name="ç”Ÿæ—¥ç±»å‹">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="Äê" type="{http://www.nju.edu.cn/schema}ÄêÀàĞÍ"/>
- *         &lt;element name="ÔÂ" type="{http://www.nju.edu.cn/schema}ÔÂÀàĞÍ"/>
- *         &lt;element name="ÈÕ" type="{http://www.nju.edu.cn/schema}ÈÕÀàĞÍ"/>
+ *         &lt;element name="å¹´" type="{http://www.nju.edu.cn/schema}å¹´ç±»å‹"/>
+ *         &lt;element name="æœˆ" type="{http://www.nju.edu.cn/schema}æœˆç±»å‹"/>
+ *         &lt;element name="æ—¥" type="{http://www.nju.edu.cn/schema}æ—¥ç±»å‹"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -33,58 +33,58 @@ import javax.xml.bind.annotation.XmlType;
     "\u6708",
     "\u65e5"
 })
-public class ÉúÈÕÀàĞÍ {
+public class ç”Ÿæ—¥ç±»å‹ {
 
-    protected int Äê;
-    protected int ÔÂ;
-    protected int ÈÕ;
+    protected int å¹´;
+    protected int æœˆ;
+    protected int æ—¥;
 
     /**
-     * »ñÈ¡ÄêÊôĞÔµÄÖµ¡£
+     * è·å–å¹´å±æ€§çš„å€¼ã€‚
      * 
      */
-    public int getÄê() {
-        return Äê;
+    public int getå¹´() {
+        return å¹´;
     }
 
     /**
-     * ÉèÖÃÄêÊôĞÔµÄÖµ¡£
+     * è®¾ç½®å¹´å±æ€§çš„å€¼ã€‚
      * 
      */
-    public void setÄê(int value) {
-        this.Äê = value;
+    public void setå¹´(int value) {
+        this.å¹´ = value;
     }
 
     /**
-     * »ñÈ¡ÔÂÊôĞÔµÄÖµ¡£
+     * è·å–æœˆå±æ€§çš„å€¼ã€‚
      * 
      */
-    public int getÔÂ() {
-        return ÔÂ;
+    public int getæœˆ() {
+        return æœˆ;
     }
 
     /**
-     * ÉèÖÃÔÂÊôĞÔµÄÖµ¡£
+     * è®¾ç½®æœˆå±æ€§çš„å€¼ã€‚
      * 
      */
-    public void setÔÂ(int value) {
-        this.ÔÂ = value;
+    public void setæœˆ(int value) {
+        this.æœˆ = value;
     }
 
     /**
-     * »ñÈ¡ÈÕÊôĞÔµÄÖµ¡£
+     * è·å–æ—¥å±æ€§çš„å€¼ã€‚
      * 
      */
-    public int getÈÕ() {
-        return ÈÕ;
+    public int getæ—¥() {
+        return æ—¥;
     }
 
     /**
-     * ÉèÖÃÈÕÊôĞÔµÄÖµ¡£
+     * è®¾ç½®æ—¥å±æ€§çš„å€¼ã€‚
      * 
      */
-    public void setÈÕ(int value) {
-        this.ÈÕ = value;
+    public void setæ—¥(int value) {
+        this.æ—¥ = value;
     }
 
 }

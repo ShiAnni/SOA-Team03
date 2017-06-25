@@ -6,10 +6,10 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "userType")
 @XmlEnum
 public enum UserType {
-	½ÌÊ¦,
-    ÑÐ¾¿Éú,
-    ±¾¿ÆÉú,
-    Î´ÖªÀàÐÍ;
+	æ•™å¸ˆ,
+    ç ”ç©¶ç”Ÿ,
+    æœ¬ç§‘ç”Ÿ,
+    æœªçŸ¥ç±»åž‹;
 	
 	public String value() {
         return name();

@@ -7,8 +7,8 @@ import javax.jws.WebResult;
 import javax.jws.WebService;
 import javax.jws.soap.SOAPBinding;
 import javax.xml.bind.annotation.XmlSeeAlso;
-import cn.edu.nju.jw.schema.学生列表信息;
-import cn.edu.nju.jw.schema.学生类型;
+import cn.edu.nju.jw.schema.瀛︾敓鍒楄〃淇℃伅;
+import cn.edu.nju.jw.schema.瀛︾敓绫诲瀷;
 
 
 /**
@@ -31,11 +31,11 @@ public interface StudentManagementInterface {
      * 
      * @param none
      * @return
-     *     returns cn.edu.nju.jw.schema.学生列表信息
+     *     returns cn.edu.nju.jw.schema.瀛︾敓鍒楄〃淇℃伅
      */
     @WebMethod(action = "http://jw.nju.edu.cn/wsdl/getAllStudents")
     @WebResult(name = "studentList", targetNamespace = "http://jw.nju.edu.cn/wsdl", partName = "list")
-    public 学生列表信息 getAllStudents(
+    public 瀛︾敓鍒楄〃淇℃伅 getAllStudents(
         @WebParam(name = "none", targetNamespace = "http://jw.nju.edu.cn/wsdl", partName = "none")
         NoneType none);
 
@@ -43,13 +43,13 @@ public interface StudentManagementInterface {
      * 
      * @param checkInfo
      * @return
-     *     returns cn.edu.nju.jw.wsdl.验证信息
+     *     returns cn.edu.nju.jw.wsdl.楠岃瘉淇℃伅
      */
     @WebMethod(action = "http://jw.nju.edu.cn/wsdl/checkStudent")
     @WebResult(name = "isCorrect", targetNamespace = "http://jw.nju.edu.cn/wsdl", partName = "checkResponse")
-    public 验证信息 checkStudent(
+    public 楠岃瘉淇℃伅 checkStudent(
         @WebParam(name = "studentInfo", targetNamespace = "http://jw.nju.edu.cn/wsdl", partName = "checkInfo")
-        学生类型 checkInfo);
+        瀛︾敓绫诲瀷 checkInfo);
 
     /**
      * 
@@ -62,7 +62,7 @@ public interface StudentManagementInterface {
     @WebResult(name = "isSuccess", targetNamespace = "http://jw.nju.edu.cn/wsdl", partName = "updateSuccess")
     public String addStudent(
         @WebParam(name = "studentInfo", targetNamespace = "http://jw.nju.edu.cn/wsdl", partName = "addInfo")
-        学生类型 addInfo)
+        瀛︾敓绫诲瀷 addInfo)
         throws AddInfoFault
     ;
 
@@ -77,7 +77,7 @@ public interface StudentManagementInterface {
     @WebResult(name = "isSuccess", targetNamespace = "http://jw.nju.edu.cn/wsdl", partName = "updateSuccess")
     public String updateStudent(
         @WebParam(name = "studentInfo", targetNamespace = "http://jw.nju.edu.cn/wsdl", partName = "updateInfo")
-        学生类型 updateInfo)
+        瀛︾敓绫诲瀷 updateInfo)
         throws UpdateInfoFault
     ;
 
@@ -92,7 +92,7 @@ public interface StudentManagementInterface {
     @WebResult(name = "isSuccess", targetNamespace = "http://jw.nju.edu.cn/wsdl", partName = "deleteSuccess")
     public String deleteStudent(
         @WebParam(name = "studentInfo", targetNamespace = "http://jw.nju.edu.cn/wsdl", partName = "deleteInfo")
-        学生类型 deleteInfo)
+        瀛︾敓绫诲瀷 deleteInfo)
         throws DeleteInfoFault
     ;
 

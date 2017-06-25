@@ -6,23 +6,23 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import cn.edu.nju.schema.¸öÈË»ù±¾ĞÅÏ¢ÀàĞÍ;
+import cn.edu.nju.schema.ä¸ªäººåŸºæœ¬ä¿¡æ¯ç±»å‹;
 
 
 /**
- * <p>Ñ§ÉúÀàĞÍ complex typeµÄ Java Àà¡£
+ * <p>å­¦ç”Ÿç±»å‹ complex typeçš„ Java ç±»ã€‚
  * 
- * <p>ÒÔÏÂÄ£Ê½Æ¬¶ÎÖ¸¶¨°üº¬ÔÚ´ËÀàÖĞµÄÔ¤ÆÚÄÚÈİ¡£
+ * <p>ä»¥ä¸‹æ¨¡å¼ç‰‡æ®µæŒ‡å®šåŒ…å«åœ¨æ­¤ç±»ä¸­çš„é¢„æœŸå†…å®¹ã€‚
  * 
  * <pre>
- * &lt;complexType name="Ñ§ÉúÀàĞÍ">
+ * &lt;complexType name="å­¦ç”Ÿç±»å‹">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;all>
- *         &lt;element ref="{http://www.nju.edu.cn/schema}Ñ§Éú»ù±¾ĞÅÏ¢"/>
- *         &lt;element ref="{http://jw.nju.edu.cn/schema}¿Î³Ì³É¼¨ÁĞ±í"/>
+ *         &lt;element ref="{http://www.nju.edu.cn/schema}å­¦ç”ŸåŸºæœ¬ä¿¡æ¯"/>
+ *         &lt;element ref="{http://jw.nju.edu.cn/schema}è¯¾ç¨‹æˆç»©åˆ—è¡¨"/>
  *       &lt;/all>
- *       &lt;attribute name="Ñ§ºÅ" type="{http://jw.nju.edu.cn/schema}Ñ§ºÅÀàĞÍ" />
+ *       &lt;attribute name="å­¦å·" type="{http://jw.nju.edu.cn/schema}å­¦å·ç±»å‹" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -34,85 +34,85 @@ import cn.edu.nju.schema.¸öÈË»ù±¾ĞÅÏ¢ÀàĞÍ;
 @XmlType(name = "\u5b66\u751f\u7c7b\u578b", propOrder = {
 
 })
-public class Ñ§ÉúÀàĞÍ {
+public class å­¦ç”Ÿç±»å‹ {
 
     @XmlElement(namespace = "http://www.nju.edu.cn/schema", required = true)
-    protected ¸öÈË»ù±¾ĞÅÏ¢ÀàĞÍ Ñ§Éú»ù±¾ĞÅÏ¢;
+    protected ä¸ªäººåŸºæœ¬ä¿¡æ¯ç±»å‹ å­¦ç”ŸåŸºæœ¬ä¿¡æ¯;
     @XmlElement(required = true)
-    protected ¿Î³Ì³É¼¨ÁĞ±íÀàĞÍ ¿Î³Ì³É¼¨ÁĞ±í;
+    protected è¯¾ç¨‹æˆç»©åˆ—è¡¨ç±»å‹ è¯¾ç¨‹æˆç»©åˆ—è¡¨;
     @XmlAttribute
-    protected String Ñ§ºÅ;
+    protected String å­¦å·;
 
     /**
-     * »ñÈ¡Ñ§Éú»ù±¾ĞÅÏ¢ÊôĞÔµÄÖµ¡£
+     * è·å–å­¦ç”ŸåŸºæœ¬ä¿¡æ¯å±æ€§çš„å€¼ã€‚
      * 
      * @return
      *     possible object is
-     *     {@link ¸öÈË»ù±¾ĞÅÏ¢ÀàĞÍ }
+     *     {@link ä¸ªäººåŸºæœ¬ä¿¡æ¯ç±»å‹ }
      *     
      */
-    public ¸öÈË»ù±¾ĞÅÏ¢ÀàĞÍ getÑ§Éú»ù±¾ĞÅÏ¢() {
-        return Ñ§Éú»ù±¾ĞÅÏ¢;
+    public ä¸ªäººåŸºæœ¬ä¿¡æ¯ç±»å‹ getå­¦ç”ŸåŸºæœ¬ä¿¡æ¯() {
+        return å­¦ç”ŸåŸºæœ¬ä¿¡æ¯;
     }
 
     /**
-     * ÉèÖÃÑ§Éú»ù±¾ĞÅÏ¢ÊôĞÔµÄÖµ¡£
+     * è®¾ç½®å­¦ç”ŸåŸºæœ¬ä¿¡æ¯å±æ€§çš„å€¼ã€‚
      * 
      * @param value
      *     allowed object is
-     *     {@link ¸öÈË»ù±¾ĞÅÏ¢ÀàĞÍ }
+     *     {@link ä¸ªäººåŸºæœ¬ä¿¡æ¯ç±»å‹ }
      *     
      */
-    public void setÑ§Éú»ù±¾ĞÅÏ¢(¸öÈË»ù±¾ĞÅÏ¢ÀàĞÍ value) {
-        this.Ñ§Éú»ù±¾ĞÅÏ¢ = value;
+    public void setå­¦ç”ŸåŸºæœ¬ä¿¡æ¯(ä¸ªäººåŸºæœ¬ä¿¡æ¯ç±»å‹ value) {
+        this.å­¦ç”ŸåŸºæœ¬ä¿¡æ¯ = value;
     }
 
     /**
-     * »ñÈ¡¿Î³Ì³É¼¨ÁĞ±íÊôĞÔµÄÖµ¡£
+     * è·å–è¯¾ç¨‹æˆç»©åˆ—è¡¨å±æ€§çš„å€¼ã€‚
      * 
      * @return
      *     possible object is
-     *     {@link ¿Î³Ì³É¼¨ÁĞ±íÀàĞÍ }
+     *     {@link è¯¾ç¨‹æˆç»©åˆ—è¡¨ç±»å‹ }
      *     
      */
-    public ¿Î³Ì³É¼¨ÁĞ±íÀàĞÍ get¿Î³Ì³É¼¨ÁĞ±í() {
-        return ¿Î³Ì³É¼¨ÁĞ±í;
+    public è¯¾ç¨‹æˆç»©åˆ—è¡¨ç±»å‹ getè¯¾ç¨‹æˆç»©åˆ—è¡¨() {
+        return è¯¾ç¨‹æˆç»©åˆ—è¡¨;
     }
 
     /**
-     * ÉèÖÃ¿Î³Ì³É¼¨ÁĞ±íÊôĞÔµÄÖµ¡£
+     * è®¾ç½®è¯¾ç¨‹æˆç»©åˆ—è¡¨å±æ€§çš„å€¼ã€‚
      * 
      * @param value
      *     allowed object is
-     *     {@link ¿Î³Ì³É¼¨ÁĞ±íÀàĞÍ }
+     *     {@link è¯¾ç¨‹æˆç»©åˆ—è¡¨ç±»å‹ }
      *     
      */
-    public void set¿Î³Ì³É¼¨ÁĞ±í(¿Î³Ì³É¼¨ÁĞ±íÀàĞÍ value) {
-        this.¿Î³Ì³É¼¨ÁĞ±í = value;
+    public void setè¯¾ç¨‹æˆç»©åˆ—è¡¨(è¯¾ç¨‹æˆç»©åˆ—è¡¨ç±»å‹ value) {
+        this.è¯¾ç¨‹æˆç»©åˆ—è¡¨ = value;
     }
 
     /**
-     * »ñÈ¡Ñ§ºÅÊôĞÔµÄÖµ¡£
+     * è·å–å­¦å·å±æ€§çš„å€¼ã€‚
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getÑ§ºÅ() {
-        return Ñ§ºÅ;
+    public String getå­¦å·() {
+        return å­¦å·;
     }
 
     /**
-     * ÉèÖÃÑ§ºÅÊôĞÔµÄÖµ¡£
+     * è®¾ç½®å­¦å·å±æ€§çš„å€¼ã€‚
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setÑ§ºÅ(String value) {
-        this.Ñ§ºÅ = value;
+    public void setå­¦å·(String value) {
+        this.å­¦å· = value;
     }
 
 }

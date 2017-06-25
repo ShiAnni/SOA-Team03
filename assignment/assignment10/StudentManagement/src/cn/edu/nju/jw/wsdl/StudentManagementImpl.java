@@ -5,49 +5,49 @@ import javax.jws.WebService;
 import org.w3c.dom.Document;
 import org.w3c.dom.NodeList;
 
-import cn.edu.nju.jw.schema.学生列表信息;
-import cn.edu.nju.jw.schema.学生类型;
+import cn.edu.nju.jw.schema.瀛︾敓鍒楄〃淇℃伅;
+import cn.edu.nju.jw.schema.瀛︾敓绫诲瀷;
 import cn.edu.nju.util.StudentScoreListBuilder;
 @WebService(endpointInterface="cn.edu.nju.jw.wsdl.StudentManagementInterface")  
 public class StudentManagementImpl implements StudentManagementInterface {
 
 	@Override
-	public 学生列表信息 getAllStudents(NoneType none) {
-		Document doc = StudentScoreListBuilder.getDocument("文档2");
-		NodeList students = doc.getDocumentElement().getElementsByTagName("学生");
+	public 瀛︾敓鍒楄〃淇℃伅 getAllStudents(NoneType none) {
+		Document doc = StudentScoreListBuilder.getDocument("鏂囨。2");
+		NodeList students = doc.getDocumentElement().getElementsByTagName("瀛︾敓");
 		return StudentScoreListBuilder.getRootList(students);
 	}
 
 	@Override
-	public 验证信息 checkStudent(学生类型 checkInfo) {
-		学生列表信息 list = getAllStudents(new NoneType());
-		for (学生类型 student : list.get学生()) {
+	public 楠岃瘉淇℃伅 checkStudent(瀛︾敓绫诲瀷 checkInfo) {
+		瀛︾敓鍒楄〃淇℃伅 list = getAllStudents(new NoneType());
+		for (瀛︾敓绫诲瀷 student : list.get瀛︾敓()) {
 			if(checkInfo.equals(student))
-				return 验证信息.正确;
+				return 楠岃瘉淇℃伅.姝ｇ‘;
 		}
-		return 验证信息.错误;
+		return 楠岃瘉淇℃伅.閿欒;
 	}
 
 	@Override
-	public String addStudent(学生类型 addInfo) throws AddInfoFault {
-		学生列表信息 list = getAllStudents(new NoneType());
-		for (学生类型 student : list.get学生()) {
-			if(student.get学号().equals(addInfo.get学号()))
-				throw new AddInfoFault("列表中已有相应学号的学生","列表中已有相应学号的学生");
+	public String addStudent(瀛︾敓绫诲瀷 addInfo) throws AddInfoFault {
+		瀛︾敓鍒楄〃淇℃伅 list = getAllStudents(new NoneType());
+		for (瀛︾敓绫诲瀷 student : list.get瀛︾敓()) {
+			if(student.get瀛﹀彿().equals(addInfo.get瀛﹀彿()))
+				throw new AddInfoFault("鍒楄〃涓凡鏈夌浉搴斿鍙风殑瀛︾敓","鍒楄〃涓凡鏈夌浉搴斿鍙风殑瀛︾敓");
 		}
-		list.get学生().add(addInfo);
+		list.get瀛︾敓().add(addInfo);
 		Document doc = StudentScoreListBuilder.create(list);
 		
 		return StudentScoreListBuilder.saveDocument(doc);
 	}
 
 	@Override
-	public String updateStudent(学生类型 updateInfo) throws UpdateInfoFault {
+	public String updateStudent(瀛︾敓绫诲瀷 updateInfo) throws UpdateInfoFault {
 		boolean found=false;
-		学生列表信息 list = getAllStudents(new NoneType());
-		for (int i=0;i<list.get学生().size();++i) {
-			if(list.get学生().get(i).get学号().equals(updateInfo.get学号())){
-				list.get学生().set(i, updateInfo);
+		瀛︾敓鍒楄〃淇℃伅 list = getAllStudents(new NoneType());
+		for (int i=0;i<list.get瀛︾敓().size();++i) {
+			if(list.get瀛︾敓().get(i).get瀛﹀彿().equals(updateInfo.get瀛﹀彿())){
+				list.get瀛︾敓().set(i, updateInfo);
 				found=true;
 			}
 		}
@@ -55,17 +55,17 @@ public class StudentManagementImpl implements StudentManagementInterface {
 			Document doc = StudentScoreListBuilder.create(list);
 			return StudentScoreListBuilder.saveDocument(doc);
 		}else{
-			throw new UpdateInfoFault("列表中没有相应学号的学生","列表中没有相应学号的学生");
+			throw new UpdateInfoFault("鍒楄〃涓病鏈夌浉搴斿鍙风殑瀛︾敓","鍒楄〃涓病鏈夌浉搴斿鍙风殑瀛︾敓");
 		}
 	}
 
 	@Override
-	public String deleteStudent(学生类型 deleteInfo) throws DeleteInfoFault {
+	public String deleteStudent(瀛︾敓绫诲瀷 deleteInfo) throws DeleteInfoFault {
 		boolean found=false;
-		学生列表信息 list = getAllStudents(new NoneType());
-		for (int i=0;i<list.get学生().size();++i) {
-			if(list.get学生().get(i).get学号().equals(deleteInfo.get学号())){
-				list.get学生().remove(i);
+		瀛︾敓鍒楄〃淇℃伅 list = getAllStudents(new NoneType());
+		for (int i=0;i<list.get瀛︾敓().size();++i) {
+			if(list.get瀛︾敓().get(i).get瀛﹀彿().equals(deleteInfo.get瀛﹀彿())){
+				list.get瀛︾敓().remove(i);
 				found=true;
 			}
 		}
@@ -73,7 +73,7 @@ public class StudentManagementImpl implements StudentManagementInterface {
 			Document doc = StudentScoreListBuilder.create(list);
 			return StudentScoreListBuilder.saveDocument(doc);
 		}else{
-			throw new DeleteInfoFault("列表中没有相应学号的学生","列表中没有相应学号的学生");
+			throw new DeleteInfoFault("鍒楄〃涓病鏈夌浉搴斿鍙风殑瀛︾敓","鍒楄〃涓病鏈夌浉搴斿鍙风殑瀛︾敓");
 		}
 	}
 

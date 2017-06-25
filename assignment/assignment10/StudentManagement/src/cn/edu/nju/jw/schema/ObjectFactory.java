@@ -24,11 +24,11 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _学号_QNAME = new QName("http://jw.nju.edu.cn/schema", "\u5b66\u53f7");
-    private final static QName _学生_QNAME = new QName("http://jw.nju.edu.cn/schema", "\u5b66\u751f");
-    private final static QName _课程编号_QNAME = new QName("http://jw.nju.edu.cn/schema", "\u8bfe\u7a0b\u7f16\u53f7");
-    private final static QName _学生列表_QNAME = new QName("http://jw.nju.edu.cn/schema", "\u5b66\u751f\u5217\u8868");
-    private final static QName _课程成绩列表_QNAME = new QName("http://jw.nju.edu.cn/schema", "\u8bfe\u7a0b\u6210\u7ee9\u5217\u8868");
+    private final static QName _瀛﹀彿_QNAME = new QName("http://jw.nju.edu.cn/schema", "\u5b66\u53f7");
+    private final static QName _瀛︾敓_QNAME = new QName("http://jw.nju.edu.cn/schema", "\u5b66\u751f");
+    private final static QName _璇剧▼缂栧彿_QNAME = new QName("http://jw.nju.edu.cn/schema", "\u8bfe\u7a0b\u7f16\u53f7");
+    private final static QName _瀛︾敓鍒楄〃_QNAME = new QName("http://jw.nju.edu.cn/schema", "\u5b66\u751f\u5217\u8868");
+    private final static QName _璇剧▼鎴愮哗鍒楄〃_QNAME = new QName("http://jw.nju.edu.cn/schema", "\u8bfe\u7a0b\u6210\u7ee9\u5217\u8868");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: cn.edu.nju.jw.schema
@@ -38,43 +38,43 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link 学生类型 }
+     * Create an instance of {@link 瀛︾敓绫诲瀷 }
      * 
      */
-    public 学生类型 create学生类型() {
-        return new 学生类型();
+    public 瀛︾敓绫诲瀷 create瀛︾敓绫诲瀷() {
+        return new 瀛︾敓绫诲瀷();
     }
 
     /**
-     * Create an instance of {@link 学生列表信息 }
+     * Create an instance of {@link 瀛︾敓鍒楄〃淇℃伅 }
      * 
      */
-    public 学生列表信息 create学生列表信息() {
-        return new 学生列表信息();
+    public 瀛︾敓鍒楄〃淇℃伅 create瀛︾敓鍒楄〃淇℃伅() {
+        return new 瀛︾敓鍒楄〃淇℃伅();
     }
 
     /**
-     * Create an instance of {@link 课程成绩列表类型 }
+     * Create an instance of {@link 璇剧▼鎴愮哗鍒楄〃绫诲瀷 }
      * 
      */
-    public 课程成绩列表类型 create课程成绩列表类型() {
-        return new 课程成绩列表类型();
+    public 璇剧▼鎴愮哗鍒楄〃绫诲瀷 create璇剧▼鎴愮哗鍒楄〃绫诲瀷() {
+        return new 璇剧▼鎴愮哗鍒楄〃绫诲瀷();
     }
 
     /**
-     * Create an instance of {@link 成绩类型 }
+     * Create an instance of {@link 鎴愮哗绫诲瀷 }
      * 
      */
-    public 成绩类型 create成绩类型() {
-        return new 成绩类型();
+    public 鎴愮哗绫诲瀷 create鎴愮哗绫诲瀷() {
+        return new 鎴愮哗绫诲瀷();
     }
 
     /**
-     * Create an instance of {@link 课程成绩类型 }
+     * Create an instance of {@link 璇剧▼鎴愮哗绫诲瀷 }
      * 
      */
-    public 课程成绩类型 create课程成绩类型() {
-        return new 课程成绩类型();
+    public 璇剧▼鎴愮哗绫诲瀷 create璇剧▼鎴愮哗绫诲瀷() {
+        return new 璇剧▼鎴愮哗绫诲瀷();
     }
 
     /**
@@ -82,17 +82,17 @@ public class ObjectFactory {
      * 
      */
     @XmlElementDecl(namespace = "http://jw.nju.edu.cn/schema", name = "\u5b66\u53f7")
-    public JAXBElement<String> create学号(String value) {
-        return new JAXBElement<String>(_学号_QNAME, String.class, null, value);
+    public JAXBElement<String> create瀛﹀彿(String value) {
+        return new JAXBElement<String>(_瀛﹀彿_QNAME, String.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link 学生类型 }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link 瀛︾敓绫诲瀷 }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://jw.nju.edu.cn/schema", name = "\u5b66\u751f")
-    public JAXBElement<学生类型> create学生(学生类型 value) {
-        return new JAXBElement<学生类型>(_学生_QNAME, 学生类型.class, null, value);
+    public JAXBElement<瀛︾敓绫诲瀷> create瀛︾敓(瀛︾敓绫诲瀷 value) {
+        return new JAXBElement<瀛︾敓绫诲瀷>(_瀛︾敓_QNAME, 瀛︾敓绫诲瀷.class, null, value);
     }
 
     /**
@@ -100,26 +100,26 @@ public class ObjectFactory {
      * 
      */
     @XmlElementDecl(namespace = "http://jw.nju.edu.cn/schema", name = "\u8bfe\u7a0b\u7f16\u53f7")
-    public JAXBElement<String> create课程编号(String value) {
-        return new JAXBElement<String>(_课程编号_QNAME, String.class, null, value);
+    public JAXBElement<String> create璇剧▼缂栧彿(String value) {
+        return new JAXBElement<String>(_璇剧▼缂栧彿_QNAME, String.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link 学生列表信息 }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link 瀛︾敓鍒楄〃淇℃伅 }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://jw.nju.edu.cn/schema", name = "\u5b66\u751f\u5217\u8868")
-    public JAXBElement<学生列表信息> create学生列表(学生列表信息 value) {
-        return new JAXBElement<学生列表信息>(_学生列表_QNAME, 学生列表信息.class, null, value);
+    public JAXBElement<瀛︾敓鍒楄〃淇℃伅> create瀛︾敓鍒楄〃(瀛︾敓鍒楄〃淇℃伅 value) {
+        return new JAXBElement<瀛︾敓鍒楄〃淇℃伅>(_瀛︾敓鍒楄〃_QNAME, 瀛︾敓鍒楄〃淇℃伅.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link 课程成绩列表类型 }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link 璇剧▼鎴愮哗鍒楄〃绫诲瀷 }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://jw.nju.edu.cn/schema", name = "\u8bfe\u7a0b\u6210\u7ee9\u5217\u8868")
-    public JAXBElement<课程成绩列表类型> create课程成绩列表(课程成绩列表类型 value) {
-        return new JAXBElement<课程成绩列表类型>(_课程成绩列表_QNAME, 课程成绩列表类型.class, null, value);
+    public JAXBElement<璇剧▼鎴愮哗鍒楄〃绫诲瀷> create璇剧▼鎴愮哗鍒楄〃(璇剧▼鎴愮哗鍒楄〃绫诲瀷 value) {
+        return new JAXBElement<璇剧▼鎴愮哗鍒楄〃绫诲瀷>(_璇剧▼鎴愮哗鍒楄〃_QNAME, 璇剧▼鎴愮哗鍒楄〃绫诲瀷.class, null, value);
     }
 
 }

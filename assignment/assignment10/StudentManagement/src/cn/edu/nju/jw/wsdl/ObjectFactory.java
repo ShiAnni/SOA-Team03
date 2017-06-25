@@ -5,8 +5,8 @@ import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlElementDecl;
 import javax.xml.bind.annotation.XmlRegistry;
 import javax.xml.namespace.QName;
-import cn.edu.nju.jw.schema.学生列表信息;
-import cn.edu.nju.jw.schema.学生类型;
+import cn.edu.nju.jw.schema.瀛︾敓鍒楄〃淇℃伅;
+import cn.edu.nju.jw.schema.瀛︾敓绫诲瀷;
 
 
 /**
@@ -59,30 +59,30 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link 学生列表信息 }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link 瀛︾敓鍒楄〃淇℃伅 }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://jw.nju.edu.cn/wsdl", name = "studentList")
-    public JAXBElement<学生列表信息> createStudentList(学生列表信息 value) {
-        return new JAXBElement<学生列表信息>(_StudentList_QNAME, 学生列表信息.class, null, value);
+    public JAXBElement<瀛︾敓鍒楄〃淇℃伅> createStudentList(瀛︾敓鍒楄〃淇℃伅 value) {
+        return new JAXBElement<瀛︾敓鍒楄〃淇℃伅>(_StudentList_QNAME, 瀛︾敓鍒楄〃淇℃伅.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link 学生类型 }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link 瀛︾敓绫诲瀷 }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://jw.nju.edu.cn/wsdl", name = "studentInfo")
-    public JAXBElement<学生类型> createStudentInfo(学生类型 value) {
-        return new JAXBElement<学生类型>(_StudentInfo_QNAME, 学生类型.class, null, value);
+    public JAXBElement<瀛︾敓绫诲瀷> createStudentInfo(瀛︾敓绫诲瀷 value) {
+        return new JAXBElement<瀛︾敓绫诲瀷>(_StudentInfo_QNAME, 瀛︾敓绫诲瀷.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link 验证信息 }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link 楠岃瘉淇℃伅 }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://jw.nju.edu.cn/wsdl", name = "isCorrect")
-    public JAXBElement<验证信息> createIsCorrect(验证信息 value) {
-        return new JAXBElement<验证信息>(_IsCorrect_QNAME, 验证信息.class, null, value);
+    public JAXBElement<楠岃瘉淇℃伅> createIsCorrect(楠岃瘉淇℃伅 value) {
+        return new JAXBElement<楠岃瘉淇℃伅>(_IsCorrect_QNAME, 楠岃瘉淇℃伅.class, null, value);
     }
 
     /**

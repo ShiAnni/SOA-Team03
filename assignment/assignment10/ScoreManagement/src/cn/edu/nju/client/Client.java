@@ -1,8 +1,8 @@
 package cn.edu.nju.client;
 
-import cn.edu.nju.jw.schema.成绩性质类型;
-import cn.edu.nju.jw.schema.成绩类型;
-import cn.edu.nju.jw.schema.课程成绩类型;
+import cn.edu.nju.jw.schema.鎴愮哗鎬ц川绫诲瀷;
+import cn.edu.nju.jw.schema.鎴愮哗绫诲瀷;
+import cn.edu.nju.jw.schema.璇剧▼鎴愮哗绫诲瀷;
 import cn.edu.nju.jw.wsdl.AddScoreFault;
 import cn.edu.nju.jw.wsdl.DeleteScoreFault;
 import cn.edu.nju.jw.wsdl.ModifyScoreFault;
@@ -17,13 +17,13 @@ public class Client {
 		ScoreService service = new ScoreService();
         ScoreInterface itf = service.getScorePort();
         
-        课程成绩类型 single = new 课程成绩类型();
-    	成绩类型 singlescore = new 成绩类型();
-    	singlescore.set学号("141250148");
-    	singlescore.set得分(95);
-        single.set成绩性质(成绩性质类型.平时成绩);
-        single.set课程编号("000001");
-        single.get成绩().add(singlescore);
+        璇剧▼鎴愮哗绫诲瀷 single = new 璇剧▼鎴愮哗绫诲瀷();
+    	鎴愮哗绫诲瀷 singlescore = new 鎴愮哗绫诲瀷();
+    	singlescore.set瀛﹀彿("141250148");
+    	singlescore.set寰楀垎(95);
+        single.set鎴愮哗鎬ц川(鎴愮哗鎬ц川绫诲瀷.骞虫椂鎴愮哗);
+        single.set璇剧▼缂栧彿("000001");
+        single.get鎴愮哗().add(singlescore);
         try {
 			itf.addScore(single);
 			System.out.println("addScoreSuccess--Client");
@@ -34,12 +34,12 @@ public class Client {
         try {
         	itf.searchScore("123");
         } catch (SearchScoreFault e) {
-        	System.out.println("查找的学号不存在");
+        	System.out.println("鏌ユ壘鐨勫鍙蜂笉瀛樺湪");
         }
         
         try {
-        	System.out.println(itf.searchScore("141250148").get课程成绩().size());
-        	System.out.println("查找成功");
+        	System.out.println(itf.searchScore("141250148").get璇剧▼鎴愮哗().size());
+        	System.out.println("鏌ユ壘鎴愬姛");
         } catch (SearchScoreFault e) {
         	e.printStackTrace();
         }
@@ -52,17 +52,17 @@ public class Client {
 			e1.printStackTrace();
 		}
 		try {
-        	System.out.println(itf.searchScore("141250158").get课程成绩().size());
+        	System.out.println(itf.searchScore("141250158").get璇剧▼鎴愮哗().size());
         } catch (SearchScoreFault e) {
         	e.printStackTrace();
         }
-		课程成绩类型 single2 = new 课程成绩类型();
-    	成绩类型 singlescore2 = new 成绩类型();
-    	singlescore2.set学号("141250158");
-    	singlescore2.set得分(58);
-    	single2.set成绩性质(成绩性质类型.总评成绩);
-        single2.set课程编号("000001");
-        single2.get成绩().add(singlescore2);
+		璇剧▼鎴愮哗绫诲瀷 single2 = new 璇剧▼鎴愮哗绫诲瀷();
+    	鎴愮哗绫诲瀷 singlescore2 = new 鎴愮哗绫诲瀷();
+    	singlescore2.set瀛﹀彿("141250158");
+    	singlescore2.set寰楀垎(58);
+    	single2.set鎴愮哗鎬ц川(鎴愮哗鎬ц川绫诲瀷.鎬昏瘎鎴愮哗);
+        single2.set璇剧▼缂栧彿("000001");
+        single2.get鎴愮哗().add(singlescore2);
         try {
 			itf.modifyScore(single2);
 			System.out.println("modifyScoreSuccess--Client");

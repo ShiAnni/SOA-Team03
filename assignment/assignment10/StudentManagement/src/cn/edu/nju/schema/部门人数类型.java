@@ -9,15 +9,15 @@ import javax.xml.bind.annotation.XmlValue;
 
 
 /**
- * <p>²¿ÃÅÈËÊıÀàĞÍ complex typeµÄ Java Àà¡£
+ * <p>éƒ¨é—¨äººæ•°ç±»å‹ complex typeçš„ Java ç±»ã€‚
  * 
- * <p>ÒÔÏÂÄ£Ê½Æ¬¶ÎÖ¸¶¨°üº¬ÔÚ´ËÀàÖĞµÄÔ¤ÆÚÄÚÈİ¡£
+ * <p>ä»¥ä¸‹æ¨¡å¼ç‰‡æ®µæŒ‡å®šåŒ…å«åœ¨æ­¤ç±»ä¸­çš„é¢„æœŸå†…å®¹ã€‚
  * 
  * <pre>
- * &lt;complexType name="²¿ÃÅÈËÊıÀàĞÍ">
+ * &lt;complexType name="éƒ¨é—¨äººæ•°ç±»å‹">
  *   &lt;simpleContent>
  *     &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema>int">
- *       &lt;attribute name="ÀàĞÍ" type="{http://www.nju.edu.cn/schema}²¿ÃÅÈËÔ±ÀàĞÍ" />
+ *       &lt;attribute name="ç±»å‹" type="{http://www.nju.edu.cn/schema}éƒ¨é—¨äººå‘˜ç±»å‹" />
  *     &lt;/extension>
  *   &lt;/simpleContent>
  * &lt;/complexType>
@@ -29,15 +29,15 @@ import javax.xml.bind.annotation.XmlValue;
 @XmlType(name = "\u90e8\u95e8\u4eba\u6570\u7c7b\u578b", propOrder = {
     "value"
 })
-public class ²¿ÃÅÈËÊıÀàĞÍ {
+public class éƒ¨é—¨äººæ•°ç±»å‹ {
 
     @XmlValue
     protected int value;
     @XmlAttribute
-    protected ²¿ÃÅÈËÔ±ÀàĞÍ ÀàĞÍ;
+    protected éƒ¨é—¨äººå‘˜ç±»å‹ ç±»å‹;
 
     /**
-     * »ñÈ¡valueÊôĞÔµÄÖµ¡£
+     * è·å–valueå±æ€§çš„å€¼ã€‚
      * 
      */
     public int getValue() {
@@ -45,7 +45,7 @@ public class ²¿ÃÅÈËÊıÀàĞÍ {
     }
 
     /**
-     * ÉèÖÃvalueÊôĞÔµÄÖµ¡£
+     * è®¾ç½®valueå±æ€§çš„å€¼ã€‚
      * 
      */
     public void setValue(int value) {
@@ -53,32 +53,32 @@ public class ²¿ÃÅÈËÊıÀàĞÍ {
     }
 
     /**
-     * »ñÈ¡ÀàĞÍÊôĞÔµÄÖµ¡£
+     * è·å–ç±»å‹å±æ€§çš„å€¼ã€‚
      * 
      * @return
      *     possible object is
-     *     {@link ²¿ÃÅÈËÔ±ÀàĞÍ }
+     *     {@link éƒ¨é—¨äººå‘˜ç±»å‹ }
      *     
      */
-    public ²¿ÃÅÈËÔ±ÀàĞÍ getÀàĞÍ() {
-        return ÀàĞÍ;
+    public éƒ¨é—¨äººå‘˜ç±»å‹ getç±»å‹() {
+        return ç±»å‹;
     }
 
     /**
-     * ÉèÖÃÀàĞÍÊôĞÔµÄÖµ¡£
+     * è®¾ç½®ç±»å‹å±æ€§çš„å€¼ã€‚
      * 
      * @param value
      *     allowed object is
-     *     {@link ²¿ÃÅÈËÔ±ÀàĞÍ }
+     *     {@link éƒ¨é—¨äººå‘˜ç±»å‹ }
      *     
      */
-    public void setÀàĞÍ(²¿ÃÅÈËÔ±ÀàĞÍ value) {
-        this.ÀàĞÍ = value;
+    public void setç±»å‹(éƒ¨é—¨äººå‘˜ç±»å‹ value) {
+        this.ç±»å‹ = value;
     }
 
 	@Override
 	public String toString() {
-		return "²¿ÃÅÈËÊıÀàĞÍ [value=" + value + ", ÀàĞÍ=" + ÀàĞÍ + "]";
+		return "éƒ¨é—¨äººæ•°ç±»å‹ [value=" + value + ", ç±»å‹=" + ç±»å‹ + "]";
 	}
 
 	@Override
@@ -86,7 +86,7 @@ public class ²¿ÃÅÈËÊıÀàĞÍ {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + value;
-		result = prime * result + ((ÀàĞÍ == null) ? 0 : ÀàĞÍ.hashCode());
+		result = prime * result + ((ç±»å‹ == null) ? 0 : ç±»å‹.hashCode());
 		return result;
 	}
 
@@ -98,10 +98,10 @@ public class ²¿ÃÅÈËÊıÀàĞÍ {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		²¿ÃÅÈËÊıÀàĞÍ other = (²¿ÃÅÈËÊıÀàĞÍ) obj;
+		éƒ¨é—¨äººæ•°ç±»å‹ other = (éƒ¨é—¨äººæ•°ç±»å‹) obj;
 		if (value != other.value)
 			return false;
-		if (ÀàĞÍ != other.ÀàĞÍ)
+		if (ç±»å‹ != other.ç±»å‹)
 			return false;
 		return true;
 	}
