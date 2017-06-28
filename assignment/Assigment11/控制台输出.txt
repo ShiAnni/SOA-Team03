@@ -1,0 +1,122 @@
+测试老师账号的增删改查
+以正确的老师身份登录
+查询141250019的成绩！
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"><SOAP-ENV:Header/><S:Body><学号 xmlns="http://jw.nju.edu.cn/schema" xmlns:ns2="http://www.nju.edu.cn/schema">141250019</学号></S:Body></S:Envelope>
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"><SOAP-ENV:Header><tns:email xmlns:tns="http://jw.nju.edu.cn/">beijia@nju.edu.cn</tns:email><tns:password xmlns:tns="http://jw.nju.edu.cn/">123456</tns:password><tns:action xmlns:tns="http://jw.nju.edu.cn">query</tns:action></SOAP-ENV:Header><S:Body><学号 xmlns="http://jw.nju.edu.cn/schema" xmlns:ns2="http://www.nju.edu.cn/schema">141250019</学号></S:Body></S:Envelope>
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"><SOAP-ENV:Header><tns:email xmlns:tns="http://jw.nju.edu.cn/">beijia@nju.edu.cn</tns:email><tns:password xmlns:tns="http://jw.nju.edu.cn/">123456</tns:password><tns:action xmlns:tns="http://jw.nju.edu.cn">query</tns:action><tns:identity xmlns:tns="http://jw.nju.edu.cn/">teacher</tns:identity></SOAP-ENV:Header><S:Body><学号 xmlns="http://jw.nju.edu.cn/schema" xmlns:ns2="http://www.nju.edu.cn/schema">141250019</学号></S:Body></S:Envelope>
+141250019成绩为：
+000001  平时成绩  141250019 100
+000001  作业成绩  141250019 90
+000002  作业成绩  141250019 90
+000002  总评成绩  141250019 90
+000003  平时成绩  141250019 90
+000003  作业成绩  141250019 90
+000003  总评成绩  141250019 90
+000004  作业成绩  141250019 100
+000009  平时成绩  141250019 99
+4  总评成绩  141250019 0
+增加141250019的成绩，课程号为00008，成绩类型为平时成绩，成绩为100！
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"><SOAP-ENV:Header/><S:Body><addScore xmlns="http://jw.nju.edu.cn/schema" xmlns:ns2="http://www.nju.edu.cn/schema"><课程成绩列表><课程成绩 成绩性质="平时成绩" 课程编号="000008"><成绩><学号>141250019</学号><得分>100</得分></成绩></课程成绩></课程成绩列表></addScore></S:Body></S:Envelope>
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"><SOAP-ENV:Header><tns:email xmlns:tns="http://jw.nju.edu.cn/">beijia@nju.edu.cn</tns:email><tns:password xmlns:tns="http://jw.nju.edu.cn/">123456</tns:password><tns:action xmlns:tns="http://jw.nju.edu.cn">add</tns:action></SOAP-ENV:Header><S:Body><addScore xmlns="http://jw.nju.edu.cn/schema" xmlns:ns2="http://www.nju.edu.cn/schema"><课程成绩列表><课程成绩 成绩性质="平时成绩" 课程编号="000008"><成绩><学号>141250019</学号><得分>100</得分></成绩></课程成绩></课程成绩列表></addScore></S:Body></S:Envelope>
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"><SOAP-ENV:Header><tns:email xmlns:tns="http://jw.nju.edu.cn/">beijia@nju.edu.cn</tns:email><tns:password xmlns:tns="http://jw.nju.edu.cn/">123456</tns:password><tns:action xmlns:tns="http://jw.nju.edu.cn">add</tns:action><tns:identity xmlns:tns="http://jw.nju.edu.cn/">teacher</tns:identity></SOAP-ENV:Header><S:Body><addScore xmlns="http://jw.nju.edu.cn/schema" xmlns:ns2="http://www.nju.edu.cn/schema"><课程成绩列表><课程成绩 成绩性质="平时成绩" 课程编号="000008"><成绩><学号>141250019</学号><得分>100</得分></成绩></课程成绩></课程成绩列表></addScore></S:Body></S:Envelope>六月 28, 2017 5:46:12 下午 com.sun.xml.internal.ws.wsdl.PayloadQNameBasedOperationFinder <init>
+加了一个成绩之后查询141250019的成绩！
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"><SOAP-ENV:Header/><S:Body><学号 xmlns="http://jw.nju.edu.cn/schema" xmlns:ns2="http://www.nju.edu.cn/schema">141250019</学号></S:Body></S:Envelope>
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"><SOAP-ENV:Header><tns:email xmlns:tns="http://jw.nju.edu.cn/">beijia@nju.edu.cn</tns:email><tns:password xmlns:tns="http://jw.nju.edu.cn/">123456</tns:password><tns:action xmlns:tns="http://jw.nju.edu.cn">query</tns:action></SOAP-ENV:Header><S:Body><学号 xmlns="http://jw.nju.edu.cn/schema" xmlns:ns2="http://www.nju.edu.cn/schema">141250019</学号></S:Body></S:Envelope>
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"><SOAP-ENV:Header><tns:email xmlns:tns="http://jw.nju.edu.cn/">beijia@nju.edu.cn</tns:email><tns:password xmlns:tns="http://jw.nju.edu.cn/">123456</tns:password><tns:action xmlns:tns="http://jw.nju.edu.cn">query</tns:action><tns:identity xmlns:tns="http://jw.nju.edu.cn/">teacher</tns:identity></SOAP-ENV:Header><S:Body><学号 xmlns="http://jw.nju.edu.cn/schema" xmlns:ns2="http://www.nju.edu.cn/schema">141250019</学号></S:Body></S:Envelope>
+加入成绩以后的成绩为
+000001  平时成绩  141250019 100
+000001  作业成绩  141250019 90
+000002  作业成绩  141250019 90
+000002  总评成绩  141250019 90
+000003  平时成绩  141250019 90
+000003  作业成绩  141250019 90
+000003  总评成绩  141250019 90
+000004  作业成绩  141250019 100
+000008  平时成绩  141250019 100
+000009  平时成绩  141250019 99
+4  总评成绩  141250019 0
+修改141250019的成绩！课程号为00008，成绩类型为平时成绩，成绩为100修改为99
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"><SOAP-ENV:Header/><S:Body><addScore xmlns="http://jw.nju.edu.cn/schema" xmlns:ns2="http://www.nju.edu.cn/schema"><课程成绩列表><课程成绩 成绩性质="平时成绩" 课程编号="000008"><成绩><学号>141250019</学号><得分>99</得分></成绩></课程成绩></课程成绩列表></addScore></S:Body></S:Envelope>
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"><SOAP-ENV:Header><tns:email xmlns:tns="http://jw.nju.edu.cn/">beijia@nju.edu.cn</tns:email><tns:password xmlns:tns="http://jw.nju.edu.cn/">123456</tns:password><tns:action xmlns:tns="http://jw.nju.edu.cn">modify</tns:action></SOAP-ENV:Header><S:Body><addScore xmlns="http://jw.nju.edu.cn/schema" xmlns:ns2="http://www.nju.edu.cn/schema"><课程成绩列表><课程成绩 成绩性质="平时成绩" 课程编号="000008"><成绩><学号>141250019</学号><得分>99</得分></成绩></课程成绩></课程成绩列表></addScore></S:Body></S:Envelope>
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"><SOAP-ENV:Header><tns:email xmlns:tns="http://jw.nju.edu.cn/">beijia@nju.edu.cn</tns:email><tns:password xmlns:tns="http://jw.nju.edu.cn/">123456</tns:password><tns:action xmlns:tns="http://jw.nju.edu.cn">modify</tns:action><tns:identity xmlns:tns="http://jw.nju.edu.cn/">teacher</tns:identity></SOAP-ENV:Header><S:Body><addScore xmlns="http://jw.nju.edu.cn/schema" xmlns:ns2="http://www.nju.edu.cn/schema"><课程成绩列表><课程成绩 成绩性质="平时成绩" 课程编号="000008"><成绩><学号>141250019</学号><得分>99</得分></成绩></课程成绩></课程成绩列表></addScore></S:Body></S:Envelope>六月 28, 2017 5:46:13 下午 com.sun.xml.internal.ws.wsdl.PayloadQNameBasedOperationFinder <init>
+修改一个成绩之后查询141250019的成绩！
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"><SOAP-ENV:Header/><S:Body><学号 xmlns="http://jw.nju.edu.cn/schema" xmlns:ns2="http://www.nju.edu.cn/schema">141250019</学号></S:Body></S:Envelope>
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"><SOAP-ENV:Header><tns:email xmlns:tns="http://jw.nju.edu.cn/">beijia@nju.edu.cn</tns:email><tns:password xmlns:tns="http://jw.nju.edu.cn/">123456</tns:password><tns:action xmlns:tns="http://jw.nju.edu.cn">query</tns:action></SOAP-ENV:Header><S:Body><学号 xmlns="http://jw.nju.edu.cn/schema" xmlns:ns2="http://www.nju.edu.cn/schema">141250019</学号></S:Body></S:Envelope>
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"><SOAP-ENV:Header><tns:email xmlns:tns="http://jw.nju.edu.cn/">beijia@nju.edu.cn</tns:email><tns:password xmlns:tns="http://jw.nju.edu.cn/">123456</tns:password><tns:action xmlns:tns="http://jw.nju.edu.cn">query</tns:action><tns:identity xmlns:tns="http://jw.nju.edu.cn/">teacher</tns:identity></SOAP-ENV:Header><S:Body><学号 xmlns="http://jw.nju.edu.cn/schema" xmlns:ns2="http://www.nju.edu.cn/schema">141250019</学号></S:Body></S:Envelope>
+修改一个成绩之后141250019的成绩为
+000001  平时成绩  141250019 100
+000001  作业成绩  141250019 90
+000002  作业成绩  141250019 90
+000002  总评成绩  141250019 90
+000003  平时成绩  141250019 90
+000003  作业成绩  141250019 90
+000003  总评成绩  141250019 90
+000004  作业成绩  141250019 100
+000008  平时成绩  141250019 99
+000009  平时成绩  141250019 99
+4  总评成绩  141250019 0
+删除141250019的某一成绩
+删除141250019的成绩，课程号为00008，成绩类型为平时成绩，成绩为99！
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"><SOAP-ENV:Header/><S:Body><课程成绩列表 xmlns="http://jw.nju.edu.cn/schema" xmlns:ns2="http://www.nju.edu.cn/schema"><课程成绩 成绩性质="平时成绩" 课程编号="000008"><成绩><学号>141250019</学号><得分>99</得分></成绩></课程成绩></课程成绩列表></S:Body></S:Envelope>
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"><SOAP-ENV:Header><tns:email xmlns:tns="http://jw.nju.edu.cn/">beijia@nju.edu.cn</tns:email><tns:password xmlns:tns="http://jw.nju.edu.cn/">123456</tns:password><tns:action xmlns:tns="http://jw.nju.edu.cn">delete</tns:action></SOAP-ENV:Header><S:Body><课程成绩列表 xmlns="http://jw.nju.edu.cn/schema" xmlns:ns2="http://www.nju.edu.cn/schema"><课程成绩 成绩性质="平时成绩" 课程编号="000008"><成绩><学号>141250019</学号><得分>99</得分></成绩></课程成绩></课程成绩列表></S:Body></S:Envelope>
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"><SOAP-ENV:Header><tns:email xmlns:tns="http://jw.nju.edu.cn/">beijia@nju.edu.cn</tns:email><tns:password xmlns:tns="http://jw.nju.edu.cn/">123456</tns:password><tns:action xmlns:tns="http://jw.nju.edu.cn">delete</tns:action><tns:identity xmlns:tns="http://jw.nju.edu.cn/">teacher</tns:identity></SOAP-ENV:Header><S:Body><课程成绩列表 xmlns="http://jw.nju.edu.cn/schema" xmlns:ns2="http://www.nju.edu.cn/schema"><课程成绩 成绩性质="平时成绩" 课程编号="000008"><成绩><学号>141250019</学号><得分>99</得分></成绩></课程成绩></课程成绩列表></S:Body></S:Envelope>六月 28, 2017 5:46:13 下午 com.sun.xml.internal.ws.wsdl.PayloadQNameBasedOperationFinder <init>
+删除一个成绩之后查询141250019的成绩！
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"><SOAP-ENV:Header/><S:Body><学号 xmlns="http://jw.nju.edu.cn/schema" xmlns:ns2="http://www.nju.edu.cn/schema">141250019</学号></S:Body></S:Envelope>
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"><SOAP-ENV:Header><tns:email xmlns:tns="http://jw.nju.edu.cn/">beijia@nju.edu.cn</tns:email><tns:password xmlns:tns="http://jw.nju.edu.cn/">123456</tns:password><tns:action xmlns:tns="http://jw.nju.edu.cn">query</tns:action></SOAP-ENV:Header><S:Body><学号 xmlns="http://jw.nju.edu.cn/schema" xmlns:ns2="http://www.nju.edu.cn/schema">141250019</学号></S:Body></S:Envelope>
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"><SOAP-ENV:Header><tns:email xmlns:tns="http://jw.nju.edu.cn/">beijia@nju.edu.cn</tns:email><tns:password xmlns:tns="http://jw.nju.edu.cn/">123456</tns:password><tns:action xmlns:tns="http://jw.nju.edu.cn">query</tns:action><tns:identity xmlns:tns="http://jw.nju.edu.cn/">teacher</tns:identity></SOAP-ENV:Header><S:Body><学号 xmlns="http://jw.nju.edu.cn/schema" xmlns:ns2="http://www.nju.edu.cn/schema">141250019</学号></S:Body></S:Envelope>
+删除一个成绩之后141250019的成绩为：
+000001  平时成绩  141250019 100
+000001  作业成绩  141250019 90
+000002  作业成绩  141250019 90
+000002  总评成绩  141250019 90
+000003  平时成绩  141250019 90
+000003  作业成绩  141250019 90
+000003  总评成绩  141250019 90
+000004  作业成绩  141250019 100
+000009  平时成绩  141250019 99
+4  总评成绩  141250019 0
+
+?
+测试学生账号的增删改查
+以普通学生身份正确登录
+查询141250019的成绩！
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"><SOAP-ENV:Header/><S:Body><学号 xmlns="http://jw.nju.edu.cn/schema" xmlns:ns2="http://www.nju.edu.cn/schema">141250019</学号></S:Body></S:Envelope>
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"><SOAP-ENV:Header><tns:email xmlns:tns="http://jw.nju.edu.cn/">141250019@smail.nju.edu.cn</tns:email><tns:password xmlns:tns="http://jw.nju.edu.cn/">141250019</tns:password><tns:action xmlns:tns="http://jw.nju.edu.cn">query</tns:action></SOAP-ENV:Header><S:Body><学号 xmlns="http://jw.nju.edu.cn/schema" xmlns:ns2="http://www.nju.edu.cn/schema">141250019</学号></S:Body></S:Envelope>
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"><SOAP-ENV:Header><tns:email xmlns:tns="http://jw.nju.edu.cn/">141250019@smail.nju.edu.cn</tns:email><tns:password xmlns:tns="http://jw.nju.edu.cn/">141250019</tns:password><tns:action xmlns:tns="http://jw.nju.edu.cn">query</tns:action><tns:identity xmlns:tns="http://jw.nju.edu.cn/">student</tns:identity></SOAP-ENV:Header><S:Body><学号 xmlns="http://jw.nju.edu.cn/schema" xmlns:ns2="http://www.nju.edu.cn/schema">141250019</学号></S:Body></S:Envelope>
+000001  平时成绩  141250019 100
+000001  作业成绩  141250019 90
+000002  作业成绩  141250019 90
+000002  总评成绩  141250019 90
+000003  平时成绩  141250019 90
+000003  作业成绩  141250019 90
+000003  总评成绩  141250019 90
+000004  作业成绩  141250019 100
+000009  平时成绩  141250019 99
+4  总评成绩  141250019 0
+尝试增加141250019的成绩，课程号为00009，成绩类型为平时成绩，成绩为100！
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"><SOAP-ENV:Header/><S:Body><addScore xmlns="http://jw.nju.edu.cn/schema" xmlns:ns2="http://www.nju.edu.cn/schema"><课程成绩列表><课程成绩 成绩性质="平时成绩" 课程编号="000009"><成绩><学号>141250019</学号><得分>100</得分></成绩></课程成绩></课程成绩列表></addScore></S:Body></S:Envelope>
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"><SOAP-ENV:Header><tns:email xmlns:tns="http://jw.nju.edu.cn/">141250019@smail.nju.edu.cn</tns:email><tns:password xmlns:tns="http://jw.nju.edu.cn/">141250019</tns:password><tns:action xmlns:tns="http://jw.nju.edu.cn">add</tns:action></SOAP-ENV:Header><S:Body><addScore xmlns="http://jw.nju.edu.cn/schema" xmlns:ns2="http://www.nju.edu.cn/schema"><课程成绩列表><课程成绩 成绩性质="平时成绩" 课程编号="000009"><成绩><学号>141250019</学号><得分>100</得分></成绩></课程成绩></课程成绩列表></addScore></S:Body></S:Envelope>
+权限不够，无法调用
+尝试修改141250019的成绩！课程号为00009，成绩类型为平时成绩，成绩为100修改为99
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"><SOAP-ENV:Header/><S:Body><addScore xmlns="http://jw.nju.edu.cn/schema" xmlns:ns2="http://www.nju.edu.cn/schema"><课程成绩列表><课程成绩 成绩性质="平时成绩" 课程编号="000009"><成绩><学号>141250019</学号><得分>99</得分></成绩></课程成绩></课程成绩列表></addScore></S:Body></S:Envelope>
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"><SOAP-ENV:Header><tns:email xmlns:tns="http://jw.nju.edu.cn/">141250019@smail.nju.edu.cn</tns:email><tns:password xmlns:tns="http://jw.nju.edu.cn/">141250019</tns:password><tns:action xmlns:tns="http://jw.nju.edu.cn">modify</tns:action></SOAP-ENV:Header><S:Body><addScore xmlns="http://jw.nju.edu.cn/schema" xmlns:ns2="http://www.nju.edu.cn/schema"><课程成绩列表><课程成绩 成绩性质="平时成绩" 课程编号="000009"><成绩><学号>141250019</学号><得分>99</得分></成绩></课程成绩></课程成绩列表></addScore></S:Body></S:Envelope>
+权限不够，无法调用
+尝试删除141250019的某一成绩
+尝试删除141250019的成绩，课程号为00004，成绩类型为总评成绩，成绩为99！
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"><SOAP-ENV:Header/><S:Body><课程成绩列表 xmlns="http://jw.nju.edu.cn/schema" xmlns:ns2="http://www.nju.edu.cn/schema"><课程成绩 成绩性质="总评成绩" 课程编号="000004"><成绩><学号>141250019</学号><得分>99</得分></成绩></课程成绩></课程成绩列表></S:Body></S:Envelope>
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"><SOAP-ENV:Header><tns:email xmlns:tns="http://jw.nju.edu.cn/">141250019@smail.nju.edu.cn</tns:email><tns:password xmlns:tns="http://jw.nju.edu.cn/">141250019</tns:password><tns:action xmlns:tns="http://jw.nju.edu.cn">delete</tns:action></SOAP-ENV:Header><S:Body><课程成绩列表 xmlns="http://jw.nju.edu.cn/schema" xmlns:ns2="http://www.nju.edu.cn/schema"><课程成绩 成绩性质="总评成绩" 课程编号="000004"><成绩><学号>141250019</学号><得分>99</得分></成绩></课程成绩></课程成绩列表></S:Body></S:Envelope>
+权限不够，无法调用
+
+测试错误的学生账号
+正确的账号为141250019@smail.nju.edu.cn密码为141250019
+本次测试的账号为141250019@smail.nju.edu.cn
+本次测试的密码为123
+密码错误！
+
+
+测试错误的学生账号
+正确的账号为141250019@smail.nju.edu.cn密码为141250019
+本次测试的账号为14125001@smail.nju.edu.cn
+本次测试的密码为123
+学号不存在！
+
