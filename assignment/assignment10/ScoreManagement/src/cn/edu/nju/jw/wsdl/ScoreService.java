@@ -17,7 +17,7 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.2
  * 
  */
-@WebServiceClient(name = "ScoreService", targetNamespace = "http://jw.nju.edu.cn/wsdl", wsdlLocation = "file:/D:/program/git/SOA-Team03/assignment/assignment10/ScoreManagement/WebContent/WEB-INF/wsdl/scoreService.wsdl")
+@WebServiceClient(name = "ScoreService", targetNamespace = "http://jw.nju.edu.cn/wsdl", wsdlLocation = "file:/C:/Users/Administrator/Desktop/SOA-Team03/assignment/assignment10/ScoreManagement/WebContent/WEB-INF/wsdl/scoreService.wsdl")
 public class ScoreService
     extends Service
 {
@@ -30,7 +30,7 @@ public class ScoreService
         URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL("file:/D:/program/git/SOA-Team03/assignment/assignment10/ScoreManagement/WebContent/WEB-INF/wsdl/scoreService.wsdl");
+            url = new URL("file:/C:/Users/Administrator/Desktop/SOA-Team03/assignment/assignment10/ScoreManagement/WebContent/WEB-INF/wsdl/scoreService.wsdl");
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }
